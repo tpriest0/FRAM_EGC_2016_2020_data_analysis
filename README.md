@@ -3,4 +3,4 @@ This repository describes and provides access to the data files and analysis pip
 
 For information on the data provided in this repository and a description of the processing, please see the wiki
 
-The data files along with the R script required to reproduce our results and generate the main figures presented in the manuscript are available under this branch.
+The data files along with the R script required to reproduce our results and generate the main figures presented in the manuscript are available under [this branch](README.md)
