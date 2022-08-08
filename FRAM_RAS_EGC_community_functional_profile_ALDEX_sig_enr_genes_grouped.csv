@@ -1,0 +1,1072 @@
+Gene,HI_mean,LI_mean,Sample,CLR_values,cluster,KEGG_ID,Metabolism,Metabolism_group,Enrichment
+carboxypeptidase PM20D1 [EC:3.4.17.-],-0.880782561,0.440391281,RAS_EGC_02_1617_1,-0.806874526,High-ice cluster,K13049,Proteins,-1.321173842,HI_enriched
+carboxypeptidase PM20D1 [EC:3.4.17.-],-0.880782561,0.440391281,RAS_EGC_03_1617_2,-1.094556599,High-ice cluster,K13049,Proteins,-1.321173842,HI_enriched
+carboxypeptidase PM20D1 [EC:3.4.17.-],-0.880782561,0.440391281,RAS_EGC_05_1617_2,0.567991139,Low-ice cluster,K13049,Proteins,-1.321173842,HI_enriched
+carboxypeptidase PM20D1 [EC:3.4.17.-],-0.880782561,0.440391281,RAS_EGC_07_1617_1,0.364762897,Low-ice cluster,K13049,Proteins,-1.321173842,HI_enriched
+carboxypeptidase PM20D1 [EC:3.4.17.-],-0.880782561,0.440391281,RAS_EGC_08_1617_1,0.770228006,Low-ice cluster,K13049,Proteins,-1.321173842,HI_enriched
+carboxypeptidase PM20D1 [EC:3.4.17.-],-0.880782561,0.440391281,RAS_EGC_09_1617_1,0.881206513,Low-ice cluster,K13049,Proteins,-1.321173842,HI_enriched
+carboxypeptidase PM20D1 [EC:3.4.17.-],-0.880782561,0.440391281,RAS_EGC_10_1617_2,0.127434711,Low-ice cluster,K13049,Proteins,-1.321173842,HI_enriched
+carboxypeptidase PM20D1 [EC:3.4.17.-],-0.880782561,0.440391281,RAS_EGC_11_1617,-0.069275583,Low-ice cluster,K13049,Proteins,-1.321173842,HI_enriched
+carboxypeptidase PM20D1 [EC:3.4.17.-],-0.880782561,0.440391281,RAS_EGC_12_1617_1,-0.740916558,High-ice cluster,K13049,Proteins,-1.321173842,HI_enriched
+penicillin-insensitive murein DD-endopeptidase [EC:3.4.24.-],-0.586834914,0.293417457,RAS_EGC_02_1617_1,-0.624611142,High-ice cluster,K07261,Proteins,-0.880252371,HI_enriched
+penicillin-insensitive murein DD-endopeptidase [EC:3.4.24.-],-0.586834914,0.293417457,RAS_EGC_03_1617_2,-0.288138906,High-ice cluster,K07261,Proteins,-0.880252371,HI_enriched
+penicillin-insensitive murein DD-endopeptidase [EC:3.4.24.-],-0.586834914,0.293417457,RAS_EGC_05_1617_2,-0.093982891,Low-ice cluster,K07261,Proteins,-0.880252371,HI_enriched
+penicillin-insensitive murein DD-endopeptidase [EC:3.4.24.-],-0.586834914,0.293417457,RAS_EGC_07_1617_1,0.368640631,Low-ice cluster,K07261,Proteins,-0.880252371,HI_enriched
+penicillin-insensitive murein DD-endopeptidase [EC:3.4.24.-],-0.586834914,0.293417457,RAS_EGC_08_1617_1,0.710389924,Low-ice cluster,K07261,Proteins,-0.880252371,HI_enriched
+penicillin-insensitive murein DD-endopeptidase [EC:3.4.24.-],-0.586834914,0.293417457,RAS_EGC_09_1617_1,-0.093982891,Low-ice cluster,K07261,Proteins,-0.880252371,HI_enriched
+penicillin-insensitive murein DD-endopeptidase [EC:3.4.24.-],-0.586834914,0.293417457,RAS_EGC_10_1617_2,0.538539667,Low-ice cluster,K07261,Proteins,-0.880252371,HI_enriched
+penicillin-insensitive murein DD-endopeptidase [EC:3.4.24.-],-0.586834914,0.293417457,RAS_EGC_11_1617,0.330900303,Low-ice cluster,K07261,Proteins,-0.880252371,HI_enriched
+penicillin-insensitive murein DD-endopeptidase [EC:3.4.24.-],-0.586834914,0.293417457,RAS_EGC_12_1617_1,-0.847754694,High-ice cluster,K07261,Proteins,-0.880252371,HI_enriched
+Xaa-Pro aminopeptidase [EC:3.4.11.9],-0.131440041,0.065720021,RAS_EGC_02_1617_1,-0.271654398,High-ice cluster,K01262,Proteins,-0.197160062,HI_enriched
+Xaa-Pro aminopeptidase [EC:3.4.11.9],-0.131440041,0.065720021,RAS_EGC_03_1617_2,-0.100532032,High-ice cluster,K01262,Proteins,-0.197160062,HI_enriched
+Xaa-Pro aminopeptidase [EC:3.4.11.9],-0.131440041,0.065720021,RAS_EGC_05_1617_2,-0.018549459,Low-ice cluster,K01262,Proteins,-0.197160062,HI_enriched
+Xaa-Pro aminopeptidase [EC:3.4.11.9],-0.131440041,0.065720021,RAS_EGC_07_1617_1,0.249714527,Low-ice cluster,K01262,Proteins,-0.197160062,HI_enriched
+Xaa-Pro aminopeptidase [EC:3.4.11.9],-0.131440041,0.065720021,RAS_EGC_08_1617_1,0.007930464,Low-ice cluster,K01262,Proteins,-0.197160062,HI_enriched
+Xaa-Pro aminopeptidase [EC:3.4.11.9],-0.131440041,0.065720021,RAS_EGC_09_1617_1,0.081789525,Low-ice cluster,K01262,Proteins,-0.197160062,HI_enriched
+Xaa-Pro aminopeptidase [EC:3.4.11.9],-0.131440041,0.065720021,RAS_EGC_10_1617_2,-0.013197083,Low-ice cluster,K01262,Proteins,-0.197160062,HI_enriched
+Xaa-Pro aminopeptidase [EC:3.4.11.9],-0.131440041,0.065720021,RAS_EGC_11_1617,0.086632149,Low-ice cluster,K01262,Proteins,-0.197160062,HI_enriched
+Xaa-Pro aminopeptidase [EC:3.4.11.9],-0.131440041,0.065720021,RAS_EGC_12_1617_1,-0.022133693,High-ice cluster,K01262,Proteins,-0.197160062,HI_enriched
+serine-type D-Ala-D-Ala carboxypeptidase (penicillin-binding protein 5/6) [EC:3.4.16.4],-0.072766801,0.036383401,RAS_EGC_02_1617_1,-0.211729048,High-ice cluster,K07258,Proteins,-0.109150202,HI_enriched
+serine-type D-Ala-D-Ala carboxypeptidase (penicillin-binding protein 5/6) [EC:3.4.16.4],-0.072766801,0.036383401,RAS_EGC_03_1617_2,-0.038098269,High-ice cluster,K07258,Proteins,-0.109150202,HI_enriched
+serine-type D-Ala-D-Ala carboxypeptidase (penicillin-binding protein 5/6) [EC:3.4.16.4],-0.072766801,0.036383401,RAS_EGC_05_1617_2,-0.055323576,Low-ice cluster,K07258,Proteins,-0.109150202,HI_enriched
+serine-type D-Ala-D-Ala carboxypeptidase (penicillin-binding protein 5/6) [EC:3.4.16.4],-0.072766801,0.036383401,RAS_EGC_07_1617_1,0.045586899,Low-ice cluster,K07258,Proteins,-0.109150202,HI_enriched
+serine-type D-Ala-D-Ala carboxypeptidase (penicillin-binding protein 5/6) [EC:3.4.16.4],-0.072766801,0.036383401,RAS_EGC_08_1617_1,0.011865869,Low-ice cluster,K07258,Proteins,-0.109150202,HI_enriched
+serine-type D-Ala-D-Ala carboxypeptidase (penicillin-binding protein 5/6) [EC:3.4.16.4],-0.072766801,0.036383401,RAS_EGC_09_1617_1,0.179336418,Low-ice cluster,K07258,Proteins,-0.109150202,HI_enriched
+serine-type D-Ala-D-Ala carboxypeptidase (penicillin-binding protein 5/6) [EC:3.4.16.4],-0.072766801,0.036383401,RAS_EGC_10_1617_2,-0.017440258,Low-ice cluster,K07258,Proteins,-0.109150202,HI_enriched
+serine-type D-Ala-D-Ala carboxypeptidase (penicillin-binding protein 5/6) [EC:3.4.16.4],-0.072766801,0.036383401,RAS_EGC_11_1617,0.054275051,Low-ice cluster,K07258,Proteins,-0.109150202,HI_enriched
+serine-type D-Ala-D-Ala carboxypeptidase (penicillin-binding protein 5/6) [EC:3.4.16.4],-0.072766801,0.036383401,RAS_EGC_12_1617_1,0.031526913,High-ice cluster,K07258,Proteins,-0.109150202,HI_enriched
+dipeptidase E [EC:3.4.13.21],-0.065445618,0.032722809,RAS_EGC_02_1617_1,-0.077349047,High-ice cluster,K05995,Proteins,-0.098168427,HI_enriched
+dipeptidase E [EC:3.4.13.21],-0.065445618,0.032722809,RAS_EGC_03_1617_2,-0.212787017,High-ice cluster,K05995,Proteins,-0.098168427,HI_enriched
+dipeptidase E [EC:3.4.13.21],-0.065445618,0.032722809,RAS_EGC_05_1617_2,0.053679216,Low-ice cluster,K05995,Proteins,-0.098168427,HI_enriched
+dipeptidase E [EC:3.4.13.21],-0.065445618,0.032722809,RAS_EGC_07_1617_1,0.107746437,Low-ice cluster,K05995,Proteins,-0.098168427,HI_enriched
+dipeptidase E [EC:3.4.13.21],-0.065445618,0.032722809,RAS_EGC_08_1617_1,0.024003448,Low-ice cluster,K05995,Proteins,-0.098168427,HI_enriched
+dipeptidase E [EC:3.4.13.21],-0.065445618,0.032722809,RAS_EGC_09_1617_1,0.116022346,Low-ice cluster,K05995,Proteins,-0.098168427,HI_enriched
+dipeptidase E [EC:3.4.13.21],-0.065445618,0.032722809,RAS_EGC_10_1617_2,-0.107808254,Low-ice cluster,K05995,Proteins,-0.098168427,HI_enriched
+dipeptidase E [EC:3.4.13.21],-0.065445618,0.032722809,RAS_EGC_11_1617,0.002693661,Low-ice cluster,K05995,Proteins,-0.098168427,HI_enriched
+dipeptidase E [EC:3.4.13.21],-0.065445618,0.032722809,RAS_EGC_12_1617_1,0.09379921,High-ice cluster,K05995,Proteins,-0.098168427,HI_enriched
+murein DD-endopeptidase [EC:3.4.24.-],-0.032370108,0.016185054,RAS_EGC_02_1617_1,-0.09905596,High-ice cluster,K19304,Proteins,-0.048555162,HI_enriched
+murein DD-endopeptidase [EC:3.4.24.-],-0.032370108,0.016185054,RAS_EGC_03_1617_2,-0.064370402,High-ice cluster,K19304,Proteins,-0.048555162,HI_enriched
+murein DD-endopeptidase [EC:3.4.24.-],-0.032370108,0.016185054,RAS_EGC_05_1617_2,-0.040311503,Low-ice cluster,K19304,Proteins,-0.048555162,HI_enriched
+murein DD-endopeptidase [EC:3.4.24.-],-0.032370108,0.016185054,RAS_EGC_07_1617_1,0.14042401,Low-ice cluster,K19304,Proteins,-0.048555162,HI_enriched
+murein DD-endopeptidase [EC:3.4.24.-],-0.032370108,0.016185054,RAS_EGC_08_1617_1,-0.045077199,Low-ice cluster,K19304,Proteins,-0.048555162,HI_enriched
+murein DD-endopeptidase [EC:3.4.24.-],-0.032370108,0.016185054,RAS_EGC_09_1617_1,-0.105801349,Low-ice cluster,K19304,Proteins,-0.048555162,HI_enriched
+murein DD-endopeptidase [EC:3.4.24.-],-0.032370108,0.016185054,RAS_EGC_10_1617_2,0.054854595,Low-ice cluster,K19304,Proteins,-0.048555162,HI_enriched
+murein DD-endopeptidase [EC:3.4.24.-],-0.032370108,0.016185054,RAS_EGC_11_1617,0.093021771,Low-ice cluster,K19304,Proteins,-0.048555162,HI_enriched
+murein DD-endopeptidase [EC:3.4.24.-],-0.032370108,0.016185054,RAS_EGC_12_1617_1,0.066316038,High-ice cluster,K19304,Proteins,-0.048555162,HI_enriched
+leucyl aminopeptidase [EC:3.4.11.1],0.031750271,-0.015875136,RAS_EGC_02_1617_1,0.056665166,High-ice cluster,K01255,Proteins,0.047625407,HI_enriched
+leucyl aminopeptidase [EC:3.4.11.1],0.031750271,-0.015875136,RAS_EGC_03_1617_2,0.019292823,High-ice cluster,K01255,Proteins,0.047625407,HI_enriched
+leucyl aminopeptidase [EC:3.4.11.1],0.031750271,-0.015875136,RAS_EGC_05_1617_2,0.007635739,Low-ice cluster,K01255,Proteins,0.047625407,HI_enriched
+leucyl aminopeptidase [EC:3.4.11.1],0.031750271,-0.015875136,RAS_EGC_07_1617_1,-0.00077474,Low-ice cluster,K01255,Proteins,0.047625407,HI_enriched
+leucyl aminopeptidase [EC:3.4.11.1],0.031750271,-0.015875136,RAS_EGC_08_1617_1,-0.115185091,Low-ice cluster,K01255,Proteins,0.047625407,HI_enriched
+leucyl aminopeptidase [EC:3.4.11.1],0.031750271,-0.015875136,RAS_EGC_09_1617_1,-0.074363096,Low-ice cluster,K01255,Proteins,0.047625407,HI_enriched
+leucyl aminopeptidase [EC:3.4.11.1],0.031750271,-0.015875136,RAS_EGC_10_1617_2,0.029177583,Low-ice cluster,K01255,Proteins,0.047625407,HI_enriched
+leucyl aminopeptidase [EC:3.4.11.1],0.031750271,-0.015875136,RAS_EGC_11_1617,0.058258792,Low-ice cluster,K01255,Proteins,0.047625407,HI_enriched
+leucyl aminopeptidase [EC:3.4.11.1],0.031750271,-0.015875136,RAS_EGC_12_1617_1,0.019292823,High-ice cluster,K01255,Proteins,0.047625407,HI_enriched
+Methionine aminopeptidase 1,0.491478122,-0.245739061,RAS_EGC_02_1617_1,0.43990378,High-ice cluster,NA,Proteins,0.737217183,HI_enriched
+Methionine aminopeptidase 1,0.491478122,-0.245739061,RAS_EGC_03_1617_2,0.519277368,High-ice cluster,NA,Proteins,0.737217183,HI_enriched
+Methionine aminopeptidase 1,0.491478122,-0.245739061,RAS_EGC_05_1617_2,-0.325346694,Low-ice cluster,NA,Proteins,0.737217183,HI_enriched
+Methionine aminopeptidase 1,0.491478122,-0.245739061,RAS_EGC_07_1617_1,-0.185991173,Low-ice cluster,NA,Proteins,0.737217183,HI_enriched
+Methionine aminopeptidase 1,0.491478122,-0.245739061,RAS_EGC_08_1617_1,-0.403055678,Low-ice cluster,NA,Proteins,0.737217183,HI_enriched
+Methionine aminopeptidase 1,0.491478122,-0.245739061,RAS_EGC_09_1617_1,-0.353784629,Low-ice cluster,NA,Proteins,0.737217183,HI_enriched
+Methionine aminopeptidase 1,0.491478122,-0.245739061,RAS_EGC_10_1617_2,-0.028362229,Low-ice cluster,NA,Proteins,0.737217183,HI_enriched
+Methionine aminopeptidase 1,0.491478122,-0.245739061,RAS_EGC_11_1617,-0.177893963,Low-ice cluster,NA,Proteins,0.737217183,HI_enriched
+Methionine aminopeptidase 1,0.491478122,-0.245739061,RAS_EGC_12_1617_1,0.515253218,High-ice cluster,NA,Proteins,0.737217183,HI_enriched
+D-aminopeptidase,0.650684465,-0.325342232,RAS_EGC_02_1617_1,0.487120344,High-ice cluster,NA,Proteins,0.976026697,HI_enriched
+D-aminopeptidase,0.650684465,-0.325342232,RAS_EGC_03_1617_2,0.797275272,High-ice cluster,NA,Proteins,0.976026697,HI_enriched
+D-aminopeptidase,0.650684465,-0.325342232,RAS_EGC_05_1617_2,0.084325464,Low-ice cluster,NA,Proteins,0.976026697,HI_enriched
+D-aminopeptidase,0.650684465,-0.325342232,RAS_EGC_07_1617_1,-0.313171474,Low-ice cluster,NA,Proteins,0.976026697,HI_enriched
+D-aminopeptidase,0.650684465,-0.325342232,RAS_EGC_08_1617_1,-0.633114409,Low-ice cluster,NA,Proteins,0.976026697,HI_enriched
+D-aminopeptidase,0.650684465,-0.325342232,RAS_EGC_09_1617_1,-0.736655088,Low-ice cluster,NA,Proteins,0.976026697,HI_enriched
+D-aminopeptidase,0.650684465,-0.325342232,RAS_EGC_10_1617_2,-0.244178603,Low-ice cluster,NA,Proteins,0.976026697,HI_enriched
+D-aminopeptidase,0.650684465,-0.325342232,RAS_EGC_11_1617,-0.109259285,Low-ice cluster,NA,Proteins,0.976026697,HI_enriched
+D-aminopeptidase,0.650684465,-0.325342232,RAS_EGC_12_1617_1,0.667657779,High-ice cluster,NA,Proteins,0.976026697,HI_enriched
+Dipeptidyl aminopeptidase 4,0.744922756,-0.372461378,RAS_EGC_02_1617_1,0.583305608,High-ice cluster,NA,Proteins,1.117384134,HI_enriched
+Dipeptidyl aminopeptidase 4,0.744922756,-0.372461378,RAS_EGC_03_1617_2,0.847834376,High-ice cluster,NA,Proteins,1.117384134,HI_enriched
+Dipeptidyl aminopeptidase 4,0.744922756,-0.372461378,RAS_EGC_05_1617_2,0.181355442,Low-ice cluster,NA,Proteins,1.117384134,HI_enriched
+Dipeptidyl aminopeptidase 4,0.744922756,-0.372461378,RAS_EGC_07_1617_1,-0.708959803,Low-ice cluster,NA,Proteins,1.117384134,HI_enriched
+Dipeptidyl aminopeptidase 4,0.744922756,-0.372461378,RAS_EGC_08_1617_1,-0.480701151,Low-ice cluster,NA,Proteins,1.117384134,HI_enriched
+Dipeptidyl aminopeptidase 4,0.744922756,-0.372461378,RAS_EGC_09_1617_1,-0.440695817,Low-ice cluster,NA,Proteins,1.117384134,HI_enriched
+Dipeptidyl aminopeptidase 4,0.744922756,-0.372461378,RAS_EGC_10_1617_2,-0.383537403,Low-ice cluster,NA,Proteins,1.117384134,HI_enriched
+Dipeptidyl aminopeptidase 4,0.744922756,-0.372461378,RAS_EGC_11_1617,-0.402229536,Low-ice cluster,NA,Proteins,1.117384134,HI_enriched
+Dipeptidyl aminopeptidase 4,0.744922756,-0.372461378,RAS_EGC_12_1617_1,0.803628283,High-ice cluster,NA,Proteins,1.117384134,HI_enriched
+serine-type D-Ala-D-Ala carboxypeptidase/endopeptidase (penicillin-binding protein 4) [EC:3.4.16.4 3.4.21.-],0.773566119,-0.386783059,RAS_EGC_02_1617_1,0.653632604,High-ice cluster,K07259,Proteins,1.160349178,HI_enriched
+serine-type D-Ala-D-Ala carboxypeptidase/endopeptidase (penicillin-binding protein 4) [EC:3.4.16.4 3.4.21.-],0.773566119,-0.386783059,RAS_EGC_03_1617_2,0.996793829,High-ice cluster,K07259,Proteins,1.160349178,HI_enriched
+serine-type D-Ala-D-Ala carboxypeptidase/endopeptidase (penicillin-binding protein 4) [EC:3.4.16.4 3.4.21.-],0.773566119,-0.386783059,RAS_EGC_05_1617_2,0.062484592,Low-ice cluster,K07259,Proteins,1.160349178,HI_enriched
+serine-type D-Ala-D-Ala carboxypeptidase/endopeptidase (penicillin-binding protein 4) [EC:3.4.16.4 3.4.21.-],0.773566119,-0.386783059,RAS_EGC_07_1617_1,-0.780781005,Low-ice cluster,K07259,Proteins,1.160349178,HI_enriched
+serine-type D-Ala-D-Ala carboxypeptidase/endopeptidase (penicillin-binding protein 4) [EC:3.4.16.4 3.4.21.-],0.773566119,-0.386783059,RAS_EGC_08_1617_1,-0.649011727,Low-ice cluster,K07259,Proteins,1.160349178,HI_enriched
+serine-type D-Ala-D-Ala carboxypeptidase/endopeptidase (penicillin-binding protein 4) [EC:3.4.16.4 3.4.21.-],0.773566119,-0.386783059,RAS_EGC_09_1617_1,-0.510861389,Low-ice cluster,K07259,Proteins,1.160349178,HI_enriched
+serine-type D-Ala-D-Ala carboxypeptidase/endopeptidase (penicillin-binding protein 4) [EC:3.4.16.4 3.4.21.-],0.773566119,-0.386783059,RAS_EGC_10_1617_2,-0.389500532,Low-ice cluster,K07259,Proteins,1.160349178,HI_enriched
+serine-type D-Ala-D-Ala carboxypeptidase/endopeptidase (penicillin-binding protein 4) [EC:3.4.16.4 3.4.21.-],0.773566119,-0.386783059,RAS_EGC_11_1617,-0.053028295,Low-ice cluster,K07259,Proteins,1.160349178,HI_enriched
+serine-type D-Ala-D-Ala carboxypeptidase/endopeptidase (penicillin-binding protein 4) [EC:3.4.16.4 3.4.21.-],0.773566119,-0.386783059,RAS_EGC_12_1617_1,0.670271923,High-ice cluster,K07259,Proteins,1.160349178,HI_enriched
+Isoaspartyl peptidase,0.796030141,-0.398015071,RAS_EGC_02_1617_1,0.581862325,High-ice cluster,NA,Proteins,1.194045212,HI_enriched
+Isoaspartyl peptidase,0.796030141,-0.398015071,RAS_EGC_03_1617_2,1.023695078,High-ice cluster,NA,Proteins,1.194045212,HI_enriched
+Isoaspartyl peptidase,0.796030141,-0.398015071,RAS_EGC_05_1617_2,-0.046746334,Low-ice cluster,NA,Proteins,1.194045212,HI_enriched
+Isoaspartyl peptidase,0.796030141,-0.398015071,RAS_EGC_07_1617_1,-0.452211442,Low-ice cluster,NA,Proteins,1.194045212,HI_enriched
+Isoaspartyl peptidase,0.796030141,-0.398015071,RAS_EGC_08_1617_1,-1.145358623,Low-ice cluster,NA,Proteins,1.194045212,HI_enriched
+Isoaspartyl peptidase,0.796030141,-0.398015071,RAS_EGC_09_1617_1,-0.229067891,Low-ice cluster,NA,Proteins,1.194045212,HI_enriched
+Isoaspartyl peptidase,0.796030141,-0.398015071,RAS_EGC_10_1617_2,-0.334428407,Low-ice cluster,NA,Proteins,1.194045212,HI_enriched
+Isoaspartyl peptidase,0.796030141,-0.398015071,RAS_EGC_11_1617,-0.180277727,Low-ice cluster,NA,Proteins,1.194045212,HI_enriched
+Isoaspartyl peptidase,0.796030141,-0.398015071,RAS_EGC_12_1617_1,0.782533021,High-ice cluster,NA,Proteins,1.194045212,HI_enriched
+branched-chain amino acid transport system ATP-binding protein,0.043658087,-0.021829043,RAS_EGC_02_1617_1,0.023117675,High-ice cluster,K01996,Amino_acids,Substrates,HI_enriched
+branched-chain amino acid transport system ATP-binding protein,0.043658087,-0.021829043,RAS_EGC_03_1617_2,0.108058352,High-ice cluster,K01996,Amino_acids,Substrates,HI_enriched
+branched-chain amino acid transport system ATP-binding protein,0.043658087,-0.021829043,RAS_EGC_05_1617_2,-0.03905957,Low-ice cluster,K01996,Amino_acids,Substrates,HI_enriched
+branched-chain amino acid transport system ATP-binding protein,0.043658087,-0.021829043,RAS_EGC_07_1617_1,0.030184843,Low-ice cluster,K01996,Amino_acids,Substrates,HI_enriched
+branched-chain amino acid transport system ATP-binding protein,0.043658087,-0.021829043,RAS_EGC_08_1617_1,-0.025938482,Low-ice cluster,K01996,Amino_acids,Substrates,HI_enriched
+branched-chain amino acid transport system ATP-binding protein,0.043658087,-0.021829043,RAS_EGC_09_1617_1,-0.220626694,Low-ice cluster,K01996,Amino_acids,Substrates,HI_enriched
+branched-chain amino acid transport system ATP-binding protein,0.043658087,-0.021829043,RAS_EGC_10_1617_2,0.059675271,Low-ice cluster,K01996,Amino_acids,Substrates,HI_enriched
+branched-chain amino acid transport system ATP-binding protein,0.043658087,-0.021829043,RAS_EGC_11_1617,0.064790372,Low-ice cluster,K01996,Amino_acids,Substrates,HI_enriched
+branched-chain amino acid transport system ATP-binding protein,0.043658087,-0.021829043,RAS_EGC_12_1617_1,-0.000201767,High-ice cluster,K01996,Amino_acids,Substrates,HI_enriched
+branched-chain amino acid transport system permease protein ,0.032834201,-0.016417101,RAS_EGC_02_1617_1,-0.057060541,High-ice cluster,K01997,Amino_acids,Substrates,HI_enriched
+branched-chain amino acid transport system permease protein ,0.032834201,-0.016417101,RAS_EGC_03_1617_2,0.094298791,High-ice cluster,K01997,Amino_acids,Substrates,HI_enriched
+branched-chain amino acid transport system permease protein ,0.032834201,-0.016417101,RAS_EGC_05_1617_2,-0.125182711,Low-ice cluster,K01997,Amino_acids,Substrates,HI_enriched
+branched-chain amino acid transport system permease protein ,0.032834201,-0.016417101,RAS_EGC_07_1617_1,0.030458838,Low-ice cluster,K01997,Amino_acids,Substrates,HI_enriched
+branched-chain amino acid transport system permease protein ,0.032834201,-0.016417101,RAS_EGC_08_1617_1,0.000978244,Low-ice cluster,K01997,Amino_acids,Substrates,HI_enriched
+branched-chain amino acid transport system permease protein ,0.032834201,-0.016417101,RAS_EGC_09_1617_1,-0.117380331,Low-ice cluster,K01997,Amino_acids,Substrates,HI_enriched
+branched-chain amino acid transport system permease protein ,0.032834201,-0.016417101,RAS_EGC_10_1617_2,0.067743858,Low-ice cluster,K01997,Amino_acids,Substrates,HI_enriched
+branched-chain amino acid transport system permease protein ,0.032834201,-0.016417101,RAS_EGC_11_1617,0.044879498,Low-ice cluster,K01997,Amino_acids,Substrates,HI_enriched
+branched-chain amino acid transport system permease protein ,0.032834201,-0.016417101,RAS_EGC_12_1617_1,0.061264354,High-ice cluster,K01997,Amino_acids,Substrates,HI_enriched
+alanine dehydrogenase [EC:1.4.1.1],-0.002345151,0.001172575,RAS_EGC_02_1617_1,0.023649209,High-ice cluster,K00259,Amino_acids,Substrates,HI_enriched
+alanine dehydrogenase [EC:1.4.1.1],-0.002345151,0.001172575,RAS_EGC_03_1617_2,-0.099710275,High-ice cluster,K00259,Amino_acids,Substrates,HI_enriched
+alanine dehydrogenase [EC:1.4.1.1],-0.002345151,0.001172575,RAS_EGC_05_1617_2,-0.005793546,Low-ice cluster,K00259,Amino_acids,Substrates,HI_enriched
+alanine dehydrogenase [EC:1.4.1.1],-0.002345151,0.001172575,RAS_EGC_07_1617_1,-0.009785567,Low-ice cluster,K00259,Amino_acids,Substrates,HI_enriched
+alanine dehydrogenase [EC:1.4.1.1],-0.002345151,0.001172575,RAS_EGC_08_1617_1,-0.144460471,Low-ice cluster,K00259,Amino_acids,Substrates,HI_enriched
+alanine dehydrogenase [EC:1.4.1.1],-0.002345151,0.001172575,RAS_EGC_09_1617_1,0.122995544,Low-ice cluster,K00259,Amino_acids,Substrates,HI_enriched
+alanine dehydrogenase [EC:1.4.1.1],-0.002345151,0.001172575,RAS_EGC_10_1617_2,0.057873081,Low-ice cluster,K00259,Amino_acids,Substrates,HI_enriched
+alanine dehydrogenase [EC:1.4.1.1],-0.002345151,0.001172575,RAS_EGC_11_1617,-0.013793589,Low-ice cluster,K00259,Amino_acids,Substrates,HI_enriched
+alanine dehydrogenase [EC:1.4.1.1],-0.002345151,0.001172575,RAS_EGC_12_1617_1,0.069025613,High-ice cluster,K00259,Amino_acids,Substrates,HI_enriched
+alanine racemase [EC:5.1.1.1],0.016537849,-0.008268925,RAS_EGC_02_1617_1,0.015139942,High-ice cluster,K01775,Amino_acids,Substrates,HI_enriched
+alanine racemase [EC:5.1.1.1],0.016537849,-0.008268925,RAS_EGC_03_1617_2,0.100146847,High-ice cluster,K01775,Amino_acids,Substrates,HI_enriched
+alanine racemase [EC:5.1.1.1],0.016537849,-0.008268925,RAS_EGC_05_1617_2,0.095040453,Low-ice cluster,K01775,Amino_acids,Substrates,HI_enriched
+alanine racemase [EC:5.1.1.1],0.016537849,-0.008268925,RAS_EGC_07_1617_1,-0.014881074,Low-ice cluster,K01775,Amino_acids,Substrates,HI_enriched
+alanine racemase [EC:5.1.1.1],0.016537849,-0.008268925,RAS_EGC_08_1617_1,-0.112861483,Low-ice cluster,K01775,Amino_acids,Substrates,HI_enriched
+alanine racemase [EC:5.1.1.1],0.016537849,-0.008268925,RAS_EGC_09_1617_1,0.12363786,Low-ice cluster,K01775,Amino_acids,Substrates,HI_enriched
+alanine racemase [EC:5.1.1.1],0.016537849,-0.008268925,RAS_EGC_10_1617_2,-0.104493233,Low-ice cluster,K01775,Amino_acids,Substrates,HI_enriched
+alanine racemase [EC:5.1.1.1],0.016537849,-0.008268925,RAS_EGC_11_1617,-0.036056071,Low-ice cluster,K01775,Amino_acids,Substrates,HI_enriched
+alanine racemase [EC:5.1.1.1],0.016537849,-0.008268925,RAS_EGC_12_1617_1,-0.065673241,High-ice cluster,K01775,Amino_acids,Substrates,HI_enriched
+proline racemase [EC:5.1.1.4],1.199669059,-0.599834529,RAS_EGC_02_1617_1,1.409005018,High-ice cluster,K01777,Amino_acids,Substrates,HI_enriched
+proline racemase [EC:5.1.1.4],1.199669059,-0.599834529,RAS_EGC_03_1617_2,1.121322946,High-ice cluster,K01777,Amino_acids,Substrates,HI_enriched
+proline racemase [EC:5.1.1.4],1.199669059,-0.599834529,RAS_EGC_05_1617_2,-0.345014123,Low-ice cluster,K01777,Amino_acids,Substrates,HI_enriched
+proline racemase [EC:5.1.1.4],1.199669059,-0.599834529,RAS_EGC_07_1617_1,-1.155944339,Low-ice cluster,K01777,Amino_acids,Substrates,HI_enriched
+proline racemase [EC:5.1.1.4],1.199669059,-0.599834529,RAS_EGC_08_1617_1,-0.932800788,Low-ice cluster,K01777,Amino_acids,Substrates,HI_enriched
+proline racemase [EC:5.1.1.4],1.199669059,-0.599834529,RAS_EGC_09_1617_1,-1.155944339,Low-ice cluster,K01777,Amino_acids,Substrates,HI_enriched
+proline racemase [EC:5.1.1.4],1.199669059,-0.599834529,RAS_EGC_10_1617_2,-0.239653608,Low-ice cluster,K01777,Amino_acids,Substrates,HI_enriched
+proline racemase [EC:5.1.1.4],1.199669059,-0.599834529,RAS_EGC_11_1617,0.230350022,Low-ice cluster,K01777,Amino_acids,Substrates,HI_enriched
+proline racemase [EC:5.1.1.4],1.199669059,-0.599834529,RAS_EGC_12_1617_1,1.068679212,High-ice cluster,K01777,Amino_acids,Substrates,HI_enriched
+polar amino acid transport system ATP-binding protein [EC:7.4.2.1],-0.164771251,0.082385625,RAS_EGC_02_1617_1,-0.366248274,High-ice cluster,K02028,Amino_acids,Substrates,HI_enriched
+polar amino acid transport system ATP-binding protein [EC:7.4.2.1],-0.164771251,0.082385625,RAS_EGC_03_1617_2,-0.017518478,High-ice cluster,K02028,Amino_acids,Substrates,HI_enriched
+polar amino acid transport system ATP-binding protein [EC:7.4.2.1],-0.164771251,0.082385625,RAS_EGC_05_1617_2,-0.0616242,Low-ice cluster,K02028,Amino_acids,Substrates,HI_enriched
+polar amino acid transport system ATP-binding protein [EC:7.4.2.1],-0.164771251,0.082385625,RAS_EGC_07_1617_1,0.224730732,Low-ice cluster,K02028,Amino_acids,Substrates,HI_enriched
+polar amino acid transport system ATP-binding protein [EC:7.4.2.1],-0.164771251,0.082385625,RAS_EGC_08_1617_1,0.179916716,Low-ice cluster,K02028,Amino_acids,Substrates,HI_enriched
+polar amino acid transport system ATP-binding protein [EC:7.4.2.1],-0.164771251,0.082385625,RAS_EGC_09_1617_1,-0.194776733,Low-ice cluster,K02028,Amino_acids,Substrates,HI_enriched
+polar amino acid transport system ATP-binding protein [EC:7.4.2.1],-0.164771251,0.082385625,RAS_EGC_10_1617_2,0.115378195,Low-ice cluster,K02028,Amino_acids,Substrates,HI_enriched
+polar amino acid transport system ATP-binding protein [EC:7.4.2.1],-0.164771251,0.082385625,RAS_EGC_11_1617,0.230689042,Low-ice cluster,K02028,Amino_acids,Substrates,HI_enriched
+polar amino acid transport system ATP-binding protein [EC:7.4.2.1],-0.164771251,0.082385625,RAS_EGC_12_1617_1,-0.110546999,High-ice cluster,K02028,Amino_acids,Substrates,HI_enriched
+polar amino acid transport system permease protein,-0.208781805,0.104390903,RAS_EGC_02_1617_1,-0.335129707,High-ice cluster,K02029,Amino_acids,Substrates,HI_enriched
+polar amino acid transport system permease protein,-0.208781805,0.104390903,RAS_EGC_03_1617_2,-0.090215301,High-ice cluster,K02029,Amino_acids,Substrates,HI_enriched
+polar amino acid transport system permease protein,-0.208781805,0.104390903,RAS_EGC_05_1617_2,-0.170101966,Low-ice cluster,K02029,Amino_acids,Substrates,HI_enriched
+polar amino acid transport system permease protein,-0.208781805,0.104390903,RAS_EGC_07_1617_1,0.337472944,Low-ice cluster,K02029,Amino_acids,Substrates,HI_enriched
+polar amino acid transport system permease protein,-0.208781805,0.104390903,RAS_EGC_08_1617_1,0.084587423,Low-ice cluster,K02029,Amino_acids,Substrates,HI_enriched
+polar amino acid transport system permease protein,-0.208781805,0.104390903,RAS_EGC_09_1617_1,0.022979614,Low-ice cluster,K02029,Amino_acids,Substrates,HI_enriched
+polar amino acid transport system permease protein,-0.208781805,0.104390903,RAS_EGC_10_1617_2,0.093977164,Low-ice cluster,K02029,Amino_acids,Substrates,HI_enriched
+polar amino acid transport system permease protein,-0.208781805,0.104390903,RAS_EGC_11_1617,0.257430236,Low-ice cluster,K02029,Amino_acids,Substrates,HI_enriched
+polar amino acid transport system permease protein,-0.208781805,0.104390903,RAS_EGC_12_1617_1,-0.201000407,High-ice cluster,K02029,Amino_acids,Substrates,HI_enriched
+polar amino acid transport system substrate-binding protein,-0.06078011,0.030390055,RAS_EGC_02_1617_1,-0.250676724,High-ice cluster,K02030,Amino_acids,Substrates,HI_enriched
+polar amino acid transport system substrate-binding protein,-0.06078011,0.030390055,RAS_EGC_03_1617_2,0.163599014,High-ice cluster,K02030,Amino_acids,Substrates,HI_enriched
+polar amino acid transport system substrate-binding protein,-0.06078011,0.030390055,RAS_EGC_05_1617_2,0.180990757,Low-ice cluster,K02030,Amino_acids,Substrates,HI_enriched
+polar amino acid transport system substrate-binding protein,-0.06078011,0.030390055,RAS_EGC_07_1617_1,0.13992927,Low-ice cluster,K02030,Amino_acids,Substrates,HI_enriched
+polar amino acid transport system substrate-binding protein,-0.06078011,0.030390055,RAS_EGC_08_1617_1,-0.102867219,Low-ice cluster,K02030,Amino_acids,Substrates,HI_enriched
+polar amino acid transport system substrate-binding protein,-0.06078011,0.030390055,RAS_EGC_09_1617_1,0.008960886,Low-ice cluster,K02030,Amino_acids,Substrates,HI_enriched
+polar amino acid transport system substrate-binding protein,-0.06078011,0.030390055,RAS_EGC_10_1617_2,-0.141782636,Low-ice cluster,K02030,Amino_acids,Substrates,HI_enriched
+polar amino acid transport system substrate-binding protein,-0.06078011,0.030390055,RAS_EGC_11_1617,0.097109273,Low-ice cluster,K02030,Amino_acids,Substrates,HI_enriched
+polar amino acid transport system substrate-binding protein,-0.06078011,0.030390055,RAS_EGC_12_1617_1,-0.09526262,High-ice cluster,K02030,Amino_acids,Substrates,HI_enriched
+2-oxopent-4-enoate/cis-2-oxohex-4-enoate hydratase [EC:4.2.1.80 4.2.1.132],-0.523731801,0.261865901,RAS_EGC_02_1617_1,-0.471336607,High-ice cluster,K18364,Aromatic_compounds,Substrates,HI_enriched
+2-oxopent-4-enoate/cis-2-oxohex-4-enoate hydratase [EC:4.2.1.80 4.2.1.132],-0.523731801,0.261865901,RAS_EGC_03_1617_2,-0.628522191,High-ice cluster,K18364,Aromatic_compounds,Substrates,HI_enriched
+2-oxopent-4-enoate/cis-2-oxohex-4-enoate hydratase [EC:4.2.1.80 4.2.1.132],-0.523731801,0.261865901,RAS_EGC_05_1617_2,0.55828281,Low-ice cluster,K18364,Aromatic_compounds,Substrates,HI_enriched
+2-oxopent-4-enoate/cis-2-oxohex-4-enoate hydratase [EC:4.2.1.80 4.2.1.132],-0.523731801,0.261865901,RAS_EGC_07_1617_1,-0.147936452,Low-ice cluster,K18364,Aromatic_compounds,Substrates,HI_enriched
+2-oxopent-4-enoate/cis-2-oxohex-4-enoate hydratase [EC:4.2.1.80 4.2.1.132],-0.523731801,0.261865901,RAS_EGC_08_1617_1,0.564755325,Low-ice cluster,K18364,Aromatic_compounds,Substrates,HI_enriched
+2-oxopent-4-enoate/cis-2-oxohex-4-enoate hydratase [EC:4.2.1.80 4.2.1.132],-0.523731801,0.261865901,RAS_EGC_09_1617_1,0.730816361,Low-ice cluster,K18364,Aromatic_compounds,Substrates,HI_enriched
+2-oxopent-4-enoate/cis-2-oxohex-4-enoate hydratase [EC:4.2.1.80 4.2.1.132],-0.523731801,0.261865901,RAS_EGC_10_1617_2,-0.012761674,Low-ice cluster,K18364,Aromatic_compounds,Substrates,HI_enriched
+2-oxopent-4-enoate/cis-2-oxohex-4-enoate hydratase [EC:4.2.1.80 4.2.1.132],-0.523731801,0.261865901,RAS_EGC_11_1617,-0.121960966,Low-ice cluster,K18364,Aromatic_compounds,Substrates,HI_enriched
+2-oxopent-4-enoate/cis-2-oxohex-4-enoate hydratase [EC:4.2.1.80 4.2.1.132],-0.523731801,0.261865901,RAS_EGC_12_1617_1,-0.471336607,High-ice cluster,K18364,Aromatic_compounds,Substrates,HI_enriched
+3-(3-hydroxy-phenyl)propionate hydroxylase [EC:1.14.13.127],-0.325938164,0.162969082,RAS_EGC_02_1617_1,-0.344161325,High-ice cluster,K05712,Aromatic_compounds,Substrates,HI_enriched
+3-(3-hydroxy-phenyl)propionate hydroxylase [EC:1.14.13.127],-0.325938164,0.162969082,RAS_EGC_03_1617_2,-0.222800468,High-ice cluster,K05712,Aromatic_compounds,Substrates,HI_enriched
+3-(3-hydroxy-phenyl)propionate hydroxylase [EC:1.14.13.127],-0.325938164,0.162969082,RAS_EGC_05_1617_2,0.282294481,Low-ice cluster,K05712,Aromatic_compounds,Substrates,HI_enriched
+3-(3-hydroxy-phenyl)propionate hydroxylase [EC:1.14.13.127],-0.325938164,0.162969082,RAS_EGC_07_1617_1,0.264902738,Low-ice cluster,K05712,Aromatic_compounds,Substrates,HI_enriched
+3-(3-hydroxy-phenyl)propionate hydroxylase [EC:1.14.13.127],-0.325938164,0.162969082,RAS_EGC_08_1617_1,-0.114586883,Low-ice cluster,K05712,Aromatic_compounds,Substrates,HI_enriched
+3-(3-hydroxy-phenyl)propionate hydroxylase [EC:1.14.13.127],-0.325938164,0.162969082,RAS_EGC_09_1617_1,-0.376951148,Low-ice cluster,K05712,Aromatic_compounds,Substrates,HI_enriched
+3-(3-hydroxy-phenyl)propionate hydroxylase [EC:1.14.13.127],-0.325938164,0.162969082,RAS_EGC_10_1617_2,0.525916564,Low-ice cluster,K05712,Aromatic_compounds,Substrates,HI_enriched
+3-(3-hydroxy-phenyl)propionate hydroxylase [EC:1.14.13.127],-0.325938164,0.162969082,RAS_EGC_11_1617,0.39623874,Low-ice cluster,K05712,Aromatic_compounds,Substrates,HI_enriched
+3-(3-hydroxy-phenyl)propionate hydroxylase [EC:1.14.13.127],-0.325938164,0.162969082,RAS_EGC_12_1617_1,-0.410852699,High-ice cluster,K05712,Aromatic_compounds,Substrates,HI_enriched
+3-hydroxylaminophenol mutase,-0.235103334,0.117551667,RAS_EGC_02_1617_1,-0.390066177,High-ice cluster,NA,Aromatic_compounds,Substrates,HI_enriched
+3-hydroxylaminophenol mutase,-0.235103334,0.117551667,RAS_EGC_03_1617_2,-0.138751749,High-ice cluster,NA,Aromatic_compounds,Substrates,HI_enriched
+3-hydroxylaminophenol mutase,-0.235103334,0.117551667,RAS_EGC_05_1617_2,-0.067292785,Low-ice cluster,NA,Aromatic_compounds,Substrates,HI_enriched
+3-hydroxylaminophenol mutase,-0.235103334,0.117551667,RAS_EGC_07_1617_1,0.457231683,Low-ice cluster,NA,Aromatic_compounds,Substrates,HI_enriched
+3-hydroxylaminophenol mutase,-0.235103334,0.117551667,RAS_EGC_08_1617_1,0.061918947,Low-ice cluster,NA,Aromatic_compounds,Substrates,HI_enriched
+3-hydroxylaminophenol mutase,-0.235103334,0.117551667,RAS_EGC_09_1617_1,0.09177191,Low-ice cluster,NA,Aromatic_compounds,Substrates,HI_enriched
+3-hydroxylaminophenol mutase,-0.235103334,0.117551667,RAS_EGC_10_1617_2,0.228973031,Low-ice cluster,NA,Aromatic_compounds,Substrates,HI_enriched
+3-hydroxylaminophenol mutase,-0.235103334,0.117551667,RAS_EGC_11_1617,-0.067292785,Low-ice cluster,NA,Aromatic_compounds,Substrates,HI_enriched
+3-hydroxylaminophenol mutase,-0.235103334,0.117551667,RAS_EGC_12_1617_1,-0.176492077,High-ice cluster,NA,Aromatic_compounds,Substrates,HI_enriched
+3-phenylpropionate-dihydrodiol/cinnamic acid-dihydrodiol dehydrogenase,-0.200607984,0.100303992,RAS_EGC_02_1617_1,-0.139158784,High-ice cluster,NA,Aromatic_compounds,Substrates,HI_enriched
+3-phenylpropionate-dihydrodiol/cinnamic acid-dihydrodiol dehydrogenase,-0.200607984,0.100303992,RAS_EGC_03_1617_2,-0.178264451,High-ice cluster,NA,Aromatic_compounds,Substrates,HI_enriched
+3-phenylpropionate-dihydrodiol/cinnamic acid-dihydrodiol dehydrogenase,-0.200607984,0.100303992,RAS_EGC_05_1617_2,0.22153492,Low-ice cluster,NA,Aromatic_compounds,Substrates,HI_enriched
+3-phenylpropionate-dihydrodiol/cinnamic acid-dihydrodiol dehydrogenase,-0.200607984,0.100303992,RAS_EGC_07_1617_1,-0.116408987,Low-ice cluster,NA,Aromatic_compounds,Substrates,HI_enriched
+3-phenylpropionate-dihydrodiol/cinnamic acid-dihydrodiol dehydrogenase,-0.200607984,0.100303992,RAS_EGC_08_1617_1,0.247270421,Low-ice cluster,NA,Aromatic_compounds,Substrates,HI_enriched
+3-phenylpropionate-dihydrodiol/cinnamic acid-dihydrodiol dehydrogenase,-0.200607984,0.100303992,RAS_EGC_09_1617_1,0.249222911,Low-ice cluster,NA,Aromatic_compounds,Substrates,HI_enriched
+3-phenylpropionate-dihydrodiol/cinnamic acid-dihydrodiol dehydrogenase,-0.200607984,0.100303992,RAS_EGC_10_1617_2,0.033044643,Low-ice cluster,NA,Aromatic_compounds,Substrates,HI_enriched
+3-phenylpropionate-dihydrodiol/cinnamic acid-dihydrodiol dehydrogenase,-0.200607984,0.100303992,RAS_EGC_11_1617,-0.032839955,Low-ice cluster,NA,Aromatic_compounds,Substrates,HI_enriched
+3-phenylpropionate-dihydrodiol/cinnamic acid-dihydrodiol dehydrogenase,-0.200607984,0.100303992,RAS_EGC_12_1617_1,-0.284400719,High-ice cluster,NA,Aromatic_compounds,Substrates,HI_enriched
+4-hydroxyacetophenone monooxygenase [EC:1.14.13.84],-0.350223911,0.175111956,RAS_EGC_02_1617_1,-0.430342201,High-ice cluster,K14520,Aromatic_compounds,Substrates,HI_enriched
+4-hydroxyacetophenone monooxygenase [EC:1.14.13.84],-0.350223911,0.175111956,RAS_EGC_03_1617_2,-0.363650826,High-ice cluster,K14520,Aromatic_compounds,Substrates,HI_enriched
+4-hydroxyacetophenone monooxygenase [EC:1.14.13.84],-0.350223911,0.175111956,RAS_EGC_05_1617_2,0.361245053,Low-ice cluster,K14520,Aromatic_compounds,Substrates,HI_enriched
+4-hydroxyacetophenone monooxygenase [EC:1.14.13.84],-0.350223911,0.175111956,RAS_EGC_07_1617_1,0.031003366,Low-ice cluster,K14520,Aromatic_compounds,Substrates,HI_enriched
+4-hydroxyacetophenone monooxygenase [EC:1.14.13.84],-0.350223911,0.175111956,RAS_EGC_08_1617_1,0.288338282,Low-ice cluster,K14520,Aromatic_compounds,Substrates,HI_enriched
+4-hydroxyacetophenone monooxygenase [EC:1.14.13.84],-0.350223911,0.175111956,RAS_EGC_09_1617_1,0.479028088,Low-ice cluster,K14520,Aromatic_compounds,Substrates,HI_enriched
+4-hydroxyacetophenone monooxygenase [EC:1.14.13.84],-0.350223911,0.175111956,RAS_EGC_10_1617_2,-0.084065964,Low-ice cluster,K14520,Aromatic_compounds,Substrates,HI_enriched
+4-hydroxyacetophenone monooxygenase [EC:1.14.13.84],-0.350223911,0.175111956,RAS_EGC_11_1617,-0.024877092,Low-ice cluster,K14520,Aromatic_compounds,Substrates,HI_enriched
+4-hydroxyacetophenone monooxygenase [EC:1.14.13.84],-0.350223911,0.175111956,RAS_EGC_12_1617_1,-0.256678706,High-ice cluster,K14520,Aromatic_compounds,Substrates,HI_enriched
+Biphenyl-2-3-diol 1-2-dioxygenase,-0.33610683,0.168053415,RAS_EGC_02_1617_1,-0.603500477,High-ice cluster,NA,Aromatic_compounds,Substrates,HI_enriched
+Biphenyl-2-3-diol 1-2-dioxygenase,-0.33610683,0.168053415,RAS_EGC_03_1617_2,-0.108804235,High-ice cluster,NA,Aromatic_compounds,Substrates,HI_enriched
+Biphenyl-2-3-diol 1-2-dioxygenase,-0.33610683,0.168053415,RAS_EGC_05_1617_2,0.128867417,Low-ice cluster,NA,Aromatic_compounds,Substrates,HI_enriched
+Biphenyl-2-3-diol 1-2-dioxygenase,-0.33610683,0.168053415,RAS_EGC_07_1617_1,0.089646703,Low-ice cluster,NA,Aromatic_compounds,Substrates,HI_enriched
+Biphenyl-2-3-diol 1-2-dioxygenase,-0.33610683,0.168053415,RAS_EGC_08_1617_1,0.128867417,Low-ice cluster,NA,Aromatic_compounds,Substrates,HI_enriched
+Biphenyl-2-3-diol 1-2-dioxygenase,-0.33610683,0.168053415,RAS_EGC_09_1617_1,0.584342945,Low-ice cluster,NA,Aromatic_compounds,Substrates,HI_enriched
+Biphenyl-2-3-diol 1-2-dioxygenase,-0.33610683,0.168053415,RAS_EGC_10_1617_2,0.048824709,Low-ice cluster,NA,Aromatic_compounds,Substrates,HI_enriched
+Biphenyl-2-3-diol 1-2-dioxygenase,-0.33610683,0.168053415,RAS_EGC_11_1617,0.0277713,Low-ice cluster,NA,Aromatic_compounds,Substrates,HI_enriched
+Biphenyl-2-3-diol 1-2-dioxygenase,-0.33610683,0.168053415,RAS_EGC_12_1617_1,-0.296015777,High-ice cluster,NA,Aromatic_compounds,Substrates,HI_enriched
+2-amino-5-chloromuconic acid deaminase,0.629663661,-0.31483183,RAS_EGC_02_1617_1,0.529970507,High-ice cluster,NA,Aromatic_compounds,Substrates,HI_enriched
+2-amino-5-chloromuconic acid deaminase,0.629663661,-0.31483183,RAS_EGC_03_1617_2,0.75120748,High-ice cluster,NA,Aromatic_compounds,Substrates,HI_enriched
+2-amino-5-chloromuconic acid deaminase,0.629663661,-0.31483183,RAS_EGC_05_1617_2,0.034893241,Low-ice cluster,NA,Aromatic_compounds,Substrates,HI_enriched
+2-amino-5-chloromuconic acid deaminase,0.629663661,-0.31483183,RAS_EGC_07_1617_1,-0.540470904,Low-ice cluster,NA,Aromatic_compounds,Substrates,HI_enriched
+2-amino-5-chloromuconic acid deaminase,0.629663661,-0.31483183,RAS_EGC_08_1617_1,-0.410417776,Low-ice cluster,NA,Aromatic_compounds,Substrates,HI_enriched
+2-amino-5-chloromuconic acid deaminase,0.629663661,-0.31483183,RAS_EGC_09_1617_1,-0.739599579,Low-ice cluster,NA,Aromatic_compounds,Substrates,HI_enriched
+2-amino-5-chloromuconic acid deaminase,0.629663661,-0.31483183,RAS_EGC_10_1617_2,-0.107606822,Low-ice cluster,NA,Aromatic_compounds,Substrates,HI_enriched
+2-amino-5-chloromuconic acid deaminase,0.629663661,-0.31483183,RAS_EGC_11_1617,-0.125789141,Low-ice cluster,NA,Aromatic_compounds,Substrates,HI_enriched
+2-amino-5-chloromuconic acid deaminase,0.629663661,-0.31483183,RAS_EGC_12_1617_1,0.607812994,High-ice cluster,NA,Aromatic_compounds,Substrates,HI_enriched
+4-hydroxybenzoyl-CoA reductase subunit alpha,0.670732031,-0.335366015,RAS_EGC_02_1617_1,0.577060456,High-ice cluster,NA,Aromatic_compounds,Substrates,HI_enriched
+4-hydroxybenzoyl-CoA reductase subunit alpha,0.670732031,-0.335366015,RAS_EGC_03_1617_2,0.78836955,High-ice cluster,NA,Aromatic_compounds,Substrates,HI_enriched
+4-hydroxybenzoyl-CoA reductase subunit alpha,0.670732031,-0.335366015,RAS_EGC_05_1617_2,0.125075332,Low-ice cluster,NA,Aromatic_compounds,Substrates,HI_enriched
+4-hydroxybenzoyl-CoA reductase subunit alpha,0.670732031,-0.335366015,RAS_EGC_07_1617_1,-0.825406764,Low-ice cluster,NA,Aromatic_compounds,Substrates,HI_enriched
+4-hydroxybenzoyl-CoA reductase subunit alpha,0.670732031,-0.335366015,RAS_EGC_08_1617_1,-0.526913776,Low-ice cluster,NA,Aromatic_compounds,Substrates,HI_enriched
+4-hydroxybenzoyl-CoA reductase subunit alpha,0.670732031,-0.335366015,RAS_EGC_09_1617_1,-0.370461599,Low-ice cluster,NA,Aromatic_compounds,Substrates,HI_enriched
+4-hydroxybenzoyl-CoA reductase subunit alpha,0.670732031,-0.335366015,RAS_EGC_10_1617_2,-0.14869831,Low-ice cluster,NA,Aromatic_compounds,Substrates,HI_enriched
+4-hydroxybenzoyl-CoA reductase subunit alpha,0.670732031,-0.335366015,RAS_EGC_11_1617,-0.265790976,Low-ice cluster,NA,Aromatic_compounds,Substrates,HI_enriched
+4-hydroxybenzoyl-CoA reductase subunit alpha,0.670732031,-0.335366015,RAS_EGC_12_1617_1,0.646766086,High-ice cluster,NA,Aromatic_compounds,Substrates,HI_enriched
+Acetophenone carboxylase delta subunit,0.577908287,-0.288954144,RAS_EGC_02_1617_1,0.406458493,High-ice cluster,NA,Aromatic_compounds,Substrates,HI_enriched
+Acetophenone carboxylase delta subunit,0.577908287,-0.288954144,RAS_EGC_03_1617_2,0.614195357,High-ice cluster,NA,Aromatic_compounds,Substrates,HI_enriched
+Acetophenone carboxylase delta subunit,0.577908287,-0.288954144,RAS_EGC_05_1617_2,0.018775067,Low-ice cluster,NA,Aromatic_compounds,Substrates,HI_enriched
+Acetophenone carboxylase delta subunit,0.577908287,-0.288954144,RAS_EGC_07_1617_1,-0.719032885,Low-ice cluster,NA,Aromatic_compounds,Substrates,HI_enriched
+Acetophenone carboxylase delta subunit,0.577908287,-0.288954144,RAS_EGC_08_1617_1,-0.644924912,Low-ice cluster,NA,Aromatic_compounds,Substrates,HI_enriched
+Acetophenone carboxylase delta subunit,0.577908287,-0.288954144,RAS_EGC_09_1617_1,-0.140368902,Low-ice cluster,NA,Aromatic_compounds,Substrates,HI_enriched
+Acetophenone carboxylase delta subunit,0.577908287,-0.288954144,RAS_EGC_10_1617_2,-0.224688487,Low-ice cluster,NA,Aromatic_compounds,Substrates,HI_enriched
+Acetophenone carboxylase delta subunit,0.577908287,-0.288954144,RAS_EGC_11_1617,-0.023484743,Low-ice cluster,NA,Aromatic_compounds,Substrates,HI_enriched
+Acetophenone carboxylase delta subunit,0.577908287,-0.288954144,RAS_EGC_12_1617_1,0.713071013,High-ice cluster,NA,Aromatic_compounds,Substrates,HI_enriched
+Acetophenone carboxylase gamma subunit,0.758433028,-0.379216514,RAS_EGC_02_1617_1,0.28343399,High-ice cluster,NA,Aromatic_compounds,Substrates,HI_enriched
+Acetophenone carboxylase gamma subunit,0.758433028,-0.379216514,RAS_EGC_03_1617_2,0.966950277,High-ice cluster,NA,Aromatic_compounds,Substrates,HI_enriched
+Acetophenone carboxylase gamma subunit,0.758433028,-0.379216514,RAS_EGC_05_1617_2,-0.101477035,Low-ice cluster,NA,Aromatic_compounds,Substrates,HI_enriched
+Acetophenone carboxylase gamma subunit,0.758433028,-0.379216514,RAS_EGC_07_1617_1,-0.813582129,Low-ice cluster,NA,Aromatic_compounds,Substrates,HI_enriched
+Acetophenone carboxylase gamma subunit,0.758433028,-0.379216514,RAS_EGC_08_1617_1,-0.692084576,Low-ice cluster,NA,Aromatic_compounds,Substrates,HI_enriched
+Acetophenone carboxylase gamma subunit,0.758433028,-0.379216514,RAS_EGC_09_1617_1,-0.022518338,Low-ice cluster,NA,Aromatic_compounds,Substrates,HI_enriched
+Acetophenone carboxylase gamma subunit,0.758433028,-0.379216514,RAS_EGC_10_1617_2,-0.381364836,Low-ice cluster,NA,Aromatic_compounds,Substrates,HI_enriched
+Acetophenone carboxylase gamma subunit,0.758433028,-0.379216514,RAS_EGC_11_1617,-0.26427217,Low-ice cluster,NA,Aromatic_compounds,Substrates,HI_enriched
+Acetophenone carboxylase gamma subunit,0.758433028,-0.379216514,RAS_EGC_12_1617_1,1.024914818,High-ice cluster,NA,Aromatic_compounds,Substrates,HI_enriched
+Benzoyl-CoA oxygenase component B boxB,0.967061948,-0.483530974,RAS_EGC_02_1617_1,0.615416206,High-ice cluster,NA,Aromatic_compounds,Substrates,HI_enriched
+Benzoyl-CoA oxygenase component B boxB,0.967061948,-0.483530974,RAS_EGC_03_1617_2,0.903098279,High-ice cluster,NA,Aromatic_compounds,Substrates,HI_enriched
+Benzoyl-CoA oxygenase component B boxB,0.967061948,-0.483530974,RAS_EGC_05_1617_2,-0.214932096,Low-ice cluster,NA,Aromatic_compounds,Substrates,HI_enriched
+Benzoyl-CoA oxygenase component B boxB,0.967061948,-0.483530974,RAS_EGC_07_1617_1,-0.968703898,Low-ice cluster,NA,Aromatic_compounds,Substrates,HI_enriched
+Benzoyl-CoA oxygenase component B boxB,0.967061948,-0.483530974,RAS_EGC_08_1617_1,-0.745560347,Low-ice cluster,NA,Aromatic_compounds,Substrates,HI_enriched
+Benzoyl-CoA oxygenase component B boxB,0.967061948,-0.483530974,RAS_EGC_09_1617_1,-1.102235291,Low-ice cluster,NA,Aromatic_compounds,Substrates,HI_enriched
+Benzoyl-CoA oxygenase component B boxB,0.967061948,-0.483530974,RAS_EGC_10_1617_2,0.087348776,Low-ice cluster,NA,Aromatic_compounds,Substrates,HI_enriched
+Benzoyl-CoA oxygenase component B boxB,0.967061948,-0.483530974,RAS_EGC_11_1617,0.042897013,Low-ice cluster,NA,Aromatic_compounds,Substrates,HI_enriched
+Benzoyl-CoA oxygenase component B boxB,0.967061948,-0.483530974,RAS_EGC_12_1617_1,1.382671359,High-ice cluster,NA,Aromatic_compounds,Substrates,HI_enriched
+Maleylacetate reductase,0.991467641,-0.49573382,RAS_EGC_02_1617_1,0.687332616,High-ice cluster,NA,Aromatic_compounds,Substrates,HI_enriched
+Maleylacetate reductase,0.991467641,-0.49573382,RAS_EGC_03_1617_2,1.176880841,High-ice cluster,NA,Aromatic_compounds,Substrates,HI_enriched
+Maleylacetate reductase,0.991467641,-0.49573382,RAS_EGC_05_1617_2,-0.059881786,Low-ice cluster,NA,Aromatic_compounds,Substrates,HI_enriched
+Maleylacetate reductase,0.991467641,-0.49573382,RAS_EGC_07_1617_1,-0.870812002,Low-ice cluster,NA,Aromatic_compounds,Substrates,HI_enriched
+Maleylacetate reductase,0.991467641,-0.49573382,RAS_EGC_08_1617_1,-0.870812002,Low-ice cluster,NA,Aromatic_compounds,Substrates,HI_enriched
+Maleylacetate reductase,0.991467641,-0.49573382,RAS_EGC_09_1617_1,-0.465346894,Low-ice cluster,NA,Aromatic_compounds,Substrates,HI_enriched
+Maleylacetate reductase,0.991467641,-0.49573382,RAS_EGC_10_1617_2,-0.647668451,Low-ice cluster,NA,Aromatic_compounds,Substrates,HI_enriched
+Maleylacetate reductase,0.991467641,-0.49573382,RAS_EGC_11_1617,-0.059881786,Low-ice cluster,NA,Aromatic_compounds,Substrates,HI_enriched
+Maleylacetate reductase,0.991467641,-0.49573382,RAS_EGC_12_1617_1,1.110189466,High-ice cluster,NA,Aromatic_compounds,Substrates,HI_enriched
+Phenoxybenzoate dioxygenase subunit alpha,0.816348573,-0.408174286,RAS_EGC_02_1617_1,0.474784265,High-ice cluster,NA,Aromatic_compounds,Substrates,HI_enriched
+Phenoxybenzoate dioxygenase subunit alpha,0.816348573,-0.408174286,RAS_EGC_03_1617_2,1.063184616,High-ice cluster,NA,Aromatic_compounds,Substrates,HI_enriched
+Phenoxybenzoate dioxygenase subunit alpha,0.816348573,-0.408174286,RAS_EGC_05_1617_2,0.120474321,Low-ice cluster,NA,Aromatic_compounds,Substrates,HI_enriched
+Phenoxybenzoate dioxygenase subunit alpha,0.816348573,-0.408174286,RAS_EGC_07_1617_1,-0.772469047,Low-ice cluster,NA,Aromatic_compounds,Substrates,HI_enriched
+Phenoxybenzoate dioxygenase subunit alpha,0.816348573,-0.408174286,RAS_EGC_08_1617_1,-1.197352241,Low-ice cluster,NA,Aromatic_compounds,Substrates,HI_enriched
+Phenoxybenzoate dioxygenase subunit alpha,0.816348573,-0.408174286,RAS_EGC_09_1617_1,-0.367003939,Low-ice cluster,NA,Aromatic_compounds,Substrates,HI_enriched
+Phenoxybenzoate dioxygenase subunit alpha,0.816348573,-0.408174286,RAS_EGC_10_1617_2,-0.191113273,Low-ice cluster,NA,Aromatic_compounds,Substrates,HI_enriched
+Phenoxybenzoate dioxygenase subunit alpha,0.816348573,-0.408174286,RAS_EGC_11_1617,-0.041581539,Low-ice cluster,NA,Aromatic_compounds,Substrates,HI_enriched
+Phenoxybenzoate dioxygenase subunit alpha,0.816348573,-0.408174286,RAS_EGC_12_1617_1,0.911076837,High-ice cluster,NA,Aromatic_compounds,Substrates,HI_enriched
+Adenylyl-sulfate kinase,0.096247692,-0.048123846,RAS_EGC_02_1617_1,0.021886101,High-ice cluster,NA,DIS_compounds,Substrates,HI_enriched
+Adenylyl-sulfate kinase,0.096247692,-0.048123846,RAS_EGC_03_1617_2,0.101489151,High-ice cluster,NA,DIS_compounds,Substrates,HI_enriched
+Adenylyl-sulfate kinase,0.096247692,-0.048123846,RAS_EGC_05_1617_2,-0.018935894,Low-ice cluster,NA,DIS_compounds,Substrates,HI_enriched
+Adenylyl-sulfate kinase,0.096247692,-0.048123846,RAS_EGC_07_1617_1,-0.093043866,Low-ice cluster,NA,DIS_compounds,Substrates,HI_enriched
+Adenylyl-sulfate kinase,0.096247692,-0.048123846,RAS_EGC_08_1617_1,-0.204835272,Low-ice cluster,NA,DIS_compounds,Substrates,HI_enriched
+Adenylyl-sulfate kinase,0.096247692,-0.048123846,RAS_EGC_09_1617_1,-0.13560348,Low-ice cluster,NA,DIS_compounds,Substrates,HI_enriched
+Adenylyl-sulfate kinase,0.096247692,-0.048123846,RAS_EGC_10_1617_2,-0.004164577,Low-ice cluster,NA,DIS_compounds,Substrates,HI_enriched
+Adenylyl-sulfate kinase,0.096247692,-0.048123846,RAS_EGC_11_1617,0.167840013,Low-ice cluster,NA,DIS_compounds,Substrates,HI_enriched
+Adenylyl-sulfate kinase,0.096247692,-0.048123846,RAS_EGC_12_1617_1,0.165367824,High-ice cluster,NA,DIS_compounds,Substrates,HI_enriched
+Acetone carboxylase beta subunit,0.826410904,-0.413205452,RAS_EGC_02_1617_1,0.499804398,High-ice cluster,NA,Ketone_compounds,Substrates,HI_enriched
+Acetone carboxylase beta subunit,0.826410904,-0.413205452,RAS_EGC_03_1617_2,1.0047303,High-ice cluster,NA,Ketone_compounds,Substrates,HI_enriched
+Acetone carboxylase beta subunit,0.826410904,-0.413205452,RAS_EGC_05_1617_2,-0.014294551,Low-ice cluster,NA,Ketone_compounds,Substrates,HI_enriched
+Acetone carboxylase beta subunit,0.826410904,-0.413205452,RAS_EGC_07_1617_1,-0.829331549,Low-ice cluster,NA,Ketone_compounds,Substrates,HI_enriched
+Acetone carboxylase beta subunit,0.826410904,-0.413205452,RAS_EGC_08_1617_1,-0.829331549,Low-ice cluster,NA,Ketone_compounds,Substrates,HI_enriched
+Acetone carboxylase beta subunit,0.826410904,-0.413205452,RAS_EGC_09_1617_1,-0.487582255,Low-ice cluster,NA,Ketone_compounds,Substrates,HI_enriched
+Acetone carboxylase beta subunit,0.826410904,-0.413205452,RAS_EGC_10_1617_2,-0.064725404,Low-ice cluster,NA,Ketone_compounds,Substrates,HI_enriched
+Acetone carboxylase beta subunit,0.826410904,-0.413205452,RAS_EGC_11_1617,-0.253967404,Low-ice cluster,NA,Ketone_compounds,Substrates,HI_enriched
+Acetone carboxylase beta subunit,0.826410904,-0.413205452,RAS_EGC_12_1617_1,0.974698013,High-ice cluster,NA,Ketone_compounds,Substrates,HI_enriched
+Ammonia monooxygenase gamma subunit,-0.215835705,0.107917853,RAS_EGC_02_1617_1,-0.51498492,High-ice cluster,NA,DIN_compounds,Substrates,Both
+Ammonia monooxygenase gamma subunit,-0.215835705,0.107917853,RAS_EGC_03_1617_2,-0.087540905,High-ice cluster,NA,DIN_compounds,Substrates,Both
+Ammonia monooxygenase gamma subunit,-0.215835705,0.107917853,RAS_EGC_05_1617_2,0.387882792,Low-ice cluster,NA,DIN_compounds,Substrates,Both
+Ammonia monooxygenase gamma subunit,-0.215835705,0.107917853,RAS_EGC_07_1617_1,-0.131992668,Low-ice cluster,NA,DIN_compounds,Substrates,Both
+Ammonia monooxygenase gamma subunit,-0.215835705,0.107917853,RAS_EGC_08_1617_1,0.072801745,Low-ice cluster,NA,DIN_compounds,Substrates,Both
+Ammonia monooxygenase gamma subunit,-0.215835705,0.107917853,RAS_EGC_09_1617_1,0.210952084,Low-ice cluster,NA,DIN_compounds,Substrates,Both
+Ammonia monooxygenase gamma subunit,-0.215835705,0.107917853,RAS_EGC_10_1617_2,0.035061417,Low-ice cluster,NA,DIN_compounds,Substrates,Both
+Ammonia monooxygenase gamma subunit,-0.215835705,0.107917853,RAS_EGC_11_1617,0.072801745,Low-ice cluster,NA,DIN_compounds,Substrates,Both
+Ammonia monooxygenase gamma subunit,-0.215835705,0.107917853,RAS_EGC_12_1617_1,-0.044981291,High-ice cluster,NA,DIN_compounds,Substrates,Both
+Ammonium transporter Amt,-0.055157661,0.02757883,RAS_EGC_02_1617_1,-0.173468412,High-ice cluster,NA,DIN_compounds,Substrates,Both
+Ammonium transporter Amt,-0.055157661,0.02757883,RAS_EGC_03_1617_2,0.017882551,High-ice cluster,NA,DIN_compounds,Substrates,Both
+Ammonium transporter Amt,-0.055157661,0.02757883,RAS_EGC_05_1617_2,-0.09893536,Low-ice cluster,NA,DIN_compounds,Substrates,Both
+Ammonium transporter Amt,-0.055157661,0.02757883,RAS_EGC_07_1617_1,0.113575702,Low-ice cluster,NA,DIN_compounds,Substrates,Both
+Ammonium transporter Amt,-0.055157661,0.02757883,RAS_EGC_08_1617_1,0.003738044,Low-ice cluster,NA,DIN_compounds,Substrates,Both
+Ammonium transporter Amt,-0.055157661,0.02757883,RAS_EGC_09_1617_1,0.089680474,Low-ice cluster,NA,DIN_compounds,Substrates,Both
+Ammonium transporter Amt,-0.055157661,0.02757883,RAS_EGC_10_1617_2,0.026970346,Low-ice cluster,NA,DIN_compounds,Substrates,Both
+Ammonium transporter Amt,-0.055157661,0.02757883,RAS_EGC_11_1617,0.030443777,Low-ice cluster,NA,DIN_compounds,Substrates,Both
+Ammonium transporter Amt,-0.055157661,0.02757883,RAS_EGC_12_1617_1,-0.009887122,High-ice cluster,NA,DIN_compounds,Substrates,Both
+Periplasmic nitrate reductase,0.487135,-0.2435675,RAS_EGC_02_1617_1,0.36247542,High-ice cluster,NA,DIN_compounds,Substrates,Both
+Periplasmic nitrate reductase,0.487135,-0.2435675,RAS_EGC_03_1617_2,0.524642175,High-ice cluster,NA,DIN_compounds,Substrates,Both
+Periplasmic nitrate reductase,0.487135,-0.2435675,RAS_EGC_05_1617_2,-0.156600103,Low-ice cluster,NA,DIN_compounds,Substrates,Both
+Periplasmic nitrate reductase,0.487135,-0.2435675,RAS_EGC_07_1617_1,-0.302892196,Low-ice cluster,NA,DIN_compounds,Substrates,Both
+Periplasmic nitrate reductase,0.487135,-0.2435675,RAS_EGC_08_1617_1,-0.403696895,Low-ice cluster,NA,DIN_compounds,Substrates,Both
+Periplasmic nitrate reductase,0.487135,-0.2435675,RAS_EGC_09_1617_1,-0.434468554,Low-ice cluster,NA,DIN_compounds,Substrates,Both
+Periplasmic nitrate reductase,0.487135,-0.2435675,RAS_EGC_10_1617_2,-0.180553344,Low-ice cluster,NA,DIN_compounds,Substrates,Both
+Periplasmic nitrate reductase,0.487135,-0.2435675,RAS_EGC_11_1617,0.01680609,Low-ice cluster,NA,DIN_compounds,Substrates,Both
+Periplasmic nitrate reductase,0.487135,-0.2435675,RAS_EGC_12_1617_1,0.574287406,High-ice cluster,NA,DIN_compounds,Substrates,Both
+"alpha-1,4-digalacturonate transport system permease protein",-0.381959567,0.190979783,RAS_EGC_02_1617_1,-0.423939975,High-ice cluster,K17243,Carbohydrates,Substrates,LI_enriched
+"alpha-1,4-digalacturonate transport system permease protein",-0.381959567,0.190979783,RAS_EGC_03_1617_2,-0.340558366,High-ice cluster,K17243,Carbohydrates,Substrates,LI_enriched
+"alpha-1,4-digalacturonate transport system permease protein",-0.381959567,0.190979783,RAS_EGC_05_1617_2,0.129445264,Low-ice cluster,K17243,Carbohydrates,Substrates,LI_enriched
+"alpha-1,4-digalacturonate transport system permease protein",-0.381959567,0.190979783,RAS_EGC_07_1617_1,0.391809528,Low-ice cluster,K17243,Carbohydrates,Substrates,LI_enriched
+"alpha-1,4-digalacturonate transport system permease protein",-0.381959567,0.190979783,RAS_EGC_08_1617_1,0.201765925,Low-ice cluster,K17243,Carbohydrates,Substrates,LI_enriched
+"alpha-1,4-digalacturonate transport system permease protein",-0.381959567,0.190979783,RAS_EGC_09_1617_1,0.391809528,Low-ice cluster,K17243,Carbohydrates,Substrates,LI_enriched
+"alpha-1,4-digalacturonate transport system permease protein",-0.381959567,0.190979783,RAS_EGC_10_1617_2,0.332386108,Low-ice cluster,K17243,Carbohydrates,Substrates,LI_enriched
+"alpha-1,4-digalacturonate transport system permease protein",-0.381959567,0.190979783,RAS_EGC_11_1617,-0.301337652,Low-ice cluster,K17243,Carbohydrates,Substrates,LI_enriched
+"alpha-1,4-digalacturonate transport system permease protein",-0.381959567,0.190979783,RAS_EGC_12_1617_1,-0.38138036,High-ice cluster,K17243,Carbohydrates,Substrates,LI_enriched
+"alpha-1,4-digalacturonate transport system permease protein",-0.454533193,0.227266596,RAS_EGC_02_1617_1,-0.430610926,High-ice cluster,K17242,Carbohydrates,Substrates,LI_enriched
+"alpha-1,4-digalacturonate transport system permease protein",-0.454533193,0.227266596,RAS_EGC_03_1617_2,-0.330527468,High-ice cluster,K17242,Carbohydrates,Substrates,LI_enriched
+"alpha-1,4-digalacturonate transport system permease protein",-0.454533193,0.227266596,RAS_EGC_05_1617_2,0.313829549,Low-ice cluster,K17242,Carbohydrates,Substrates,LI_enriched
+"alpha-1,4-digalacturonate transport system permease protein",-0.454533193,0.227266596,RAS_EGC_07_1617_1,0.650301785,Low-ice cluster,K17242,Carbohydrates,Substrates,LI_enriched
+"alpha-1,4-digalacturonate transport system permease protein",-0.454533193,0.227266596,RAS_EGC_08_1617_1,0.235868007,Low-ice cluster,K17242,Carbohydrates,Substrates,LI_enriched
+"alpha-1,4-digalacturonate transport system permease protein",-0.454533193,0.227266596,RAS_EGC_09_1617_1,0.026147476,Low-ice cluster,K17242,Carbohydrates,Substrates,LI_enriched
+"alpha-1,4-digalacturonate transport system permease protein",-0.454533193,0.227266596,RAS_EGC_10_1617_2,0.516770393,Low-ice cluster,K17242,Carbohydrates,Substrates,LI_enriched
+"alpha-1,4-digalacturonate transport system permease protein",-0.454533193,0.227266596,RAS_EGC_11_1617,-0.379317632,Low-ice cluster,K17242,Carbohydrates,Substrates,LI_enriched
+"alpha-1,4-digalacturonate transport system permease protein",-0.454533193,0.227266596,RAS_EGC_12_1617_1,-0.602461183,High-ice cluster,K17242,Carbohydrates,Substrates,LI_enriched
+"alpha-1,4-digalacturonate transport system substrate-binding protein",-0.428740919,0.214370459,RAS_EGC_02_1617_1,-0.627731444,High-ice cluster,K17241,Carbohydrates,Substrates,LI_enriched
+"alpha-1,4-digalacturonate transport system substrate-binding protein",-0.428740919,0.214370459,RAS_EGC_03_1617_2,-0.242068963,High-ice cluster,K17241,Carbohydrates,Substrates,LI_enriched
+"alpha-1,4-digalacturonate transport system substrate-binding protein",-0.428740919,0.214370459,RAS_EGC_05_1617_2,0.300255328,Low-ice cluster,K17241,Carbohydrates,Substrates,LI_enriched
+"alpha-1,4-digalacturonate transport system substrate-binding protein",-0.428740919,0.214370459,RAS_EGC_07_1617_1,0.649929076,Low-ice cluster,K17241,Carbohydrates,Substrates,LI_enriched
+"alpha-1,4-digalacturonate transport system substrate-binding protein",-0.428740919,0.214370459,RAS_EGC_08_1617_1,0.176641372,Low-ice cluster,K17241,Carbohydrates,Substrates,LI_enriched
+"alpha-1,4-digalacturonate transport system substrate-binding protein",-0.428740919,0.214370459,RAS_EGC_09_1617_1,-0.026957583,Low-ice cluster,K17241,Carbohydrates,Substrates,LI_enriched
+"alpha-1,4-digalacturonate transport system substrate-binding protein",-0.428740919,0.214370459,RAS_EGC_10_1617_2,0.389202814,Low-ice cluster,K17241,Carbohydrates,Substrates,LI_enriched
+"alpha-1,4-digalacturonate transport system substrate-binding protein",-0.428740919,0.214370459,RAS_EGC_11_1617,-0.20284825,Low-ice cluster,K17241,Carbohydrates,Substrates,LI_enriched
+"alpha-1,4-digalacturonate transport system substrate-binding protein",-0.428740919,0.214370459,RAS_EGC_12_1617_1,-0.41642235,High-ice cluster,K17241,Carbohydrates,Substrates,LI_enriched
+5-dehydro-2-deoxygluconokinase,-0.102613128,0.051306564,RAS_EGC_02_1617_1,-0.444929524,High-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+5-dehydro-2-deoxygluconokinase,-0.102613128,0.051306564,RAS_EGC_03_1617_2,0.120384285,High-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+5-dehydro-2-deoxygluconokinase,-0.102613128,0.051306564,RAS_EGC_05_1617_2,0.105116813,Low-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+5-dehydro-2-deoxygluconokinase,-0.102613128,0.051306564,RAS_EGC_07_1617_1,0.19340942,Low-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+5-dehydro-2-deoxygluconokinase,-0.102613128,0.051306564,RAS_EGC_08_1617_1,0.049766718,Low-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+5-dehydro-2-deoxygluconokinase,-0.102613128,0.051306564,RAS_EGC_09_1617_1,0.025074105,Low-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+5-dehydro-2-deoxygluconokinase,-0.102613128,0.051306564,RAS_EGC_10_1617_2,-0.147297121,Low-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+5-dehydro-2-deoxygluconokinase,-0.102613128,0.051306564,RAS_EGC_11_1617,0.081769449,Low-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+5-dehydro-2-deoxygluconokinase,-0.102613128,0.051306564,RAS_EGC_12_1617_1,0.016705855,High-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+5-dehydro-2-deoxygluconokinase [EC:2.7.1.92],-0.571451214,0.285725607,RAS_EGC_02_1617_1,-0.737952047,High-ice cluster,K03338,Carbohydrates,Substrates,LI_enriched
+5-dehydro-2-deoxygluconokinase [EC:2.7.1.92],-0.571451214,0.285725607,RAS_EGC_03_1617_2,-0.694466935,High-ice cluster,K03338,Carbohydrates,Substrates,LI_enriched
+5-dehydro-2-deoxygluconokinase [EC:2.7.1.92],-0.571451214,0.285725607,RAS_EGC_05_1617_2,0.259406508,Low-ice cluster,K03338,Carbohydrates,Substrates,LI_enriched
+5-dehydro-2-deoxygluconokinase [EC:2.7.1.92],-0.571451214,0.285725607,RAS_EGC_07_1617_1,0.743652494,Low-ice cluster,K03338,Carbohydrates,Substrates,LI_enriched
+5-dehydro-2-deoxygluconokinase [EC:2.7.1.92],-0.571451214,0.285725607,RAS_EGC_08_1617_1,0.4726653,Low-ice cluster,K03338,Carbohydrates,Substrates,LI_enriched
+5-dehydro-2-deoxygluconokinase [EC:2.7.1.92],-0.571451214,0.285725607,RAS_EGC_09_1617_1,-0.18790571,Low-ice cluster,K03338,Carbohydrates,Substrates,LI_enriched
+5-dehydro-2-deoxygluconokinase [EC:2.7.1.92],-0.571451214,0.285725607,RAS_EGC_10_1617_2,0.217559398,Low-ice cluster,K03338,Carbohydrates,Substrates,LI_enriched
+5-dehydro-2-deoxygluconokinase [EC:2.7.1.92],-0.571451214,0.285725607,RAS_EGC_11_1617,0.208975654,Low-ice cluster,K03338,Carbohydrates,Substrates,LI_enriched
+5-dehydro-2-deoxygluconokinase [EC:2.7.1.92],-0.571451214,0.285725607,RAS_EGC_12_1617_1,-0.28193466,High-ice cluster,K03338,Carbohydrates,Substrates,LI_enriched
+5-deoxy-glucuronate isomerase [EC:5.3.1.30],-0.644112106,0.322056053,RAS_EGC_02_1617_1,-0.863491005,High-ice cluster,K03337,Carbohydrates,Substrates,LI_enriched
+5-deoxy-glucuronate isomerase [EC:5.3.1.30],-0.644112106,0.322056053,RAS_EGC_03_1617_2,-0.72465456,High-ice cluster,K03337,Carbohydrates,Substrates,LI_enriched
+5-deoxy-glucuronate isomerase [EC:5.3.1.30],-0.644112106,0.322056053,RAS_EGC_05_1617_2,0.176710522,Low-ice cluster,K03337,Carbohydrates,Substrates,LI_enriched
+5-deoxy-glucuronate isomerase [EC:5.3.1.30],-0.644112106,0.322056053,RAS_EGC_07_1617_1,0.850881801,Low-ice cluster,K03337,Carbohydrates,Substrates,LI_enriched
+5-deoxy-glucuronate isomerase [EC:5.3.1.30],-0.644112106,0.322056053,RAS_EGC_08_1617_1,0.564476053,Low-ice cluster,K03337,Carbohydrates,Substrates,LI_enriched
+5-deoxy-glucuronate isomerase [EC:5.3.1.30],-0.644112106,0.322056053,RAS_EGC_09_1617_1,-0.191850029,Low-ice cluster,K03337,Carbohydrates,Substrates,LI_enriched
+5-deoxy-glucuronate isomerase [EC:5.3.1.30],-0.644112106,0.322056053,RAS_EGC_10_1617_2,0.235121284,Low-ice cluster,K03337,Carbohydrates,Substrates,LI_enriched
+5-deoxy-glucuronate isomerase [EC:5.3.1.30],-0.644112106,0.322056053,RAS_EGC_11_1617,0.296996688,Low-ice cluster,K03337,Carbohydrates,Substrates,LI_enriched
+5-deoxy-glucuronate isomerase [EC:5.3.1.30],-0.644112106,0.322056053,RAS_EGC_12_1617_1,-0.344190754,High-ice cluster,K03337,Carbohydrates,Substrates,LI_enriched
+alpha-ketoglutaric semialdehyde dehydrogenase [EC:1.2.1.-],-0.26125584,0.13062792,RAS_EGC_02_1617_1,-0.492131425,High-ice cluster,K22187,Carbohydrates,Substrates,LI_enriched
+alpha-ketoglutaric semialdehyde dehydrogenase [EC:1.2.1.-],-0.26125584,0.13062792,RAS_EGC_03_1617_2,-0.399758105,High-ice cluster,K22187,Carbohydrates,Substrates,LI_enriched
+alpha-ketoglutaric semialdehyde dehydrogenase [EC:1.2.1.-],-0.26125584,0.13062792,RAS_EGC_05_1617_2,0.417686792,Low-ice cluster,K22187,Carbohydrates,Substrates,LI_enriched
+alpha-ketoglutaric semialdehyde dehydrogenase [EC:1.2.1.-],-0.26125584,0.13062792,RAS_EGC_07_1617_1,0.357467932,Low-ice cluster,K22187,Carbohydrates,Substrates,LI_enriched
+alpha-ketoglutaric semialdehyde dehydrogenase [EC:1.2.1.-],-0.26125584,0.13062792,RAS_EGC_08_1617_1,0.081214556,Low-ice cluster,K22187,Carbohydrates,Substrates,LI_enriched
+alpha-ketoglutaric semialdehyde dehydrogenase [EC:1.2.1.-],-0.26125584,0.13062792,RAS_EGC_09_1617_1,-0.28853247,Low-ice cluster,K22187,Carbohydrates,Substrates,LI_enriched
+alpha-ketoglutaric semialdehyde dehydrogenase [EC:1.2.1.-],-0.26125584,0.13062792,RAS_EGC_10_1617_2,0.090264391,Low-ice cluster,K22187,Carbohydrates,Substrates,LI_enriched
+alpha-ketoglutaric semialdehyde dehydrogenase [EC:1.2.1.-],-0.26125584,0.13062792,RAS_EGC_11_1617,0.125666318,Low-ice cluster,K22187,Carbohydrates,Substrates,LI_enriched
+alpha-ketoglutaric semialdehyde dehydrogenase [EC:1.2.1.-],-0.26125584,0.13062792,RAS_EGC_12_1617_1,0.108122009,High-ice cluster,K22187,Carbohydrates,Substrates,LI_enriched
+ATP-dependent phosphofructokinase / diphosphate-dependent phosphofructokinase [EC:2.7.1.11 2.7.1.90],-0.0644127,0.03220635,RAS_EGC_02_1617_1,-0.032776958,High-ice cluster,K21071,Carbohydrates,Substrates,LI_enriched
+ATP-dependent phosphofructokinase / diphosphate-dependent phosphofructokinase [EC:2.7.1.11 2.7.1.90],-0.0644127,0.03220635,RAS_EGC_03_1617_2,-0.144605063,High-ice cluster,K21071,Carbohydrates,Substrates,LI_enriched
+ATP-dependent phosphofructokinase / diphosphate-dependent phosphofructokinase [EC:2.7.1.11 2.7.1.90],-0.0644127,0.03220635,RAS_EGC_05_1617_2,0.104161593,Low-ice cluster,K21071,Carbohydrates,Substrates,LI_enriched
+ATP-dependent phosphofructokinase / diphosphate-dependent phosphofructokinase [EC:2.7.1.11 2.7.1.90],-0.0644127,0.03220635,RAS_EGC_07_1617_1,-0.029369799,Low-ice cluster,K21071,Carbohydrates,Substrates,LI_enriched
+ATP-dependent phosphofructokinase / diphosphate-dependent phosphofructokinase [EC:2.7.1.11 2.7.1.90],-0.0644127,0.03220635,RAS_EGC_08_1617_1,0.033253624,Low-ice cluster,K21071,Carbohydrates,Substrates,LI_enriched
+ATP-dependent phosphofructokinase / diphosphate-dependent phosphofructokinase [EC:2.7.1.11 2.7.1.90],-0.0644127,0.03220635,RAS_EGC_09_1617_1,-0.071042496,Low-ice cluster,K21071,Carbohydrates,Substrates,LI_enriched
+ATP-dependent phosphofructokinase / diphosphate-dependent phosphofructokinase [EC:2.7.1.11 2.7.1.90],-0.0644127,0.03220635,RAS_EGC_10_1617_2,0.049101816,Low-ice cluster,K21071,Carbohydrates,Substrates,LI_enriched
+ATP-dependent phosphofructokinase / diphosphate-dependent phosphofructokinase [EC:2.7.1.11 2.7.1.90],-0.0644127,0.03220635,RAS_EGC_11_1617,0.107133364,Low-ice cluster,K21071,Carbohydrates,Substrates,LI_enriched
+ATP-dependent phosphofructokinase / diphosphate-dependent phosphofructokinase [EC:2.7.1.11 2.7.1.90],-0.0644127,0.03220635,RAS_EGC_12_1617_1,-0.01585608,High-ice cluster,K21071,Carbohydrates,Substrates,LI_enriched
+CBM50|,-0.094207742,0.047103871,RAS_EGC_02_1617_1,-0.013436703,High-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+CBM50|,-0.094207742,0.047103871,RAS_EGC_03_1617_2,-0.108622512,High-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+CBM50|,-0.094207742,0.047103871,RAS_EGC_05_1617_2,0.202717304,Low-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+CBM50|,-0.094207742,0.047103871,RAS_EGC_07_1617_1,-0.055347599,Low-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+CBM50|,-0.094207742,0.047103871,RAS_EGC_08_1617_1,0.102686581,Low-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+CBM50|,-0.094207742,0.047103871,RAS_EGC_09_1617_1,0.103793388,Low-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+CBM50|,-0.094207742,0.047103871,RAS_EGC_10_1617_2,-0.054051422,Low-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+CBM50|,-0.094207742,0.047103871,RAS_EGC_11_1617,-0.017175025,Low-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+CBM50|,-0.094207742,0.047103871,RAS_EGC_12_1617_1,-0.160564012,High-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+Diacetylchitobiose uptake system permease protein DasC,-0.345806486,0.172903243,RAS_EGC_02_1617_1,-0.908587171,High-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+Diacetylchitobiose uptake system permease protein DasC,-0.345806486,0.172903243,RAS_EGC_03_1617_2,0.177121713,High-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+Diacetylchitobiose uptake system permease protein DasC,-0.345806486,0.172903243,RAS_EGC_05_1617_2,-0.106240699,Low-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+Diacetylchitobiose uptake system permease protein DasC,-0.345806486,0.172903243,RAS_EGC_07_1617_1,0.360524935,Low-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+Diacetylchitobiose uptake system permease protein DasC,-0.345806486,0.172903243,RAS_EGC_08_1617_1,0.196414916,Low-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+Diacetylchitobiose uptake system permease protein DasC,-0.345806486,0.172903243,RAS_EGC_09_1617_1,0.137381384,Low-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+Diacetylchitobiose uptake system permease protein DasC,-0.345806486,0.172903243,RAS_EGC_10_1617_2,0.227765445,Low-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+Diacetylchitobiose uptake system permease protein DasC,-0.345806486,0.172903243,RAS_EGC_11_1617,0.221573475,Low-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+Diacetylchitobiose uptake system permease protein DasC,-0.345806486,0.172903243,RAS_EGC_12_1617_1,-0.305953998,High-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+D-xylose 1-dehydrogenase [EC:1.1.1.175],-0.565787531,0.282893766,RAS_EGC_02_1617_1,-0.638088161,High-ice cluster,K22185,Carbohydrates,Substrates,LI_enriched
+D-xylose 1-dehydrogenase [EC:1.1.1.175],-0.565787531,0.282893766,RAS_EGC_03_1617_2,-0.278085427,High-ice cluster,K22185,Carbohydrates,Substrates,LI_enriched
+D-xylose 1-dehydrogenase [EC:1.1.1.175],-0.565787531,0.282893766,RAS_EGC_05_1617_2,-0.483937482,Low-ice cluster,K22185,Carbohydrates,Substrates,LI_enriched
+D-xylose 1-dehydrogenase [EC:1.1.1.175],-0.565787531,0.282893766,RAS_EGC_07_1617_1,0.731399081,Low-ice cluster,K22185,Carbohydrates,Substrates,LI_enriched
+D-xylose 1-dehydrogenase [EC:1.1.1.175],-0.565787531,0.282893766,RAS_EGC_08_1617_1,0.367433704,Low-ice cluster,K22185,Carbohydrates,Substrates,LI_enriched
+D-xylose 1-dehydrogenase [EC:1.1.1.175],-0.565787531,0.282893766,RAS_EGC_09_1617_1,0.317423284,Low-ice cluster,K22185,Carbohydrates,Substrates,LI_enriched
+D-xylose 1-dehydrogenase [EC:1.1.1.175],-0.565787531,0.282893766,RAS_EGC_10_1617_2,0.460524127,Low-ice cluster,K22185,Carbohydrates,Substrates,LI_enriched
+D-xylose 1-dehydrogenase [EC:1.1.1.175],-0.565787531,0.282893766,RAS_EGC_11_1617,0.304519879,Low-ice cluster,K22185,Carbohydrates,Substrates,LI_enriched
+D-xylose 1-dehydrogenase [EC:1.1.1.175],-0.565787531,0.282893766,RAS_EGC_12_1617_1,-0.781189005,High-ice cluster,K22185,Carbohydrates,Substrates,LI_enriched
+D-xylose transport system ATP-binding protein [EC:7.5.2.10],-0.443106811,0.221553406,RAS_EGC_02_1617_1,-0.830823748,High-ice cluster,K10545,Carbohydrates,Substrates,LI_enriched
+D-xylose transport system ATP-binding protein [EC:7.5.2.10],-0.443106811,0.221553406,RAS_EGC_03_1617_2,-0.137676567,High-ice cluster,K10545,Carbohydrates,Substrates,LI_enriched
+D-xylose transport system ATP-binding protein [EC:7.5.2.10],-0.443106811,0.221553406,RAS_EGC_05_1617_2,0.044644989,Low-ice cluster,K10545,Carbohydrates,Substrates,LI_enriched
+D-xylose transport system ATP-binding protein [EC:7.5.2.10],-0.443106811,0.221553406,RAS_EGC_07_1617_1,0.332327062,Low-ice cluster,K10545,Carbohydrates,Substrates,LI_enriched
+D-xylose transport system ATP-binding protein [EC:7.5.2.10],-0.443106811,0.221553406,RAS_EGC_08_1617_1,0.198795669,Low-ice cluster,K10545,Carbohydrates,Substrates,LI_enriched
+D-xylose transport system ATP-binding protein [EC:7.5.2.10],-0.443106811,0.221553406,RAS_EGC_09_1617_1,0.124687697,Low-ice cluster,K10545,Carbohydrates,Substrates,LI_enriched
+D-xylose transport system ATP-binding protein [EC:7.5.2.10],-0.443106811,0.221553406,RAS_EGC_10_1617_2,0.504177319,Low-ice cluster,K10545,Carbohydrates,Substrates,LI_enriched
+D-xylose transport system ATP-binding protein [EC:7.5.2.10],-0.443106811,0.221553406,RAS_EGC_11_1617,0.124687697,Low-ice cluster,K10545,Carbohydrates,Substrates,LI_enriched
+D-xylose transport system ATP-binding protein [EC:7.5.2.10],-0.443106811,0.221553406,RAS_EGC_12_1617_1,-0.360820119,High-ice cluster,K10545,Carbohydrates,Substrates,LI_enriched
+D-xylose transport system permease protein,-0.850598961,0.42529948,RAS_EGC_02_1617_1,-1.984331421,High-ice cluster,K10544,Carbohydrates,Substrates,LI_enriched
+D-xylose transport system permease protein,-0.850598961,0.42529948,RAS_EGC_03_1617_2,-0.192571952,High-ice cluster,K10544,Carbohydrates,Substrates,LI_enriched
+D-xylose transport system permease protein,-0.850598961,0.42529948,RAS_EGC_05_1617_2,0.72371878,Low-ice cluster,K10544,Carbohydrates,Substrates,LI_enriched
+D-xylose transport system permease protein,-0.850598961,0.42529948,RAS_EGC_07_1617_1,0.095110121,Low-ice cluster,K10544,Carbohydrates,Substrates,LI_enriched
+D-xylose transport system permease protein,-0.850598961,0.42529948,RAS_EGC_08_1617_1,0.318253672,Low-ice cluster,K10544,Carbohydrates,Substrates,LI_enriched
+D-xylose transport system permease protein,-0.850598961,0.42529948,RAS_EGC_09_1617_1,0.413563852,Low-ice cluster,K10544,Carbohydrates,Substrates,LI_enriched
+D-xylose transport system permease protein,-0.850598961,0.42529948,RAS_EGC_10_1617_2,0.906040337,Low-ice cluster,K10544,Carbohydrates,Substrates,LI_enriched
+D-xylose transport system permease protein,-0.850598961,0.42529948,RAS_EGC_11_1617,0.095110121,Low-ice cluster,K10544,Carbohydrates,Substrates,LI_enriched
+D-xylose transport system permease protein,-0.850598961,0.42529948,RAS_EGC_12_1617_1,-0.374893509,High-ice cluster,K10544,Carbohydrates,Substrates,LI_enriched
+fructokinase [EC:2.7.1.4],-0.244809076,0.122404538,RAS_EGC_02_1617_1,-0.102002001,High-ice cluster,K00847,Carbohydrates,Substrates,LI_enriched
+fructokinase [EC:2.7.1.4],-0.244809076,0.122404538,RAS_EGC_03_1617_2,-0.190555399,High-ice cluster,K00847,Carbohydrates,Substrates,LI_enriched
+fructokinase [EC:2.7.1.4],-0.244809076,0.122404538,RAS_EGC_05_1617_2,0.384808746,Low-ice cluster,K00847,Carbohydrates,Substrates,LI_enriched
+fructokinase [EC:2.7.1.4],-0.244809076,0.122404538,RAS_EGC_07_1617_1,0.239301163,Low-ice cluster,K00847,Carbohydrates,Substrates,LI_enriched
+fructokinase [EC:2.7.1.4],-0.244809076,0.122404538,RAS_EGC_08_1617_1,0.025153174,Low-ice cluster,K00847,Carbohydrates,Substrates,LI_enriched
+fructokinase [EC:2.7.1.4],-0.244809076,0.122404538,RAS_EGC_09_1617_1,-0.190555399,Low-ice cluster,K00847,Carbohydrates,Substrates,LI_enriched
+fructokinase [EC:2.7.1.4],-0.244809076,0.122404538,RAS_EGC_10_1617_2,0.124525648,Low-ice cluster,K00847,Carbohydrates,Substrates,LI_enriched
+fructokinase [EC:2.7.1.4],-0.244809076,0.122404538,RAS_EGC_11_1617,0.151193895,Low-ice cluster,K00847,Carbohydrates,Substrates,LI_enriched
+fructokinase [EC:2.7.1.4],-0.244809076,0.122404538,RAS_EGC_12_1617_1,-0.441869827,High-ice cluster,K00847,Carbohydrates,Substrates,LI_enriched
+galactose dehydrogenase [EC:1.1.1.48 1.1.1.120],-0.897081064,0.448540532,RAS_EGC_02_1617_1,-0.804458247,High-ice cluster,K22215,Carbohydrates,Substrates,LI_enriched
+galactose dehydrogenase [EC:1.1.1.48 1.1.1.120],-0.897081064,0.448540532,RAS_EGC_03_1617_2,-1.983113244,High-ice cluster,K22215,Carbohydrates,Substrates,LI_enriched
+galactose dehydrogenase [EC:1.1.1.48 1.1.1.120],-0.897081064,0.448540532,RAS_EGC_05_1617_2,0.391792511,Low-ice cluster,K22215,Carbohydrates,Substrates,LI_enriched
+galactose dehydrogenase [EC:1.1.1.48 1.1.1.120],-0.897081064,0.448540532,RAS_EGC_07_1617_1,1.01261903,Low-ice cluster,K22215,Carbohydrates,Substrates,LI_enriched
+galactose dehydrogenase [EC:1.1.1.48 1.1.1.120],-0.897081064,0.448540532,RAS_EGC_08_1617_1,0.724936957,Low-ice cluster,K22215,Carbohydrates,Substrates,LI_enriched
+galactose dehydrogenase [EC:1.1.1.48 1.1.1.120],-0.897081064,0.448540532,RAS_EGC_09_1617_1,0.031789777,Low-ice cluster,K22215,Carbohydrates,Substrates,LI_enriched
+galactose dehydrogenase [EC:1.1.1.48 1.1.1.120],-0.897081064,0.448540532,RAS_EGC_10_1617_2,0.185940457,Low-ice cluster,K22215,Carbohydrates,Substrates,LI_enriched
+galactose dehydrogenase [EC:1.1.1.48 1.1.1.120],-0.897081064,0.448540532,RAS_EGC_11_1617,0.344164462,Low-ice cluster,K22215,Carbohydrates,Substrates,LI_enriched
+galactose dehydrogenase [EC:1.1.1.48 1.1.1.120],-0.897081064,0.448540532,RAS_EGC_12_1617_1,0.096328298,High-ice cluster,K22215,Carbohydrates,Substrates,LI_enriched
+GH103|,-0.03051623,0.015258115,RAS_EGC_02_1617_1,-0.220956408,High-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+GH103|,-0.03051623,0.015258115,RAS_EGC_03_1617_2,0.086212552,High-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+GH103|,-0.03051623,0.015258115,RAS_EGC_05_1617_2,0.005402006,Low-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+GH103|,-0.03051623,0.015258115,RAS_EGC_07_1617_1,0.034919258,Low-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+GH103|,-0.03051623,0.015258115,RAS_EGC_08_1617_1,-0.004633921,Low-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+GH103|,-0.03051623,0.015258115,RAS_EGC_09_1617_1,0.202825313,Low-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+GH103|,-0.03051623,0.015258115,RAS_EGC_10_1617_2,-0.133646924,Low-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+GH103|,-0.03051623,0.015258115,RAS_EGC_11_1617,-0.013317043,Low-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+GH103|,-0.03051623,0.015258115,RAS_EGC_12_1617_1,0.043195167,High-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+GH16_3,-1.339892266,0.669946133,RAS_EGC_02_1617_1,-1.837110558,High-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+GH16_3,-1.339892266,0.669946133,RAS_EGC_03_1617_2,-0.856281305,High-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+GH16_3,-1.339892266,0.669946133,RAS_EGC_05_1617_2,1.20741188,Low-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+GH16_3,-1.339892266,0.669946133,RAS_EGC_07_1617_1,0.619625215,Low-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+GH16_3,-1.339892266,0.669946133,RAS_EGC_08_1617_1,1.0532612,Low-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+GH16_3,-1.339892266,0.669946133,RAS_EGC_09_1617_1,1.124720164,Low-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+GH16_3,-1.339892266,0.669946133,RAS_EGC_10_1617_2,-0.045351089,Low-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+GH16_3,-1.339892266,0.669946133,RAS_EGC_11_1617,0.060009427,Low-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+GH16_3,-1.339892266,0.669946133,RAS_EGC_12_1617_1,-1.326284934,High-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+GH23|,-0.013620392,0.006810196,RAS_EGC_02_1617_1,-0.112138418,High-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+GH23|,-0.013620392,0.006810196,RAS_EGC_03_1617_2,0.017260737,High-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+GH23|,-0.013620392,0.006810196,RAS_EGC_05_1617_2,-0.012153148,Low-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+GH23|,-0.013620392,0.006810196,RAS_EGC_07_1617_1,-0.061876583,Low-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+GH23|,-0.013620392,0.006810196,RAS_EGC_08_1617_1,0.000207949,Low-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+GH23|,-0.013620392,0.006810196,RAS_EGC_09_1617_1,0.084964534,Low-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+GH23|,-0.013620392,0.006810196,RAS_EGC_10_1617_2,-0.009048519,Low-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+GH23|,-0.013620392,0.006810196,RAS_EGC_11_1617,0.038766943,Low-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+GH23|,-0.013620392,0.006810196,RAS_EGC_12_1617_1,0.054016505,High-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+GH36|,-0.300847587,0.150423794,RAS_EGC_02_1617_1,-0.721621014,High-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+GH36|,-0.300847587,0.150423794,RAS_EGC_03_1617_2,-0.245538338,High-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+GH36|,-0.300847587,0.150423794,RAS_EGC_05_1617_2,0.129155111,Low-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+GH36|,-0.300847587,0.150423794,RAS_EGC_07_1617_1,0.534620219,Low-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+GH36|,-0.300847587,0.150423794,RAS_EGC_08_1617_1,0.301005368,Low-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+GH36|,-0.300847587,0.150423794,RAS_EGC_09_1617_1,0.118683811,Low-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+GH36|,-0.300847587,0.150423794,RAS_EGC_10_1617_2,-0.245538338,Low-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+GH36|,-0.300847587,0.150423794,RAS_EGC_11_1617,0.06461659,Low-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+GH36|,-0.300847587,0.150423794,RAS_EGC_12_1617_1,0.06461659,High-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+GH42|,-0.447816515,0.223908258,RAS_EGC_02_1617_1,-1.109412314,High-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+GH42|,-0.447816515,0.223908258,RAS_EGC_03_1617_2,-0.391572521,High-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+GH42|,-0.447816515,0.223908258,RAS_EGC_05_1617_2,0.185314853,Low-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+GH42|,-0.447816515,0.223908258,RAS_EGC_07_1617_1,0.622243231,Low-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+GH42|,-0.447816515,0.223908258,RAS_EGC_08_1617_1,0.225588752,Low-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+GH42|,-0.447816515,0.223908258,RAS_EGC_09_1617_1,0.037990139,Low-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+GH42|,-0.447816515,0.223908258,RAS_EGC_10_1617_2,0.143350654,Low-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+GH42|,-0.447816515,0.223908258,RAS_EGC_11_1617,0.128961917,Low-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+GH42|,-0.447816515,0.223908258,RAS_EGC_12_1617_1,0.157535289,High-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+GH73|,-0.110049108,0.055024554,RAS_EGC_02_1617_1,-0.462796125,High-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+GH73|,-0.110049108,0.055024554,RAS_EGC_03_1617_2,0.098271393,High-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+GH73|,-0.110049108,0.055024554,RAS_EGC_05_1617_2,-0.04945253,Low-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+GH73|,-0.110049108,0.055024554,RAS_EGC_07_1617_1,0.273475482,Low-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+GH73|,-0.110049108,0.055024554,RAS_EGC_08_1617_1,-0.009886929,Low-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+GH73|,-0.110049108,0.055024554,RAS_EGC_09_1617_1,-0.131178267,Low-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+GH73|,-0.110049108,0.055024554,RAS_EGC_10_1617_2,0.042591008,Low-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+GH73|,-0.110049108,0.055024554,RAS_EGC_11_1617,0.204598559,Low-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+GH73|,-0.110049108,0.055024554,RAS_EGC_12_1617_1,0.034377409,High-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+GH8,-0.565567659,0.282783829,RAS_EGC_02_1617_1,-0.526306647,High-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+GH8,-0.565567659,0.282783829,RAS_EGC_03_1617_2,-0.931771755,High-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+GH8,-0.565567659,0.282783829,RAS_EGC_05_1617_2,0.515147228,Low-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+GH8,-0.565567659,0.282783829,RAS_EGC_07_1617_1,0.124280919,Low-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+GH8,-0.565567659,0.282783829,RAS_EGC_08_1617_1,0.454522606,Low-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+GH8,-0.565567659,0.282783829,RAS_EGC_09_1617_1,-0.238624575,Low-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+GH8,-0.565567659,0.282783829,RAS_EGC_10_1617_2,0.356082533,Low-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+GH8,-0.565567659,0.282783829,RAS_EGC_11_1617,0.485294265,Low-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+GH8,-0.565567659,0.282783829,RAS_EGC_12_1617_1,-0.238624575,High-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+glucose/mannose transport system permease protein,-0.23284776,0.11642388,RAS_EGC_02_1617_1,-0.496705247,High-ice cluster,K17317,Carbohydrates,Substrates,LI_enriched
+glucose/mannose transport system permease protein,-0.23284776,0.11642388,RAS_EGC_03_1617_2,-0.240275718,High-ice cluster,K17317,Carbohydrates,Substrates,LI_enriched
+glucose/mannose transport system permease protein,-0.23284776,0.11642388,RAS_EGC_05_1617_2,0.099592108,Low-ice cluster,K17317,Carbohydrates,Substrates,LI_enriched
+glucose/mannose transport system permease protein,-0.23284776,0.11642388,RAS_EGC_07_1617_1,0.622212308,Low-ice cluster,K17317,Carbohydrates,Substrates,LI_enriched
+glucose/mannose transport system permease protein,-0.23284776,0.11642388,RAS_EGC_08_1617_1,0.038437685,Low-ice cluster,K17317,Carbohydrates,Substrates,LI_enriched
+glucose/mannose transport system permease protein,-0.23284776,0.11642388,RAS_EGC_09_1617_1,0.029387849,Low-ice cluster,K17317,Carbohydrates,Substrates,LI_enriched
+glucose/mannose transport system permease protein,-0.23284776,0.11642388,RAS_EGC_10_1617_2,-0.138493024,Low-ice cluster,K17317,Carbohydrates,Substrates,LI_enriched
+glucose/mannose transport system permease protein,-0.23284776,0.11642388,RAS_EGC_11_1617,0.047406355,Low-ice cluster,K17317,Carbohydrates,Substrates,LI_enriched
+glucose/mannose transport system permease protein,-0.23284776,0.11642388,RAS_EGC_12_1617_1,0.038437685,High-ice cluster,K17317,Carbohydrates,Substrates,LI_enriched
+glucose/mannose transport system permease protein,-0.24767806,0.12383903,RAS_EGC_02_1617_1,-0.446326344,High-ice cluster,K17316,Carbohydrates,Substrates,LI_enriched
+glucose/mannose transport system permease protein,-0.24767806,0.12383903,RAS_EGC_03_1617_2,-0.298406214,High-ice cluster,K17316,Carbohydrates,Substrates,LI_enriched
+glucose/mannose transport system permease protein,-0.24767806,0.12383903,RAS_EGC_05_1617_2,0.090251776,Low-ice cluster,K17316,Carbohydrates,Substrates,LI_enriched
+glucose/mannose transport system permease protein,-0.24767806,0.12383903,RAS_EGC_07_1617_1,0.637687145,Low-ice cluster,K17316,Carbohydrates,Substrates,LI_enriched
+glucose/mannose transport system permease protein,-0.24767806,0.12383903,RAS_EGC_08_1617_1,0.0557656,Low-ice cluster,K17316,Carbohydrates,Substrates,LI_enriched
+glucose/mannose transport system permease protein,-0.24767806,0.12383903,RAS_EGC_09_1617_1,0.107058894,Low-ice cluster,K17316,Carbohydrates,Substrates,LI_enriched
+glucose/mannose transport system permease protein,-0.24767806,0.12383903,RAS_EGC_10_1617_2,-0.158644271,Low-ice cluster,K17316,Carbohydrates,Substrates,LI_enriched
+glucose/mannose transport system permease protein,-0.24767806,0.12383903,RAS_EGC_11_1617,0.010915034,Low-ice cluster,K17316,Carbohydrates,Substrates,LI_enriched
+glucose/mannose transport system permease protein,-0.24767806,0.12383903,RAS_EGC_12_1617_1,0.001698379,High-ice cluster,K17316,Carbohydrates,Substrates,LI_enriched
+glucose-6-phosphate isomerase [EC:5.3.1.9],-0.028583925,0.014291962,RAS_EGC_02_1617_1,-0.117944645,High-ice cluster,K01810,Carbohydrates,Substrates,LI_enriched
+glucose-6-phosphate isomerase [EC:5.3.1.9],-0.028583925,0.014291962,RAS_EGC_03_1617_2,0.061880032,High-ice cluster,K01810,Carbohydrates,Substrates,LI_enriched
+glucose-6-phosphate isomerase [EC:5.3.1.9],-0.028583925,0.014291962,RAS_EGC_05_1617_2,0.132260829,Low-ice cluster,K01810,Carbohydrates,Substrates,LI_enriched
+glucose-6-phosphate isomerase [EC:5.3.1.9],-0.028583925,0.014291962,RAS_EGC_07_1617_1,0.034423186,Low-ice cluster,K01810,Carbohydrates,Substrates,LI_enriched
+glucose-6-phosphate isomerase [EC:5.3.1.9],-0.028583925,0.014291962,RAS_EGC_08_1617_1,-0.009347478,Low-ice cluster,K01810,Carbohydrates,Substrates,LI_enriched
+glucose-6-phosphate isomerase [EC:5.3.1.9],-0.028583925,0.014291962,RAS_EGC_09_1617_1,0.086572644,Low-ice cluster,K01810,Carbohydrates,Substrates,LI_enriched
+glucose-6-phosphate isomerase [EC:5.3.1.9],-0.028583925,0.014291962,RAS_EGC_10_1617_2,-0.201109428,Low-ice cluster,K01810,Carbohydrates,Substrates,LI_enriched
+glucose-6-phosphate isomerase [EC:5.3.1.9],-0.028583925,0.014291962,RAS_EGC_11_1617,0.042952022,Low-ice cluster,K01810,Carbohydrates,Substrates,LI_enriched
+glucose-6-phosphate isomerase [EC:5.3.1.9],-0.028583925,0.014291962,RAS_EGC_12_1617_1,-0.029687162,High-ice cluster,K01810,Carbohydrates,Substrates,LI_enriched
+L-rhamnonate dehydratase [EC:4.2.1.90],-0.247743393,0.123871697,RAS_EGC_02_1617_1,-0.327836671,High-ice cluster,K12661,Carbohydrates,Substrates,LI_enriched
+L-rhamnonate dehydratase [EC:4.2.1.90],-0.247743393,0.123871697,RAS_EGC_03_1617_2,-0.192917353,High-ice cluster,K12661,Carbohydrates,Substrates,LI_enriched
+L-rhamnonate dehydratase [EC:4.2.1.90],-0.247743393,0.123871697,RAS_EGC_05_1617_2,-0.327836671,Low-ice cluster,K12661,Carbohydrates,Substrates,LI_enriched
+L-rhamnonate dehydratase [EC:4.2.1.90],-0.247743393,0.123871697,RAS_EGC_07_1617_1,0.592888658,Low-ice cluster,K12661,Carbohydrates,Substrates,LI_enriched
+L-rhamnonate dehydratase [EC:4.2.1.90],-0.247743393,0.123871697,RAS_EGC_08_1617_1,0.259949994,Low-ice cluster,K12661,Carbohydrates,Substrates,LI_enriched
+L-rhamnonate dehydratase [EC:4.2.1.90],-0.247743393,0.123871697,RAS_EGC_09_1617_1,0.024383923,Low-ice cluster,K12661,Carbohydrates,Substrates,LI_enriched
+L-rhamnonate dehydratase [EC:4.2.1.90],-0.247743393,0.123871697,RAS_EGC_10_1617_2,-0.015461986,Low-ice cluster,K12661,Carbohydrates,Substrates,LI_enriched
+L-rhamnonate dehydratase [EC:4.2.1.90],-0.247743393,0.123871697,RAS_EGC_11_1617,0.209306261,Low-ice cluster,K12661,Carbohydrates,Substrates,LI_enriched
+L-rhamnonate dehydratase [EC:4.2.1.90],-0.247743393,0.123871697,RAS_EGC_12_1617_1,-0.222476155,High-ice cluster,K12661,Carbohydrates,Substrates,LI_enriched
+L-xylulose reductase [EC:1.1.1.10],-0.190697421,0.09534871,RAS_EGC_02_1617_1,-0.343530689,High-ice cluster,K03331,Carbohydrates,Substrates,LI_enriched
+L-xylulose reductase [EC:1.1.1.10],-0.190697421,0.09534871,RAS_EGC_03_1617_2,-0.142859994,High-ice cluster,K03331,Carbohydrates,Substrates,LI_enriched
+L-xylulose reductase [EC:1.1.1.10],-0.190697421,0.09534871,RAS_EGC_05_1617_2,-0.268023137,Low-ice cluster,K03331,Carbohydrates,Substrates,LI_enriched
+L-xylulose reductase [EC:1.1.1.10],-0.190697421,0.09534871,RAS_EGC_07_1617_1,0.369034577,Low-ice cluster,K03331,Carbohydrates,Substrates,LI_enriched
+L-xylulose reductase [EC:1.1.1.10],-0.190697421,0.09534871,RAS_EGC_08_1617_1,0.147492307,Low-ice cluster,K03331,Carbohydrates,Substrates,LI_enriched
+L-xylulose reductase [EC:1.1.1.10],-0.190697421,0.09534871,RAS_EGC_09_1617_1,-0.132221596,Low-ice cluster,K03331,Carbohydrates,Substrates,LI_enriched
+L-xylulose reductase [EC:1.1.1.10],-0.190697421,0.09534871,RAS_EGC_10_1617_2,0.250048896,Low-ice cluster,K03331,Carbohydrates,Substrates,LI_enriched
+L-xylulose reductase [EC:1.1.1.10],-0.190697421,0.09534871,RAS_EGC_11_1617,0.205761215,Low-ice cluster,K03331,Carbohydrates,Substrates,LI_enriched
+L-xylulose reductase [EC:1.1.1.10],-0.190697421,0.09534871,RAS_EGC_12_1617_1,-0.08570158,High-ice cluster,K03331,Carbohydrates,Substrates,LI_enriched
+L-xylulose/3-keto-L-gulonate kinase,-0.740688127,0.370344063,RAS_EGC_02_1617_1,-0.82297482,High-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+L-xylulose/3-keto-L-gulonate kinase,-0.740688127,0.370344063,RAS_EGC_03_1617_2,-1.046118371,High-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+L-xylulose/3-keto-L-gulonate kinase,-0.740688127,0.370344063,RAS_EGC_05_1617_2,0.563319542,Low-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+L-xylulose/3-keto-L-gulonate kinase,-0.740688127,0.370344063,RAS_EGC_07_1617_1,0.400800612,Low-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+L-xylulose/3-keto-L-gulonate kinase,-0.740688127,0.370344063,RAS_EGC_08_1617_1,0.658629721,Low-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+L-xylulose/3-keto-L-gulonate kinase,-0.740688127,0.370344063,RAS_EGC_09_1617_1,0.34017599,Low-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+L-xylulose/3-keto-L-gulonate kinase,-0.740688127,0.370344063,RAS_EGC_10_1617_2,0.052493918,Low-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+L-xylulose/3-keto-L-gulonate kinase,-0.740688127,0.370344063,RAS_EGC_11_1617,0.206644598,Low-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+L-xylulose/3-keto-L-gulonate kinase,-0.740688127,0.370344063,RAS_EGC_12_1617_1,-0.35297119,High-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+Maltose/maltodextrin import ATP-binding protein MalK,-0.279795502,0.139897751,RAS_EGC_02_1617_1,-0.579976293,High-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+Maltose/maltodextrin import ATP-binding protein MalK,-0.279795502,0.139897751,RAS_EGC_03_1617_2,0.048632366,High-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+Maltose/maltodextrin import ATP-binding protein MalK,-0.279795502,0.139897751,RAS_EGC_05_1617_2,0.014730814,Low-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+Maltose/maltodextrin import ATP-binding protein MalK,-0.279795502,0.139897751,RAS_EGC_07_1617_1,0.31099663,Low-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+Maltose/maltodextrin import ATP-binding protein MalK,-0.279795502,0.139897751,RAS_EGC_08_1617_1,0.361007051,Low-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+Maltose/maltodextrin import ATP-binding protein MalK,-0.279795502,0.139897751,RAS_EGC_09_1617_1,0.361007051,Low-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+Maltose/maltodextrin import ATP-binding protein MalK,-0.279795502,0.139897751,RAS_EGC_10_1617_2,-0.113886564,Low-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+Maltose/maltodextrin import ATP-binding protein MalK,-0.279795502,0.139897751,RAS_EGC_11_1617,-0.094468478,Low-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+Maltose/maltodextrin import ATP-binding protein MalK,-0.279795502,0.139897751,RAS_EGC_12_1617_1,-0.308042578,High-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+multiple sugar transport system permease protein,-0.264504749,0.132252374,RAS_EGC_02_1617_1,-0.369757523,High-ice cluster,K02026,Carbohydrates,Substrates,LI_enriched
+multiple sugar transport system permease protein,-0.264504749,0.132252374,RAS_EGC_03_1617_2,0.013659448,High-ice cluster,K02026,Carbohydrates,Substrates,LI_enriched
+multiple sugar transport system permease protein,-0.264504749,0.132252374,RAS_EGC_05_1617_2,-0.072773058,Low-ice cluster,K02026,Carbohydrates,Substrates,LI_enriched
+multiple sugar transport system permease protein,-0.264504749,0.132252374,RAS_EGC_07_1617_1,0.337310996,Low-ice cluster,K02026,Carbohydrates,Substrates,LI_enriched
+multiple sugar transport system permease protein,-0.264504749,0.132252374,RAS_EGC_08_1617_1,0.069401431,Low-ice cluster,K02026,Carbohydrates,Substrates,LI_enriched
+multiple sugar transport system permease protein,-0.264504749,0.132252374,RAS_EGC_09_1617_1,-0.246795812,Low-ice cluster,K02026,Carbohydrates,Substrates,LI_enriched
+multiple sugar transport system permease protein,-0.264504749,0.132252374,RAS_EGC_10_1617_2,0.369059694,Low-ice cluster,K02026,Carbohydrates,Substrates,LI_enriched
+multiple sugar transport system permease protein,-0.264504749,0.132252374,RAS_EGC_11_1617,0.337310996,Low-ice cluster,K02026,Carbohydrates,Substrates,LI_enriched
+multiple sugar transport system permease protein,-0.264504749,0.132252374,RAS_EGC_12_1617_1,-0.437416172,High-ice cluster,K02026,Carbohydrates,Substrates,LI_enriched
+multiple sugar transport system permease protein,-0.317604949,0.158802475,RAS_EGC_02_1617_1,-0.531902925,High-ice cluster,K02025,Carbohydrates,Substrates,LI_enriched
+multiple sugar transport system permease protein,-0.317604949,0.158802475,RAS_EGC_03_1617_2,-0.065939706,High-ice cluster,K02025,Carbohydrates,Substrates,LI_enriched
+multiple sugar transport system permease protein,-0.317604949,0.158802475,RAS_EGC_05_1617_2,-0.150378025,Low-ice cluster,K02025,Carbohydrates,Substrates,LI_enriched
+multiple sugar transport system permease protein,-0.317604949,0.158802475,RAS_EGC_07_1617_1,0.440829118,Low-ice cluster,K02025,Carbohydrates,Substrates,LI_enriched
+multiple sugar transport system permease protein,-0.317604949,0.158802475,RAS_EGC_08_1617_1,0.321825825,Low-ice cluster,K02025,Carbohydrates,Substrates,LI_enriched
+multiple sugar transport system permease protein,-0.317604949,0.158802475,RAS_EGC_09_1617_1,-0.065939706,Low-ice cluster,K02025,Carbohydrates,Substrates,LI_enriched
+multiple sugar transport system permease protein,-0.317604949,0.158802475,RAS_EGC_10_1617_2,0.167675146,Low-ice cluster,K02025,Carbohydrates,Substrates,LI_enriched
+multiple sugar transport system permease protein,-0.317604949,0.158802475,RAS_EGC_11_1617,0.23880249,Low-ice cluster,K02025,Carbohydrates,Substrates,LI_enriched
+multiple sugar transport system permease protein,-0.317604949,0.158802475,RAS_EGC_12_1617_1,-0.354972217,High-ice cluster,K02025,Carbohydrates,Substrates,LI_enriched
+multiple sugar transport system substrate-binding protein,-0.31992251,0.159961255,RAS_EGC_02_1617_1,-0.459844396,High-ice cluster,K02027,Carbohydrates,Substrates,LI_enriched
+multiple sugar transport system substrate-binding protein,-0.31992251,0.159961255,RAS_EGC_03_1617_2,0.017079676,High-ice cluster,K02027,Carbohydrates,Substrates,LI_enriched
+multiple sugar transport system substrate-binding protein,-0.31992251,0.159961255,RAS_EGC_05_1617_2,0.274124779,Low-ice cluster,K02027,Carbohydrates,Substrates,LI_enriched
+multiple sugar transport system substrate-binding protein,-0.31992251,0.159961255,RAS_EGC_07_1617_1,0.489236158,Low-ice cluster,K02027,Carbohydrates,Substrates,LI_enriched
+multiple sugar transport system substrate-binding protein,-0.31992251,0.159961255,RAS_EGC_08_1617_1,-0.092119616,Low-ice cluster,K02027,Carbohydrates,Substrates,LI_enriched
+multiple sugar transport system substrate-binding protein,-0.31992251,0.159961255,RAS_EGC_09_1617_1,-0.092119616,Low-ice cluster,K02027,Carbohydrates,Substrates,LI_enriched
+multiple sugar transport system substrate-binding protein,-0.31992251,0.159961255,RAS_EGC_10_1617_2,0.161329285,Low-ice cluster,K02027,Carbohydrates,Substrates,LI_enriched
+multiple sugar transport system substrate-binding protein,-0.31992251,0.159961255,RAS_EGC_11_1617,0.219316542,Low-ice cluster,K02027,Carbohydrates,Substrates,LI_enriched
+multiple sugar transport system substrate-binding protein,-0.31992251,0.159961255,RAS_EGC_12_1617_1,-0.51700281,High-ice cluster,K02027,Carbohydrates,Substrates,LI_enriched
+phosphomannomutase / phosphoglucomutase [EC:5.4.2.8 5.4.2.2],-0.140923449,0.070461724,RAS_EGC_02_1617_1,-0.061210206,High-ice cluster,K15778,Carbohydrates,Substrates,LI_enriched
+phosphomannomutase / phosphoglucomutase [EC:5.4.2.8 5.4.2.2],-0.140923449,0.070461724,RAS_EGC_03_1617_2,-0.20781368,High-ice cluster,K15778,Carbohydrates,Substrates,LI_enriched
+phosphomannomutase / phosphoglucomutase [EC:5.4.2.8 5.4.2.2],-0.140923449,0.070461724,RAS_EGC_05_1617_2,-0.016758444,Low-ice cluster,K15778,Carbohydrates,Substrates,LI_enriched
+phosphomannomutase / phosphoglucomutase [EC:5.4.2.8 5.4.2.2],-0.140923449,0.070461724,RAS_EGC_07_1617_1,0.053200145,Low-ice cluster,K15778,Carbohydrates,Substrates,LI_enriched
+phosphomannomutase / phosphoglucomutase [EC:5.4.2.8 5.4.2.2],-0.140923449,0.070461724,RAS_EGC_08_1617_1,0.097260135,Low-ice cluster,K15778,Carbohydrates,Substrates,LI_enriched
+phosphomannomutase / phosphoglucomutase [EC:5.4.2.8 5.4.2.2],-0.140923449,0.070461724,RAS_EGC_09_1617_1,0.122793437,Low-ice cluster,K15778,Carbohydrates,Substrates,LI_enriched
+phosphomannomutase / phosphoglucomutase [EC:5.4.2.8 5.4.2.2],-0.140923449,0.070461724,RAS_EGC_10_1617_2,0.088602072,Low-ice cluster,K15778,Carbohydrates,Substrates,LI_enriched
+phosphomannomutase / phosphoglucomutase [EC:5.4.2.8 5.4.2.2],-0.140923449,0.070461724,RAS_EGC_11_1617,0.077673001,Low-ice cluster,K15778,Carbohydrates,Substrates,LI_enriched
+phosphomannomutase / phosphoglucomutase [EC:5.4.2.8 5.4.2.2],-0.140923449,0.070461724,RAS_EGC_12_1617_1,-0.153746459,High-ice cluster,K15778,Carbohydrates,Substrates,LI_enriched
+rhamnose transport system substrate-binding protein,-0.69076425,0.345382125,RAS_EGC_02_1617_1,-1.175242138,High-ice cluster,K10559,Carbohydrates,Substrates,LI_enriched
+rhamnose transport system substrate-binding protein,-0.69076425,0.345382125,RAS_EGC_03_1617_2,-0.327944277,High-ice cluster,K10559,Carbohydrates,Substrates,LI_enriched
+rhamnose transport system substrate-binding protein,-0.69076425,0.345382125,RAS_EGC_05_1617_2,-0.569106334,Low-ice cluster,K10559,Carbohydrates,Substrates,LI_enriched
+rhamnose transport system substrate-binding protein,-0.69076425,0.345382125,RAS_EGC_07_1617_1,0.721877847,Low-ice cluster,K10559,Carbohydrates,Substrates,LI_enriched
+rhamnose transport system substrate-binding protein,-0.69076425,0.345382125,RAS_EGC_08_1617_1,0.924818691,Low-ice cluster,K10559,Carbohydrates,Substrates,LI_enriched
+rhamnose transport system substrate-binding protein,-0.69076425,0.345382125,RAS_EGC_09_1617_1,0.077520831,Low-ice cluster,K10559,Carbohydrates,Substrates,LI_enriched
+rhamnose transport system substrate-binding protein,-0.69076425,0.345382125,RAS_EGC_10_1617_2,0.588346455,Low-ice cluster,K10559,Carbohydrates,Substrates,LI_enriched
+rhamnose transport system substrate-binding protein,-0.69076425,0.345382125,RAS_EGC_11_1617,0.328835259,Low-ice cluster,K10559,Carbohydrates,Substrates,LI_enriched
+rhamnose transport system substrate-binding protein,-0.69076425,0.345382125,RAS_EGC_12_1617_1,-0.569106334,High-ice cluster,K10559,Carbohydrates,Substrates,LI_enriched
+Trehalose transport system permease protein SugB,-0.366448173,0.183224086,RAS_EGC_02_1617_1,-0.499937792,High-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+Trehalose transport system permease protein SugB,-0.366448173,0.183224086,RAS_EGC_03_1617_2,-0.344067421,High-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+Trehalose transport system permease protein SugB,-0.366448173,0.183224086,RAS_EGC_05_1617_2,-0.209248198,Low-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+Trehalose transport system permease protein SugB,-0.366448173,0.183224086,RAS_EGC_07_1617_1,0.47029333,Low-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+Trehalose transport system permease protein SugB,-0.366448173,0.183224086,RAS_EGC_08_1617_1,0.354221159,Low-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+Trehalose transport system permease protein SugB,-0.366448173,0.183224086,RAS_EGC_09_1617_1,0.143816633,Low-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+Trehalose transport system permease protein SugB,-0.366448173,0.183224086,RAS_EGC_10_1617_2,0.071654187,Low-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+Trehalose transport system permease protein SugB,-0.366448173,0.183224086,RAS_EGC_11_1617,0.268607406,Low-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+Trehalose transport system permease protein SugB,-0.366448173,0.183224086,RAS_EGC_12_1617_1,-0.255339305,High-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+Xylulose kinase,-0.154865165,0.077432583,RAS_EGC_02_1617_1,-0.533325238,High-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+Xylulose kinase,-0.154865165,0.077432583,RAS_EGC_03_1617_2,0.050715102,High-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+Xylulose kinase,-0.154865165,0.077432583,RAS_EGC_05_1617_2,-0.012930163,Low-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+Xylulose kinase,-0.154865165,0.077432583,RAS_EGC_07_1617_1,-0.059722325,Low-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+Xylulose kinase,-0.154865165,0.077432583,RAS_EGC_08_1617_1,0.004067413,Low-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+Xylulose kinase,-0.154865165,0.077432583,RAS_EGC_09_1617_1,0.437235124,Low-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+Xylulose kinase,-0.154865165,0.077432583,RAS_EGC_10_1617_2,0.058725826,Low-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+Xylulose kinase,-0.154865165,0.077432583,RAS_EGC_11_1617,0.03721962,Low-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+Xylulose kinase,-0.154865165,0.077432583,RAS_EGC_12_1617_1,0.018014641,High-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+inositol transport system permease protein,-1.064579337,0.532289669,RAS_EGC_02_1617_1,-1.892881554,High-ice cluster,K17214,Carbohydrates,Substrates,LI_enriched
+inositol transport system permease protein,-1.064579337,0.532289669,RAS_EGC_03_1617_2,-0.506587193,High-ice cluster,K17214,Carbohydrates,Substrates,LI_enriched
+inositol transport system permease protein,-1.064579337,0.532289669,RAS_EGC_05_1617_2,0.746175776,Low-ice cluster,K17214,Carbohydrates,Substrates,LI_enriched
+inositol transport system permease protein,-1.064579337,0.532289669,RAS_EGC_07_1617_1,1.242612662,Low-ice cluster,K17214,Carbohydrates,Substrates,LI_enriched
+inositol transport system permease protein,-1.064579337,0.532289669,RAS_EGC_08_1617_1,0.815168647,Low-ice cluster,K17214,Carbohydrates,Substrates,LI_enriched
+inositol transport system permease protein,-1.064579337,0.532289669,RAS_EGC_09_1617_1,-0.506587193,Low-ice cluster,K17214,Carbohydrates,Substrates,LI_enriched
+inositol transport system permease protein,-1.064579337,0.532289669,RAS_EGC_10_1617_2,0.592025096,Low-ice cluster,K17214,Carbohydrates,Substrates,LI_enriched
+inositol transport system permease protein,-1.064579337,0.532289669,RAS_EGC_11_1617,0.304343023,Low-ice cluster,K17214,Carbohydrates,Substrates,LI_enriched
+inositol transport system permease protein,-1.064579337,0.532289669,RAS_EGC_12_1617_1,-0.794269265,High-ice cluster,K17214,Carbohydrates,Substrates,LI_enriched
+inosose dehydratase [EC:4.2.1.44],-0.339252168,0.169626084,RAS_EGC_02_1617_1,-0.648157064,High-ice cluster,K03335,Carbohydrates,Substrates,LI_enriched
+inosose dehydratase [EC:4.2.1.44],-0.339252168,0.169626084,RAS_EGC_03_1617_2,-0.209539748,High-ice cluster,K03335,Carbohydrates,Substrates,LI_enriched
+inosose dehydratase [EC:4.2.1.44],-0.339252168,0.169626084,RAS_EGC_05_1617_2,-0.13958116,Low-ice cluster,K03335,Carbohydrates,Substrates,LI_enriched
+inosose dehydratase [EC:4.2.1.44],-0.339252168,0.169626084,RAS_EGC_07_1617_1,0.479977664,Low-ice cluster,K03335,Carbohydrates,Substrates,LI_enriched
+inosose dehydratase [EC:4.2.1.44],-0.339252168,0.169626084,RAS_EGC_08_1617_1,0.233844595,Low-ice cluster,K03335,Carbohydrates,Substrates,LI_enriched
+inosose dehydratase [EC:4.2.1.44],-0.339252168,0.169626084,RAS_EGC_09_1617_1,0.161523933,Low-ice cluster,K03335,Carbohydrates,Substrates,LI_enriched
+inosose dehydratase [EC:4.2.1.44],-0.339252168,0.169626084,RAS_EGC_10_1617_2,0.115479995,Low-ice cluster,K03335,Carbohydrates,Substrates,LI_enriched
+inosose dehydratase [EC:4.2.1.44],-0.339252168,0.169626084,RAS_EGC_11_1617,0.166511475,Low-ice cluster,K03335,Carbohydrates,Substrates,LI_enriched
+inosose dehydratase [EC:4.2.1.44],-0.339252168,0.169626084,RAS_EGC_12_1617_1,-0.160059691,High-ice cluster,K03335,Carbohydrates,Substrates,LI_enriched
+D-glucosaminate-6-phosphate ammonia lyase,0.789918215,-0.394959108,RAS_EGC_02_1617_1,0.795400625,High-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+D-glucosaminate-6-phosphate ammonia lyase,0.789918215,-0.394959108,RAS_EGC_03_1617_2,0.971857062,High-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+D-glucosaminate-6-phosphate ammonia lyase,0.789918215,-0.394959108,RAS_EGC_05_1617_2,0.186336562,Low-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+D-glucosaminate-6-phosphate ammonia lyase,0.789918215,-0.394959108,RAS_EGC_07_1617_1,-0.682701285,Low-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+D-glucosaminate-6-phosphate ammonia lyase,0.789918215,-0.394959108,RAS_EGC_08_1617_1,-0.539600442,Low-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+D-glucosaminate-6-phosphate ammonia lyase,0.789918215,-0.394959108,RAS_EGC_09_1617_1,-0.84975537,Low-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+D-glucosaminate-6-phosphate ammonia lyase,0.789918215,-0.394959108,RAS_EGC_10_1617_2,-0.414437299,Low-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+D-glucosaminate-6-phosphate ammonia lyase,0.789918215,-0.394959108,RAS_EGC_11_1617,-0.069596812,Low-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+D-glucosaminate-6-phosphate ammonia lyase,0.789918215,-0.394959108,RAS_EGC_12_1617_1,0.602496959,High-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+mannonate dehydratase [EC:4.2.1.8],0.529231411,-0.264615706,RAS_EGC_02_1617_1,0.433997356,High-ice cluster,K01686,Carbohydrates,Substrates,LI_enriched
+mannonate dehydratase [EC:4.2.1.8],0.529231411,-0.264615706,RAS_EGC_03_1617_2,0.590765838,High-ice cluster,K01686,Carbohydrates,Substrates,LI_enriched
+mannonate dehydratase [EC:4.2.1.8],0.529231411,-0.264615706,RAS_EGC_05_1617_2,-0.250017341,Low-ice cluster,K01686,Carbohydrates,Substrates,LI_enriched
+mannonate dehydratase [EC:4.2.1.8],0.529231411,-0.264615706,RAS_EGC_07_1617_1,-0.417898214,Low-ice cluster,K01686,Carbohydrates,Substrates,LI_enriched
+mannonate dehydratase [EC:4.2.1.8],0.529231411,-0.264615706,RAS_EGC_08_1617_1,-0.296537357,Low-ice cluster,K01686,Carbohydrates,Substrates,LI_enriched
+mannonate dehydratase [EC:4.2.1.8],0.529231411,-0.264615706,RAS_EGC_09_1617_1,-0.581049854,Low-ice cluster,K01686,Carbohydrates,Substrates,LI_enriched
+mannonate dehydratase [EC:4.2.1.8],0.529231411,-0.264615706,RAS_EGC_10_1617_2,0.033108915,Low-ice cluster,K01686,Carbohydrates,Substrates,LI_enriched
+mannonate dehydratase [EC:4.2.1.8],0.529231411,-0.264615706,RAS_EGC_11_1617,-0.075300384,Low-ice cluster,K01686,Carbohydrates,Substrates,LI_enriched
+mannonate dehydratase [EC:4.2.1.8],0.529231411,-0.264615706,RAS_EGC_12_1617_1,0.562931039,High-ice cluster,K01686,Carbohydrates,Substrates,LI_enriched
+Uronate dehydrogenase,0.942854797,-0.471427398,RAS_EGC_02_1617_1,0.773179734,High-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+Uronate dehydrogenase,0.942854797,-0.471427398,RAS_EGC_03_1617_2,1.193912314,High-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+Uronate dehydrogenase,0.942854797,-0.471427398,RAS_EGC_05_1617_2,0.064528367,Low-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+Uronate dehydrogenase,0.942854797,-0.471427398,RAS_EGC_07_1617_1,-1.321765994,Low-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+Uronate dehydrogenase,0.942854797,-0.471427398,RAS_EGC_08_1617_1,-1.003312263,Low-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+Uronate dehydrogenase,0.942854797,-0.471427398,RAS_EGC_09_1617_1,-0.567994192,Low-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+Uronate dehydrogenase,0.942854797,-0.471427398,RAS_EGC_10_1617_2,-1.02E-05,Low-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+Uronate dehydrogenase,0.942854797,-0.471427398,RAS_EGC_11_1617,-1.02E-05,Low-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+Uronate dehydrogenase,0.942854797,-0.471427398,RAS_EGC_12_1617_1,0.861472341,High-ice cluster,NA,Carbohydrates,Substrates,LI_enriched
+glutamate---methylamine ligase [EC:6.3.4.12],-0.152184174,0.076092087,RAS_EGC_02_1617_1,-0.316151016,High-ice cluster,K01949,DON_compounds,Substrates,LI_enriched
+glutamate---methylamine ligase [EC:6.3.4.12],-0.152184174,0.076092087,RAS_EGC_03_1617_2,-0.183391526,High-ice cluster,K01949,DON_compounds,Substrates,LI_enriched
+glutamate---methylamine ligase [EC:6.3.4.12],-0.152184174,0.076092087,RAS_EGC_05_1617_2,-0.316151016,Low-ice cluster,K01949,DON_compounds,Substrates,LI_enriched
+glutamate---methylamine ligase [EC:6.3.4.12],-0.152184174,0.076092087,RAS_EGC_07_1617_1,0.279832416,Low-ice cluster,K01949,DON_compounds,Substrates,LI_enriched
+glutamate---methylamine ligase [EC:6.3.4.12],-0.152184174,0.076092087,RAS_EGC_08_1617_1,0.081049582,Low-ice cluster,K01949,DON_compounds,Substrates,LI_enriched
+glutamate---methylamine ligase [EC:6.3.4.12],-0.152184174,0.076092087,RAS_EGC_09_1617_1,0.060084454,Low-ice cluster,K01949,DON_compounds,Substrates,LI_enriched
+glutamate---methylamine ligase [EC:6.3.4.12],-0.152184174,0.076092087,RAS_EGC_10_1617_2,0.190964028,Low-ice cluster,K01949,DON_compounds,Substrates,LI_enriched
+glutamate---methylamine ligase [EC:6.3.4.12],-0.152184174,0.076092087,RAS_EGC_11_1617,0.160773056,Low-ice cluster,K01949,DON_compounds,Substrates,LI_enriched
+glutamate---methylamine ligase [EC:6.3.4.12],-0.152184174,0.076092087,RAS_EGC_12_1617_1,0.042990021,High-ice cluster,K01949,DON_compounds,Substrates,LI_enriched
+methylamine---glutamate N-methyltransferase subunit A [EC:2.1.1.21],-0.135796507,0.067898253,RAS_EGC_02_1617_1,-0.327393608,High-ice cluster,K22081,DON_compounds,Substrates,LI_enriched
+methylamine---glutamate N-methyltransferase subunit A [EC:2.1.1.21],-0.135796507,0.067898253,RAS_EGC_03_1617_2,-0.003916733,High-ice cluster,K22081,DON_compounds,Substrates,LI_enriched
+methylamine---glutamate N-methyltransferase subunit A [EC:2.1.1.21],-0.135796507,0.067898253,RAS_EGC_05_1617_2,-0.287388273,Low-ice cluster,K22081,DON_compounds,Substrates,LI_enriched
+methylamine---glutamate N-methyltransferase subunit A [EC:2.1.1.21],-0.135796507,0.067898253,RAS_EGC_07_1617_1,0.269422464,Low-ice cluster,K22081,DON_compounds,Substrates,LI_enriched
+methylamine---glutamate N-methyltransferase subunit A [EC:2.1.1.21],-0.135796507,0.067898253,RAS_EGC_08_1617_1,0.130141947,Low-ice cluster,K22081,DON_compounds,Substrates,LI_enriched
+methylamine---glutamate N-methyltransferase subunit A [EC:2.1.1.21],-0.135796507,0.067898253,RAS_EGC_09_1617_1,0.065357393,Low-ice cluster,K22081,DON_compounds,Substrates,LI_enriched
+methylamine---glutamate N-methyltransferase subunit A [EC:2.1.1.21],-0.135796507,0.067898253,RAS_EGC_10_1617_2,0.141151232,Low-ice cluster,K22081,DON_compounds,Substrates,LI_enriched
+methylamine---glutamate N-methyltransferase subunit A [EC:2.1.1.21],-0.135796507,0.067898253,RAS_EGC_11_1617,0.088704757,Low-ice cluster,K22081,DON_compounds,Substrates,LI_enriched
+methylamine---glutamate N-methyltransferase subunit A [EC:2.1.1.21],-0.135796507,0.067898253,RAS_EGC_12_1617_1,-0.076079179,High-ice cluster,K22081,DON_compounds,Substrates,LI_enriched
+methylamine---glutamate N-methyltransferase subunit B [EC:2.1.1.21],-0.147921226,0.073960613,RAS_EGC_02_1617_1,-0.33222819,High-ice cluster,K22082,DON_compounds,Substrates,LI_enriched
+methylamine---glutamate N-methyltransferase subunit B [EC:2.1.1.21],-0.147921226,0.073960613,RAS_EGC_03_1617_2,-0.043162035,High-ice cluster,K22082,DON_compounds,Substrates,LI_enriched
+methylamine---glutamate N-methyltransferase subunit B [EC:2.1.1.21],-0.147921226,0.073960613,RAS_EGC_05_1617_2,-0.280934896,Low-ice cluster,K22082,DON_compounds,Substrates,LI_enriched
+methylamine---glutamate N-methyltransferase subunit B [EC:2.1.1.21],-0.147921226,0.073960613,RAS_EGC_07_1617_1,0.255866214,Low-ice cluster,K22082,DON_compounds,Substrates,LI_enriched
+methylamine---glutamate N-methyltransferase subunit B [EC:2.1.1.21],-0.147921226,0.073960613,RAS_EGC_08_1617_1,0.159016388,Low-ice cluster,K22082,DON_compounds,Substrates,LI_enriched
+methylamine---glutamate N-methyltransferase subunit B [EC:2.1.1.21],-0.147921226,0.073960613,RAS_EGC_09_1617_1,0.049882283,Low-ice cluster,K22082,DON_compounds,Substrates,LI_enriched
+methylamine---glutamate N-methyltransferase subunit B [EC:2.1.1.21],-0.147921226,0.073960613,RAS_EGC_10_1617_2,0.185773837,Low-ice cluster,K22082,DON_compounds,Substrates,LI_enriched
+methylamine---glutamate N-methyltransferase subunit B [EC:2.1.1.21],-0.147921226,0.073960613,RAS_EGC_11_1617,0.074159853,Low-ice cluster,K22082,DON_compounds,Substrates,LI_enriched
+methylamine---glutamate N-methyltransferase subunit B [EC:2.1.1.21],-0.147921226,0.073960613,RAS_EGC_12_1617_1,-0.068373454,High-ice cluster,K22082,DON_compounds,Substrates,LI_enriched
+methylglutamate dehydrogenase subunit A [EC:1.5.99.5],-0.27694751,0.138473755,RAS_EGC_02_1617_1,-0.139065299,High-ice cluster,K22084,DON_compounds,Substrates,LI_enriched
+methylglutamate dehydrogenase subunit A [EC:1.5.99.5],-0.27694751,0.138473755,RAS_EGC_03_1617_2,-0.282166143,High-ice cluster,K22084,DON_compounds,Substrates,LI_enriched
+methylglutamate dehydrogenase subunit A [EC:1.5.99.5],-0.27694751,0.138473755,RAS_EGC_05_1617_2,-0.047127804,Low-ice cluster,K22084,DON_compounds,Substrates,LI_enriched
+methylglutamate dehydrogenase subunit A [EC:1.5.99.5],-0.27694751,0.138473755,RAS_EGC_07_1617_1,0.293198002,Low-ice cluster,K22084,DON_compounds,Substrates,LI_enriched
+methylglutamate dehydrogenase subunit A [EC:1.5.99.5],-0.27694751,0.138473755,RAS_EGC_08_1617_1,0.126143918,Low-ice cluster,K22084,DON_compounds,Substrates,LI_enriched
+methylglutamate dehydrogenase subunit A [EC:1.5.99.5],-0.27694751,0.138473755,RAS_EGC_09_1617_1,-0.033704783,Low-ice cluster,K22084,DON_compounds,Substrates,LI_enriched
+methylglutamate dehydrogenase subunit A [EC:1.5.99.5],-0.27694751,0.138473755,RAS_EGC_10_1617_2,0.143045728,Low-ice cluster,K22084,DON_compounds,Substrates,LI_enriched
+methylglutamate dehydrogenase subunit A [EC:1.5.99.5],-0.27694751,0.138473755,RAS_EGC_11_1617,0.349287469,Low-ice cluster,K22084,DON_compounds,Substrates,LI_enriched
+methylglutamate dehydrogenase subunit A [EC:1.5.99.5],-0.27694751,0.138473755,RAS_EGC_12_1617_1,-0.409611089,High-ice cluster,K22084,DON_compounds,Substrates,LI_enriched
+methylglutamate dehydrogenase subunit B [EC:1.5.99.5],-0.370974411,0.185487205,RAS_EGC_02_1617_1,-0.30190667,High-ice cluster,K22085,DON_compounds,Substrates,LI_enriched
+methylglutamate dehydrogenase subunit B [EC:1.5.99.5],-0.370974411,0.185487205,RAS_EGC_03_1617_2,-0.774813059,High-ice cluster,K22085,DON_compounds,Substrates,LI_enriched
+methylglutamate dehydrogenase subunit B [EC:1.5.99.5],-0.370974411,0.185487205,RAS_EGC_05_1617_2,0.117947176,Low-ice cluster,K22085,DON_compounds,Substrates,LI_enriched
+methylglutamate dehydrogenase subunit B [EC:1.5.99.5],-0.370974411,0.185487205,RAS_EGC_07_1617_1,0.276171181,Low-ice cluster,K22085,DON_compounds,Substrates,LI_enriched
+methylglutamate dehydrogenase subunit B [EC:1.5.99.5],-0.370974411,0.185487205,RAS_EGC_08_1617_1,0.284268391,Low-ice cluster,K22085,DON_compounds,Substrates,LI_enriched
+methylglutamate dehydrogenase subunit B [EC:1.5.99.5],-0.370974411,0.185487205,RAS_EGC_09_1617_1,-0.081665878,Low-ice cluster,K22085,DON_compounds,Substrates,LI_enriched
+methylglutamate dehydrogenase subunit B [EC:1.5.99.5],-0.370974411,0.185487205,RAS_EGC_10_1617_2,0.316017089,Low-ice cluster,K22085,DON_compounds,Substrates,LI_enriched
+methylglutamate dehydrogenase subunit B [EC:1.5.99.5],-0.370974411,0.185487205,RAS_EGC_11_1617,0.200185274,Low-ice cluster,K22085,DON_compounds,Substrates,LI_enriched
+methylglutamate dehydrogenase subunit B [EC:1.5.99.5],-0.370974411,0.185487205,RAS_EGC_12_1617_1,-0.036203504,High-ice cluster,K22085,DON_compounds,Substrates,LI_enriched
+methylglutamate dehydrogenase subunit C [EC:1.5.99.5],-0.385020885,0.192510442,RAS_EGC_02_1617_1,-0.127984644,High-ice cluster,K22086,DON_compounds,Substrates,LI_enriched
+methylglutamate dehydrogenase subunit C [EC:1.5.99.5],-0.385020885,0.192510442,RAS_EGC_03_1617_2,-0.415666716,High-ice cluster,K22086,DON_compounds,Substrates,LI_enriched
+methylglutamate dehydrogenase subunit C [EC:1.5.99.5],-0.385020885,0.192510442,RAS_EGC_05_1617_2,-0.032674464,Low-ice cluster,K22086,DON_compounds,Substrates,LI_enriched
+methylglutamate dehydrogenase subunit C [EC:1.5.99.5],-0.385020885,0.192510442,RAS_EGC_07_1617_1,0.342018985,Low-ice cluster,K22086,DON_compounds,Substrates,LI_enriched
+methylglutamate dehydrogenase subunit C [EC:1.5.99.5],-0.385020885,0.192510442,RAS_EGC_08_1617_1,0.243578912,Low-ice cluster,K22086,DON_compounds,Substrates,LI_enriched
+methylglutamate dehydrogenase subunit C [EC:1.5.99.5],-0.385020885,0.192510442,RAS_EGC_09_1617_1,-0.372181604,Low-ice cluster,K22086,DON_compounds,Substrates,LI_enriched
+methylglutamate dehydrogenase subunit C [EC:1.5.99.5],-0.385020885,0.192510442,RAS_EGC_10_1617_2,0.496169665,Low-ice cluster,K22086,DON_compounds,Substrates,LI_enriched
+methylglutamate dehydrogenase subunit C [EC:1.5.99.5],-0.385020885,0.192510442,RAS_EGC_11_1617,0.47815116,Low-ice cluster,K22086,DON_compounds,Substrates,LI_enriched
+methylglutamate dehydrogenase subunit C [EC:1.5.99.5],-0.385020885,0.192510442,RAS_EGC_12_1617_1,-0.611411294,High-ice cluster,K22086,DON_compounds,Substrates,LI_enriched
+methylglutamate dehydrogenase subunit D [EC:1.5.99.5],-0.439635121,0.219817561,RAS_EGC_02_1617_1,-0.577509553,High-ice cluster,K22087,DON_compounds,Substrates,LI_enriched
+methylglutamate dehydrogenase subunit D [EC:1.5.99.5],-0.439635121,0.219817561,RAS_EGC_03_1617_2,-0.494127944,High-ice cluster,K22087,DON_compounds,Substrates,LI_enriched
+methylglutamate dehydrogenase subunit D [EC:1.5.99.5],-0.439635121,0.219817561,RAS_EGC_05_1617_2,0.521102735,Low-ice cluster,K22087,DON_compounds,Substrates,LI_enriched
+methylglutamate dehydrogenase subunit D [EC:1.5.99.5],-0.439635121,0.219817561,RAS_EGC_07_1617_1,0.476650973,Low-ice cluster,K22087,DON_compounds,Substrates,LI_enriched
+methylglutamate dehydrogenase subunit D [EC:1.5.99.5],-0.439635121,0.219817561,RAS_EGC_08_1617_1,0.49168885,Low-ice cluster,K22087,DON_compounds,Substrates,LI_enriched
+methylglutamate dehydrogenase subunit D [EC:1.5.99.5],-0.439635121,0.219817561,RAS_EGC_09_1617_1,-0.380799259,Low-ice cluster,K22087,DON_compounds,Substrates,LI_enriched
+methylglutamate dehydrogenase subunit D [EC:1.5.99.5],-0.439635121,0.219817561,RAS_EGC_10_1617_2,0.312347921,Low-ice cluster,K22087,DON_compounds,Substrates,LI_enriched
+methylglutamate dehydrogenase subunit D [EC:1.5.99.5],-0.439635121,0.219817561,RAS_EGC_11_1617,-0.102085857,Low-ice cluster,K22087,DON_compounds,Substrates,LI_enriched
+methylglutamate dehydrogenase subunit D [EC:1.5.99.5],-0.439635121,0.219817561,RAS_EGC_12_1617_1,-0.247267866,High-ice cluster,K22087,DON_compounds,Substrates,LI_enriched
+trimethylamine monooxygenase [EC:1.14.13.148],-0.20650813,0.103254065,RAS_EGC_02_1617_1,-0.376626534,High-ice cluster,K18277,DON_compounds,Substrates,LI_enriched
+trimethylamine monooxygenase [EC:1.14.13.148],-0.20650813,0.103254065,RAS_EGC_03_1617_2,-0.038984022,High-ice cluster,K18277,DON_compounds,Substrates,LI_enriched
+trimethylamine monooxygenase [EC:1.14.13.148],-0.20650813,0.103254065,RAS_EGC_05_1617_2,-0.376626534,Low-ice cluster,K18277,DON_compounds,Substrates,LI_enriched
+trimethylamine monooxygenase [EC:1.14.13.148],-0.20650813,0.103254065,RAS_EGC_07_1617_1,0.432480528,Low-ice cluster,K18277,DON_compounds,Substrates,LI_enriched
+trimethylamine monooxygenase [EC:1.14.13.148],-0.20650813,0.103254065,RAS_EGC_08_1617_1,0.147228591,Low-ice cluster,K18277,DON_compounds,Substrates,LI_enriched
+trimethylamine monooxygenase [EC:1.14.13.148],-0.20650813,0.103254065,RAS_EGC_09_1617_1,0.142362401,Low-ice cluster,K18277,DON_compounds,Substrates,LI_enriched
+trimethylamine monooxygenase [EC:1.14.13.148],-0.20650813,0.103254065,RAS_EGC_10_1617_2,0.212979968,Low-ice cluster,K18277,DON_compounds,Substrates,LI_enriched
+trimethylamine monooxygenase [EC:1.14.13.148],-0.20650813,0.103254065,RAS_EGC_11_1617,0.061099437,Low-ice cluster,K18277,DON_compounds,Substrates,LI_enriched
+trimethylamine monooxygenase [EC:1.14.13.148],-0.20650813,0.103254065,RAS_EGC_12_1617_1,-0.203913836,High-ice cluster,K18277,DON_compounds,Substrates,LI_enriched
+nitronate monooxygenase [EC:1.13.12.16],-0.217985748,0.108992874,RAS_EGC_02_1617_1,-0.380851838,High-ice cluster,K00459,DON_compounds,Substrates,LI_enriched
+nitronate monooxygenase [EC:1.13.12.16],-0.217985748,0.108992874,RAS_EGC_03_1617_2,-0.184844829,High-ice cluster,K00459,DON_compounds,Substrates,LI_enriched
+nitronate monooxygenase [EC:1.13.12.16],-0.217985748,0.108992874,RAS_EGC_05_1617_2,0.254210144,Low-ice cluster,K00459,DON_compounds,Substrates,LI_enriched
+nitronate monooxygenase [EC:1.13.12.16],-0.217985748,0.108992874,RAS_EGC_07_1617_1,-0.14986511,Low-ice cluster,K00459,DON_compounds,Substrates,LI_enriched
+nitronate monooxygenase [EC:1.13.12.16],-0.217985748,0.108992874,RAS_EGC_08_1617_1,0.156393348,Low-ice cluster,K00459,DON_compounds,Substrates,LI_enriched
+nitronate monooxygenase [EC:1.13.12.16],-0.217985748,0.108992874,RAS_EGC_09_1617_1,0.421585136,Low-ice cluster,K00459,DON_compounds,Substrates,LI_enriched
+nitronate monooxygenase [EC:1.13.12.16],-0.217985748,0.108992874,RAS_EGC_10_1617_2,-0.044192143,Low-ice cluster,K00459,DON_compounds,Substrates,LI_enriched
+nitronate monooxygenase [EC:1.13.12.16],-0.217985748,0.108992874,RAS_EGC_11_1617,0.015825867,Low-ice cluster,K00459,DON_compounds,Substrates,LI_enriched
+nitronate monooxygenase [EC:1.13.12.16],-0.217985748,0.108992874,RAS_EGC_12_1617_1,-0.088260576,High-ice cluster,K00459,DON_compounds,Substrates,LI_enriched
+(2R)-3-sulfolactate dehydrogenase (NADP+) [EC:1.1.1.338],-0.242310363,0.121155181,RAS_EGC_02_1617_1,-0.622600338,High-ice cluster,K16844,DOS_compounds,Substrates,LI_enriched
+(2R)-3-sulfolactate dehydrogenase (NADP+) [EC:1.1.1.338],-0.242310363,0.121155181,RAS_EGC_03_1617_2,0.003105562,High-ice cluster,K16844,DOS_compounds,Substrates,LI_enriched
+(2R)-3-sulfolactate dehydrogenase (NADP+) [EC:1.1.1.338],-0.242310363,0.121155181,RAS_EGC_05_1617_2,0.258288467,Low-ice cluster,K16844,DOS_compounds,Substrates,LI_enriched
+(2R)-3-sulfolactate dehydrogenase (NADP+) [EC:1.1.1.338],-0.242310363,0.121155181,RAS_EGC_07_1617_1,0.2215871,Low-ice cluster,K16844,DOS_compounds,Substrates,LI_enriched
+(2R)-3-sulfolactate dehydrogenase (NADP+) [EC:1.1.1.338],-0.242310363,0.121155181,RAS_EGC_08_1617_1,0.31944289,Low-ice cluster,K16844,DOS_compounds,Substrates,LI_enriched
+(2R)-3-sulfolactate dehydrogenase (NADP+) [EC:1.1.1.338],-0.242310363,0.121155181,RAS_EGC_09_1617_1,0.037394636,Low-ice cluster,K16844,DOS_compounds,Substrates,LI_enriched
+(2R)-3-sulfolactate dehydrogenase (NADP+) [EC:1.1.1.338],-0.242310363,0.121155181,RAS_EGC_10_1617_2,-0.147176641,Low-ice cluster,K16844,DOS_compounds,Substrates,LI_enriched
+(2R)-3-sulfolactate dehydrogenase (NADP+) [EC:1.1.1.338],-0.242310363,0.121155181,RAS_EGC_11_1617,0.037394636,Low-ice cluster,K16844,DOS_compounds,Substrates,LI_enriched
+(2R)-3-sulfolactate dehydrogenase (NADP+) [EC:1.1.1.338],-0.242310363,0.121155181,RAS_EGC_12_1617_1,-0.107436312,High-ice cluster,K16844,DOS_compounds,Substrates,LI_enriched
+(2R)-sulfolactate sulfo-lyase subunit alpha [EC:4.4.1.24],-0.143669103,0.071834551,RAS_EGC_02_1617_1,-0.199173471,High-ice cluster,K16845,DOS_compounds,Substrates,LI_enriched
+(2R)-sulfolactate sulfo-lyase subunit alpha [EC:4.4.1.24],-0.143669103,0.071834551,RAS_EGC_03_1617_2,-0.089172576,High-ice cluster,K16845,DOS_compounds,Substrates,LI_enriched
+(2R)-sulfolactate sulfo-lyase subunit alpha [EC:4.4.1.24],-0.143669103,0.071834551,RAS_EGC_05_1617_2,-0.078809789,Low-ice cluster,K16845,DOS_compounds,Substrates,LI_enriched
+(2R)-sulfolactate sulfo-lyase subunit alpha [EC:4.4.1.24],-0.143669103,0.071834551,RAS_EGC_07_1617_1,0.202408137,Low-ice cluster,K16845,DOS_compounds,Substrates,LI_enriched
+(2R)-sulfolactate sulfo-lyase subunit alpha [EC:4.4.1.24],-0.143669103,0.071834551,RAS_EGC_08_1617_1,0.100069424,Low-ice cluster,K16845,DOS_compounds,Substrates,LI_enriched
+(2R)-sulfolactate sulfo-lyase subunit alpha [EC:4.4.1.24],-0.143669103,0.071834551,RAS_EGC_09_1617_1,0.104370505,Low-ice cluster,K16845,DOS_compounds,Substrates,LI_enriched
+(2R)-sulfolactate sulfo-lyase subunit alpha [EC:4.4.1.24],-0.143669103,0.071834551,RAS_EGC_10_1617_2,0.056009434,Low-ice cluster,K16845,DOS_compounds,Substrates,LI_enriched
+(2R)-sulfolactate sulfo-lyase subunit alpha [EC:4.4.1.24],-0.143669103,0.071834551,RAS_EGC_11_1617,0.046959598,Low-ice cluster,K16845,DOS_compounds,Substrates,LI_enriched
+(2R)-sulfolactate sulfo-lyase subunit alpha [EC:4.4.1.24],-0.143669103,0.071834551,RAS_EGC_12_1617_1,-0.142661261,High-ice cluster,K16845,DOS_compounds,Substrates,LI_enriched
+(2R)-sulfolactate sulfo-lyase subunit beta [EC:4.4.1.24],-0.15008324,0.07504162,RAS_EGC_02_1617_1,-0.256708117,High-ice cluster,K16846,DOS_compounds,Substrates,LI_enriched
+(2R)-sulfolactate sulfo-lyase subunit beta [EC:4.4.1.24],-0.15008324,0.07504162,RAS_EGC_03_1617_2,-0.082685363,High-ice cluster,K16846,DOS_compounds,Substrates,LI_enriched
+(2R)-sulfolactate sulfo-lyase subunit beta [EC:4.4.1.24],-0.15008324,0.07504162,RAS_EGC_05_1617_2,-0.041863368,Low-ice cluster,K16846,DOS_compounds,Substrates,LI_enriched
+(2R)-sulfolactate sulfo-lyase subunit beta [EC:4.4.1.24],-0.15008324,0.07504162,RAS_EGC_07_1617_1,0.285039417,Low-ice cluster,K16846,DOS_compounds,Substrates,LI_enriched
+(2R)-sulfolactate sulfo-lyase subunit beta [EC:4.4.1.24],-0.15008324,0.07504162,RAS_EGC_08_1617_1,-0.048552356,Low-ice cluster,K16846,DOS_compounds,Substrates,LI_enriched
+(2R)-sulfolactate sulfo-lyase subunit beta [EC:4.4.1.24],-0.15008324,0.07504162,RAS_EGC_09_1617_1,0.089164894,Low-ice cluster,K16846,DOS_compounds,Substrates,LI_enriched
+(2R)-sulfolactate sulfo-lyase subunit beta [EC:4.4.1.24],-0.15008324,0.07504162,RAS_EGC_10_1617_2,0.094995815,Low-ice cluster,K16846,DOS_compounds,Substrates,LI_enriched
+(2R)-sulfolactate sulfo-lyase subunit beta [EC:4.4.1.24],-0.15008324,0.07504162,RAS_EGC_11_1617,0.071465317,Low-ice cluster,K16846,DOS_compounds,Substrates,LI_enriched
+(2R)-sulfolactate sulfo-lyase subunit beta [EC:4.4.1.24],-0.15008324,0.07504162,RAS_EGC_12_1617_1,-0.11085624,High-ice cluster,K16846,DOS_compounds,Substrates,LI_enriched
+3-methylmercaptopropionyl-CoA dehydrogenase,-0.019116801,0.0095584,RAS_EGC_02_1617_1,-0.357762058,High-ice cluster,NA,DOS_compounds,Substrates,LI_enriched
+3-methylmercaptopropionyl-CoA dehydrogenase,-0.019116801,0.0095584,RAS_EGC_03_1617_2,0.195774684,High-ice cluster,NA,DOS_compounds,Substrates,LI_enriched
+3-methylmercaptopropionyl-CoA dehydrogenase,-0.019116801,0.0095584,RAS_EGC_05_1617_2,0.070998613,Low-ice cluster,NA,DOS_compounds,Substrates,LI_enriched
+3-methylmercaptopropionyl-CoA dehydrogenase,-0.019116801,0.0095584,RAS_EGC_07_1617_1,0.0918327,Low-ice cluster,NA,DOS_compounds,Substrates,LI_enriched
+3-methylmercaptopropionyl-CoA dehydrogenase,-0.019116801,0.0095584,RAS_EGC_08_1617_1,-0.04760713,Low-ice cluster,NA,DOS_compounds,Substrates,LI_enriched
+3-methylmercaptopropionyl-CoA dehydrogenase,-0.019116801,0.0095584,RAS_EGC_09_1617_1,-0.001289155,Low-ice cluster,NA,DOS_compounds,Substrates,LI_enriched
+3-methylmercaptopropionyl-CoA dehydrogenase,-0.019116801,0.0095584,RAS_EGC_10_1617_2,0.002945149,Low-ice cluster,NA,DOS_compounds,Substrates,LI_enriched
+3-methylmercaptopropionyl-CoA dehydrogenase,-0.019116801,0.0095584,RAS_EGC_11_1617,-0.059529775,Low-ice cluster,NA,DOS_compounds,Substrates,LI_enriched
+3-methylmercaptopropionyl-CoA dehydrogenase,-0.019116801,0.0095584,RAS_EGC_12_1617_1,0.104636972,High-ice cluster,NA,DOS_compounds,Substrates,LI_enriched
+Dimethylsulfonioproprionate demethylase DmdA,-0.131953173,0.065976586,RAS_EGC_02_1617_1,-0.413423742,High-ice cluster,NA,DOS_compounds,Substrates,LI_enriched
+Dimethylsulfonioproprionate demethylase DmdA,-0.131953173,0.065976586,RAS_EGC_03_1617_2,0.02686966,High-ice cluster,NA,DOS_compounds,Substrates,LI_enriched
+Dimethylsulfonioproprionate demethylase DmdA,-0.131953173,0.065976586,RAS_EGC_05_1617_2,-0.101475896,Low-ice cluster,NA,DOS_compounds,Substrates,LI_enriched
+Dimethylsulfonioproprionate demethylase DmdA,-0.131953173,0.065976586,RAS_EGC_07_1617_1,0.122652392,Low-ice cluster,NA,DOS_compounds,Substrates,LI_enriched
+Dimethylsulfonioproprionate demethylase DmdA,-0.131953173,0.065976586,RAS_EGC_08_1617_1,0.032055497,Low-ice cluster,NA,DOS_compounds,Substrates,LI_enriched
+Dimethylsulfonioproprionate demethylase DmdA,-0.131953173,0.065976586,RAS_EGC_09_1617_1,0.329602543,Low-ice cluster,NA,DOS_compounds,Substrates,LI_enriched
+Dimethylsulfonioproprionate demethylase DmdA,-0.131953173,0.065976586,RAS_EGC_10_1617_2,-0.014710854,Low-ice cluster,NA,DOS_compounds,Substrates,LI_enriched
+Dimethylsulfonioproprionate demethylase DmdA,-0.131953173,0.065976586,RAS_EGC_11_1617,0.027735836,Low-ice cluster,NA,DOS_compounds,Substrates,LI_enriched
+Dimethylsulfonioproprionate demethylase DmdA,-0.131953173,0.065976586,RAS_EGC_12_1617_1,-0.009305436,High-ice cluster,NA,DOS_compounds,Substrates,LI_enriched
+Hypotaurine/taurine--pyruvate aminotransferase,-0.203310711,0.101655356,RAS_EGC_02_1617_1,-0.507445737,High-ice cluster,NA,DOS_compounds,Substrates,LI_enriched
+Hypotaurine/taurine--pyruvate aminotransferase,-0.203310711,0.101655356,RAS_EGC_03_1617_2,-0.017897511,High-ice cluster,NA,DOS_compounds,Substrates,LI_enriched
+Hypotaurine/taurine--pyruvate aminotransferase,-0.203310711,0.101655356,RAS_EGC_05_1617_2,0.103463346,Low-ice cluster,NA,DOS_compounds,Substrates,LI_enriched
+Hypotaurine/taurine--pyruvate aminotransferase,-0.203310711,0.101655356,RAS_EGC_07_1617_1,0.261687351,Low-ice cluster,NA,DOS_compounds,Substrates,LI_enriched
+Hypotaurine/taurine--pyruvate aminotransferase,-0.203310711,0.101655356,RAS_EGC_08_1617_1,-0.273830885,Low-ice cluster,NA,DOS_compounds,Substrates,LI_enriched
+Hypotaurine/taurine--pyruvate aminotransferase,-0.203310711,0.101655356,RAS_EGC_09_1617_1,0.236994738,Low-ice cluster,NA,DOS_compounds,Substrates,LI_enriched
+Hypotaurine/taurine--pyruvate aminotransferase,-0.203310711,0.101655356,RAS_EGC_10_1617_2,0.044622846,Low-ice cluster,NA,DOS_compounds,Substrates,LI_enriched
+Hypotaurine/taurine--pyruvate aminotransferase,-0.203310711,0.101655356,RAS_EGC_11_1617,0.236994738,Low-ice cluster,NA,DOS_compounds,Substrates,LI_enriched
+Hypotaurine/taurine--pyruvate aminotransferase,-0.203310711,0.101655356,RAS_EGC_12_1617_1,-0.084588886,High-ice cluster,NA,DOS_compounds,Substrates,LI_enriched
+methanethiol oxidase [EC:1.8.3.4],-0.563409718,0.281704859,RAS_EGC_02_1617_1,-0.608837193,High-ice cluster,K17285,DOS_compounds,Substrates,LI_enriched
+methanethiol oxidase [EC:1.8.3.4],-0.563409718,0.281704859,RAS_EGC_03_1617_2,-0.154101036,High-ice cluster,K17285,DOS_compounds,Substrates,LI_enriched
+methanethiol oxidase [EC:1.8.3.4],-0.563409718,0.281704859,RAS_EGC_05_1617_2,0.037789972,Low-ice cluster,K17285,DOS_compounds,Substrates,LI_enriched
+methanethiol oxidase [EC:1.8.3.4],-0.563409718,0.281704859,RAS_EGC_07_1617_1,0.56748408,Low-ice cluster,K17285,DOS_compounds,Substrates,LI_enriched
+methanethiol oxidase [EC:1.8.3.4],-0.563409718,0.281704859,RAS_EGC_08_1617_1,0.337306502,Low-ice cluster,K17285,DOS_compounds,Substrates,LI_enriched
+methanethiol oxidase [EC:1.8.3.4],-0.563409718,0.281704859,RAS_EGC_09_1617_1,-0.255197153,Low-ice cluster,K17285,DOS_compounds,Substrates,LI_enriched
+methanethiol oxidase [EC:1.8.3.4],-0.563409718,0.281704859,RAS_EGC_10_1617_2,0.37199206,Low-ice cluster,K17285,DOS_compounds,Substrates,LI_enriched
+methanethiol oxidase [EC:1.8.3.4],-0.563409718,0.281704859,RAS_EGC_11_1617,0.630853694,Low-ice cluster,K17285,DOS_compounds,Substrates,LI_enriched
+methanethiol oxidase [EC:1.8.3.4],-0.563409718,0.281704859,RAS_EGC_12_1617_1,-0.927290924,High-ice cluster,K17285,DOS_compounds,Substrates,LI_enriched
+Sulfoacetaldehyde dehydrogenase,-0.377245585,0.188622793,RAS_EGC_02_1617_1,-0.214673691,High-ice cluster,NA,DOS_compounds,Substrates,LI_enriched
+Sulfoacetaldehyde dehydrogenase,-0.377245585,0.188622793,RAS_EGC_03_1617_2,-0.583437432,High-ice cluster,NA,DOS_compounds,Substrates,LI_enriched
+Sulfoacetaldehyde dehydrogenase,-0.377245585,0.188622793,RAS_EGC_05_1617_2,0.218442949,Low-ice cluster,NA,DOS_compounds,Substrates,LI_enriched
+Sulfoacetaldehyde dehydrogenase,-0.377245585,0.188622793,RAS_EGC_07_1617_1,0.102930062,Low-ice cluster,NA,DOS_compounds,Substrates,LI_enriched
+Sulfoacetaldehyde dehydrogenase,-0.377245585,0.188622793,RAS_EGC_08_1617_1,0.259991952,Low-ice cluster,NA,DOS_compounds,Substrates,LI_enriched
+Sulfoacetaldehyde dehydrogenase,-0.377245585,0.188622793,RAS_EGC_09_1617_1,0.524143527,Low-ice cluster,NA,DOS_compounds,Substrates,LI_enriched
+Sulfoacetaldehyde dehydrogenase,-0.377245585,0.188622793,RAS_EGC_10_1617_2,0.109709749,Low-ice cluster,NA,DOS_compounds,Substrates,LI_enriched
+Sulfoacetaldehyde dehydrogenase,-0.377245585,0.188622793,RAS_EGC_11_1617,-0.083481481,Low-ice cluster,NA,DOS_compounds,Substrates,LI_enriched
+Sulfoacetaldehyde dehydrogenase,-0.377245585,0.188622793,RAS_EGC_12_1617_1,-0.333625634,High-ice cluster,NA,DOS_compounds,Substrates,LI_enriched
+Sulfoquinovose isomerase,-0.463924035,0.231962017,RAS_EGC_02_1617_1,-0.837619083,High-ice cluster,NA,DOS_compounds,Substrates,LI_enriched
+Sulfoquinovose isomerase,-0.463924035,0.231962017,RAS_EGC_03_1617_2,-0.432153975,High-ice cluster,NA,DOS_compounds,Substrates,LI_enriched
+Sulfoquinovose isomerase,-0.463924035,0.231962017,RAS_EGC_05_1617_2,0.260993206,Low-ice cluster,NA,DOS_compounds,Substrates,LI_enriched
+Sulfoquinovose isomerase,-0.463924035,0.231962017,RAS_EGC_07_1617_1,0.762686346,Low-ice cluster,NA,DOS_compounds,Substrates,LI_enriched
+Sulfoquinovose isomerase,-0.463924035,0.231962017,RAS_EGC_08_1617_1,0.096690155,Low-ice cluster,NA,DOS_compounds,Substrates,LI_enriched
+Sulfoquinovose isomerase,-0.463924035,0.231962017,RAS_EGC_09_1617_1,0.096690155,Low-ice cluster,NA,DOS_compounds,Substrates,LI_enriched
+Sulfoquinovose isomerase,-0.463924035,0.231962017,RAS_EGC_10_1617_2,0.06032251,Low-ice cluster,NA,DOS_compounds,Substrates,LI_enriched
+Sulfoquinovose isomerase,-0.463924035,0.231962017,RAS_EGC_11_1617,0.114389732,Low-ice cluster,NA,DOS_compounds,Substrates,LI_enriched
+Sulfoquinovose isomerase,-0.463924035,0.231962017,RAS_EGC_12_1617_1,-0.121999046,High-ice cluster,NA,DOS_compounds,Substrates,LI_enriched
+taurine transport system ATP-binding protein [EC:7.6.2.7],-0.149627429,0.074813715,RAS_EGC_02_1617_1,-0.267363675,High-ice cluster,K10831,DOS_compounds,Substrates,LI_enriched
+taurine transport system ATP-binding protein [EC:7.6.2.7],-0.149627429,0.074813715,RAS_EGC_03_1617_2,-0.076673868,High-ice cluster,K10831,DOS_compounds,Substrates,LI_enriched
+taurine transport system ATP-binding protein [EC:7.6.2.7],-0.149627429,0.074813715,RAS_EGC_05_1617_2,-0.275802543,Low-ice cluster,K10831,DOS_compounds,Substrates,LI_enriched
+taurine transport system ATP-binding protein [EC:7.6.2.7],-0.149627429,0.074813715,RAS_EGC_07_1617_1,0.305370966,Low-ice cluster,K10831,DOS_compounds,Substrates,LI_enriched
+taurine transport system ATP-binding protein [EC:7.6.2.7],-0.149627429,0.074813715,RAS_EGC_08_1617_1,0.077476812,Low-ice cluster,K10831,DOS_compounds,Substrates,LI_enriched
+taurine transport system ATP-binding protein [EC:7.6.2.7],-0.149627429,0.074813715,RAS_EGC_09_1617_1,0.016107865,Low-ice cluster,K10831,DOS_compounds,Substrates,LI_enriched
+taurine transport system ATP-binding protein [EC:7.6.2.7],-0.149627429,0.074813715,RAS_EGC_10_1617_2,0.146469683,Low-ice cluster,K10831,DOS_compounds,Substrates,LI_enriched
+taurine transport system ATP-binding protein [EC:7.6.2.7],-0.149627429,0.074813715,RAS_EGC_11_1617,0.179259506,Low-ice cluster,K10831,DOS_compounds,Substrates,LI_enriched
+taurine transport system ATP-binding protein [EC:7.6.2.7],-0.149627429,0.074813715,RAS_EGC_12_1617_1,-0.104844745,High-ice cluster,K10831,DOS_compounds,Substrates,LI_enriched
+taurine transport system permease protein,-0.158135732,0.079067866,RAS_EGC_02_1617_1,-0.211245862,High-ice cluster,K15552,DOS_compounds,Substrates,LI_enriched
+taurine transport system permease protein,-0.158135732,0.079067866,RAS_EGC_03_1617_2,-0.104101225,High-ice cluster,K15552,DOS_compounds,Substrates,LI_enriched
+taurine transport system permease protein,-0.158135732,0.079067866,RAS_EGC_05_1617_2,-0.211245862,Low-ice cluster,K15552,DOS_compounds,Substrates,LI_enriched
+taurine transport system permease protein,-0.158135732,0.079067866,RAS_EGC_07_1617_1,0.240739262,Low-ice cluster,K15552,DOS_compounds,Substrates,LI_enriched
+taurine transport system permease protein,-0.158135732,0.079067866,RAS_EGC_08_1617_1,0.149587092,Low-ice cluster,K15552,DOS_compounds,Substrates,LI_enriched
+taurine transport system permease protein,-0.158135732,0.079067866,RAS_EGC_09_1617_1,0.098512162,Low-ice cluster,K15552,DOS_compounds,Substrates,LI_enriched
+taurine transport system permease protein,-0.158135732,0.079067866,RAS_EGC_10_1617_2,0.030766173,Low-ice cluster,K15552,DOS_compounds,Substrates,LI_enriched
+taurine transport system permease protein,-0.158135732,0.079067866,RAS_EGC_11_1617,0.166048369,Low-ice cluster,K15552,DOS_compounds,Substrates,LI_enriched
+taurine transport system permease protein,-0.158135732,0.079067866,RAS_EGC_12_1617_1,-0.159060109,High-ice cluster,K15552,DOS_compounds,Substrates,LI_enriched
+taurine transport system substrate-binding protein,-0.336990782,0.168495391,RAS_EGC_02_1617_1,-0.395597108,High-ice cluster,K15551,DOS_compounds,Substrates,LI_enriched
+taurine transport system substrate-binding protein,-0.336990782,0.168495391,RAS_EGC_03_1617_2,-0.42949866,High-ice cluster,K15551,DOS_compounds,Substrates,LI_enriched
+taurine transport system substrate-binding protein,-0.336990782,0.168495391,RAS_EGC_05_1617_2,0.451700752,Low-ice cluster,K15551,DOS_compounds,Substrates,LI_enriched
+taurine transport system substrate-binding protein,-0.336990782,0.168495391,RAS_EGC_07_1617_1,0.437312015,Low-ice cluster,K15551,DOS_compounds,Substrates,LI_enriched
+taurine transport system substrate-binding protein,-0.336990782,0.168495391,RAS_EGC_08_1617_1,0.346340236,Low-ice cluster,K15551,DOS_compounds,Substrates,LI_enriched
+taurine transport system substrate-binding protein,-0.336990782,0.168495391,RAS_EGC_09_1617_1,0.135031143,Low-ice cluster,K15551,DOS_compounds,Substrates,LI_enriched
+taurine transport system substrate-binding protein,-0.336990782,0.168495391,RAS_EGC_10_1617_2,-0.300286929,Low-ice cluster,K15551,DOS_compounds,Substrates,LI_enriched
+taurine transport system substrate-binding protein,-0.336990782,0.168495391,RAS_EGC_11_1617,-0.059124872,Low-ice cluster,K15551,DOS_compounds,Substrates,LI_enriched
+taurine transport system substrate-binding protein,-0.336990782,0.168495391,RAS_EGC_12_1617_1,-0.185876577,High-ice cluster,K15551,DOS_compounds,Substrates,LI_enriched
+Taurine-binding periplasmic protein,-0.434152052,0.217076026,RAS_EGC_02_1617_1,-0.76754279,High-ice cluster,NA,DOS_compounds,Substrates,LI_enriched
+Taurine-binding periplasmic protein,-0.434152052,0.217076026,RAS_EGC_03_1617_2,-0.172835683,High-ice cluster,NA,DOS_compounds,Substrates,LI_enriched
+Taurine-binding periplasmic protein,-0.434152052,0.217076026,RAS_EGC_05_1617_2,-0.282034975,Low-ice cluster,NA,DOS_compounds,Substrates,LI_enriched
+Taurine-binding periplasmic protein,-0.434152052,0.217076026,RAS_EGC_07_1617_1,0.411112206,Low-ice cluster,NA,DOS_compounds,Substrates,LI_enriched
+Taurine-binding periplasmic protein,-0.434152052,0.217076026,RAS_EGC_08_1617_1,-0.172835683,Low-ice cluster,NA,DOS_compounds,Substrates,LI_enriched
+Taurine-binding periplasmic protein,-0.434152052,0.217076026,RAS_EGC_09_1617_1,0.467201673,Low-ice cluster,NA,DOS_compounds,Substrates,LI_enriched
+Taurine-binding periplasmic protein,-0.434152052,0.217076026,RAS_EGC_10_1617_2,0.430160401,Low-ice cluster,NA,DOS_compounds,Substrates,LI_enriched
+Taurine-binding periplasmic protein,-0.434152052,0.217076026,RAS_EGC_11_1617,0.448852534,Low-ice cluster,NA,DOS_compounds,Substrates,LI_enriched
+Taurine-binding periplasmic protein,-0.434152052,0.217076026,RAS_EGC_12_1617_1,-0.362077682,High-ice cluster,NA,DOS_compounds,Substrates,LI_enriched
+taurine-pyruvate aminotransferase [EC:2.6.1.77],-0.34869718,0.17434859,RAS_EGC_02_1617_1,-0.281642298,High-ice cluster,K03851,DOS_compounds,Substrates,LI_enriched
+taurine-pyruvate aminotransferase [EC:2.6.1.77],-0.34869718,0.17434859,RAS_EGC_03_1617_2,-0.547345464,High-ice cluster,K03851,DOS_compounds,Substrates,LI_enriched
+taurine-pyruvate aminotransferase [EC:2.6.1.77],-0.34869718,0.17434859,RAS_EGC_05_1617_2,0.377603331,Low-ice cluster,K03851,DOS_compounds,Substrates,LI_enriched
+taurine-pyruvate aminotransferase [EC:2.6.1.77],-0.34869718,0.17434859,RAS_EGC_07_1617_1,0.521852939,Low-ice cluster,K03851,DOS_compounds,Substrates,LI_enriched
+taurine-pyruvate aminotransferase [EC:2.6.1.77],-0.34869718,0.17434859,RAS_EGC_08_1617_1,0.208980618,Low-ice cluster,K03851,DOS_compounds,Substrates,LI_enriched
+taurine-pyruvate aminotransferase [EC:2.6.1.77],-0.34869718,0.17434859,RAS_EGC_09_1617_1,-0.071921767,Low-ice cluster,K03851,DOS_compounds,Substrates,LI_enriched
+taurine-pyruvate aminotransferase [EC:2.6.1.77],-0.34869718,0.17434859,RAS_EGC_10_1617_2,-0.04525352,Low-ice cluster,K03851,DOS_compounds,Substrates,LI_enriched
+taurine-pyruvate aminotransferase [EC:2.6.1.77],-0.34869718,0.17434859,RAS_EGC_11_1617,0.054829938,Low-ice cluster,K03851,DOS_compounds,Substrates,LI_enriched
+taurine-pyruvate aminotransferase [EC:2.6.1.77],-0.34869718,0.17434859,RAS_EGC_12_1617_1,-0.217103777,High-ice cluster,K03851,DOS_compounds,Substrates,LI_enriched
+FMNH(2)-dependent dimethylsulfone monooxygenase,0.811331936,-0.405665968,RAS_EGC_02_1617_1,0.670890247,High-ice cluster,NA,DOS_compounds,Substrates,LI_enriched
+FMNH(2)-dependent dimethylsulfone monooxygenase,0.811331936,-0.405665968,RAS_EGC_03_1617_2,1.057123993,High-ice cluster,NA,DOS_compounds,Substrates,LI_enriched
+FMNH(2)-dependent dimethylsulfone monooxygenase,0.811331936,-0.405665968,RAS_EGC_05_1617_2,0.171899081,Low-ice cluster,NA,DOS_compounds,Substrates,LI_enriched
+FMNH(2)-dependent dimethylsulfone monooxygenase,0.811331936,-0.405665968,RAS_EGC_07_1617_1,-1.012655638,Low-ice cluster,NA,DOS_compounds,Substrates,LI_enriched
+FMNH(2)-dependent dimethylsulfone monooxygenase,0.811331936,-0.405665968,RAS_EGC_08_1617_1,-0.869554794,Low-ice cluster,NA,DOS_compounds,Substrates,LI_enriched
+FMNH(2)-dependent dimethylsulfone monooxygenase,0.811331936,-0.405665968,RAS_EGC_09_1617_1,-0.533082557,Low-ice cluster,NA,DOS_compounds,Substrates,LI_enriched
+FMNH(2)-dependent dimethylsulfone monooxygenase,0.811331936,-0.405665968,RAS_EGC_10_1617_2,0.019707266,Low-ice cluster,NA,DOS_compounds,Substrates,LI_enriched
+FMNH(2)-dependent dimethylsulfone monooxygenase,0.811331936,-0.405665968,RAS_EGC_11_1617,-0.210309165,Low-ice cluster,NA,DOS_compounds,Substrates,LI_enriched
+FMNH(2)-dependent dimethylsulfone monooxygenase,0.811331936,-0.405665968,RAS_EGC_12_1617_1,0.705981567,High-ice cluster,NA,DOS_compounds,Substrates,LI_enriched
+Toluene-4-sulfonate monooxygenase system iron-sulfur subunit TsaM1,1.015018961,-0.507509481,RAS_EGC_02_1617_1,0.931397092,High-ice cluster,NA,DOS_compounds,Substrates,LI_enriched
+Toluene-4-sulfonate monooxygenase system iron-sulfur subunit TsaM1,1.015018961,-0.507509481,RAS_EGC_03_1617_2,0.857105516,High-ice cluster,NA,DOS_compounds,Substrates,LI_enriched
+Toluene-4-sulfonate monooxygenase system iron-sulfur subunit TsaM1,1.015018961,-0.507509481,RAS_EGC_05_1617_2,-0.164831405,Low-ice cluster,NA,DOS_compounds,Substrates,LI_enriched
+Toluene-4-sulfonate monooxygenase system iron-sulfur subunit TsaM1,1.015018961,-0.507509481,RAS_EGC_07_1617_1,-1.117489781,Low-ice cluster,NA,DOS_compounds,Substrates,LI_enriched
+Toluene-4-sulfonate monooxygenase system iron-sulfur subunit TsaM1,1.015018961,-0.507509481,RAS_EGC_08_1617_1,-0.901781208,Low-ice cluster,NA,DOS_compounds,Substrates,LI_enriched
+Toluene-4-sulfonate monooxygenase system iron-sulfur subunit TsaM1,1.015018961,-0.507509481,RAS_EGC_09_1617_1,-0.963339101,Low-ice cluster,NA,DOS_compounds,Substrates,LI_enriched
+Toluene-4-sulfonate monooxygenase system iron-sulfur subunit TsaM1,1.015018961,-0.507509481,RAS_EGC_10_1617_2,0.211646166,Low-ice cluster,NA,DOS_compounds,Substrates,LI_enriched
+Toluene-4-sulfonate monooxygenase system iron-sulfur subunit TsaM1,1.015018961,-0.507509481,RAS_EGC_11_1617,-0.109261554,Low-ice cluster,NA,DOS_compounds,Substrates,LI_enriched
+Toluene-4-sulfonate monooxygenase system iron-sulfur subunit TsaM1,1.015018961,-0.507509481,RAS_EGC_12_1617_1,1.256554276,High-ice cluster,NA,DOS_compounds,Substrates,LI_enriched
+choline monooxygenase [EC:1.14.15.7],-0.208925938,0.104462969,RAS_EGC_02_1617_1,-0.149806318,High-ice cluster,K00499,Osmolytes,Substrates,LI_enriched
+choline monooxygenase [EC:1.14.15.7],-0.208925938,0.104462969,RAS_EGC_03_1617_2,-0.306258495,High-ice cluster,K00499,Osmolytes,Substrates,LI_enriched
+choline monooxygenase [EC:1.14.15.7],-0.208925938,0.104462969,RAS_EGC_05_1617_2,-0.251342737,Low-ice cluster,K00499,Osmolytes,Substrates,LI_enriched
+choline monooxygenase [EC:1.14.15.7],-0.208925938,0.104462969,RAS_EGC_07_1617_1,0.285105992,Low-ice cluster,K00499,Osmolytes,Substrates,LI_enriched
+choline monooxygenase [EC:1.14.15.7],-0.208925938,0.104462969,RAS_EGC_08_1617_1,0.16172697,Low-ice cluster,K00499,Osmolytes,Substrates,LI_enriched
+choline monooxygenase [EC:1.14.15.7],-0.208925938,0.104462969,RAS_EGC_09_1617_1,0.109901903,Low-ice cluster,K00499,Osmolytes,Substrates,LI_enriched
+choline monooxygenase [EC:1.14.15.7],-0.208925938,0.104462969,RAS_EGC_10_1617_2,0.115206955,Low-ice cluster,K00499,Osmolytes,Substrates,LI_enriched
+choline monooxygenase [EC:1.14.15.7],-0.208925938,0.104462969,RAS_EGC_11_1617,0.206178733,Low-ice cluster,K00499,Osmolytes,Substrates,LI_enriched
+choline monooxygenase [EC:1.14.15.7],-0.208925938,0.104462969,RAS_EGC_12_1617_1,-0.170713003,High-ice cluster,K00499,Osmolytes,Substrates,LI_enriched
+Glycine betaine/carnitine transport permease protein GbuB,-0.679937615,0.339968807,RAS_EGC_02_1617_1,-0.946106847,High-ice cluster,NA,Osmolytes,Substrates,LI_enriched
+Glycine betaine/carnitine transport permease protein GbuB,-0.679937615,0.339968807,RAS_EGC_03_1617_2,-0.435281223,High-ice cluster,NA,Osmolytes,Substrates,LI_enriched
+Glycine betaine/carnitine transport permease protein GbuB,-0.679937615,0.339968807,RAS_EGC_05_1617_2,0.257865957,Low-ice cluster,NA,Osmolytes,Substrates,LI_enriched
+Glycine betaine/carnitine transport permease protein GbuB,-0.679937615,0.339968807,RAS_EGC_07_1617_1,0.353176137,Low-ice cluster,NA,Osmolytes,Substrates,LI_enriched
+Glycine betaine/carnitine transport permease protein GbuB,-0.679937615,0.339968807,RAS_EGC_08_1617_1,0.152505442,Low-ice cluster,NA,Osmolytes,Substrates,LI_enriched
+Glycine betaine/carnitine transport permease protein GbuB,-0.679937615,0.339968807,RAS_EGC_09_1617_1,0.3976279,Low-ice cluster,NA,Osmolytes,Substrates,LI_enriched
+Glycine betaine/carnitine transport permease protein GbuB,-0.679937615,0.339968807,RAS_EGC_10_1617_2,0.3976279,Low-ice cluster,NA,Osmolytes,Substrates,LI_enriched
+Glycine betaine/carnitine transport permease protein GbuB,-0.679937615,0.339968807,RAS_EGC_11_1617,0.481009509,Low-ice cluster,NA,Osmolytes,Substrates,LI_enriched
+Glycine betaine/carnitine transport permease protein GbuB,-0.679937615,0.339968807,RAS_EGC_12_1617_1,-0.658424774,High-ice cluster,NA,Osmolytes,Substrates,LI_enriched
+glycine betaine/proline transport system ATP-binding protein [EC:7.6.2.9],-0.202290913,0.101145456,RAS_EGC_02_1617_1,-0.299489821,High-ice cluster,K02000,Osmolytes,Substrates,LI_enriched
+glycine betaine/proline transport system ATP-binding protein [EC:7.6.2.9],-0.202290913,0.101145456,RAS_EGC_03_1617_2,-0.136052946,High-ice cluster,K02000,Osmolytes,Substrates,LI_enriched
+glycine betaine/proline transport system ATP-binding protein [EC:7.6.2.9],-0.202290913,0.101145456,RAS_EGC_05_1617_2,-0.182160403,Low-ice cluster,K02000,Osmolytes,Substrates,LI_enriched
+glycine betaine/proline transport system ATP-binding protein [EC:7.6.2.9],-0.202290913,0.101145456,RAS_EGC_07_1617_1,0.278040344,Low-ice cluster,K02000,Osmolytes,Substrates,LI_enriched
+glycine betaine/proline transport system ATP-binding protein [EC:7.6.2.9],-0.202290913,0.101145456,RAS_EGC_08_1617_1,0.126177994,Low-ice cluster,K02000,Osmolytes,Substrates,LI_enriched
+glycine betaine/proline transport system ATP-binding protein [EC:7.6.2.9],-0.202290913,0.101145456,RAS_EGC_09_1617_1,0.105975287,Low-ice cluster,K02000,Osmolytes,Substrates,LI_enriched
+glycine betaine/proline transport system ATP-binding protein [EC:7.6.2.9],-0.202290913,0.101145456,RAS_EGC_10_1617_2,0.142051344,Low-ice cluster,K02000,Osmolytes,Substrates,LI_enriched
+glycine betaine/proline transport system ATP-binding protein [EC:7.6.2.9],-0.202290913,0.101145456,RAS_EGC_11_1617,0.136788173,Low-ice cluster,K02000,Osmolytes,Substrates,LI_enriched
+glycine betaine/proline transport system ATP-binding protein [EC:7.6.2.9],-0.202290913,0.101145456,RAS_EGC_12_1617_1,-0.171329972,High-ice cluster,K02000,Osmolytes,Substrates,LI_enriched
+glycine betaine/proline transport system permease protein,-0.132131552,0.066065776,RAS_EGC_02_1617_1,-0.28168064,High-ice cluster,K02001,Osmolytes,Substrates,LI_enriched
+glycine betaine/proline transport system permease protein,-0.132131552,0.066065776,RAS_EGC_03_1617_2,-0.034198021,High-ice cluster,K02001,Osmolytes,Substrates,LI_enriched
+glycine betaine/proline transport system permease protein,-0.132131552,0.066065776,RAS_EGC_05_1617_2,-0.22361684,Low-ice cluster,K02001,Osmolytes,Substrates,LI_enriched
+glycine betaine/proline transport system permease protein,-0.132131552,0.066065776,RAS_EGC_07_1617_1,0.228057436,Low-ice cluster,K02001,Osmolytes,Substrates,LI_enriched
+glycine betaine/proline transport system permease protein,-0.132131552,0.066065776,RAS_EGC_08_1617_1,0.103039367,Low-ice cluster,K02001,Osmolytes,Substrates,LI_enriched
+glycine betaine/proline transport system permease protein,-0.132131552,0.066065776,RAS_EGC_09_1617_1,0.049862283,Low-ice cluster,K02001,Osmolytes,Substrates,LI_enriched
+glycine betaine/proline transport system permease protein,-0.132131552,0.066065776,RAS_EGC_10_1617_2,0.126197014,Low-ice cluster,K02001,Osmolytes,Substrates,LI_enriched
+glycine betaine/proline transport system permease protein,-0.132131552,0.066065776,RAS_EGC_11_1617,0.112855397,Low-ice cluster,K02001,Osmolytes,Substrates,LI_enriched
+glycine betaine/proline transport system permease protein,-0.132131552,0.066065776,RAS_EGC_12_1617_1,-0.080515996,High-ice cluster,K02001,Osmolytes,Substrates,LI_enriched
+glycine betaine/proline transport system substrate-binding protein,-0.163119424,0.081559712,RAS_EGC_02_1617_1,-0.262162425,High-ice cluster,K02002,Osmolytes,Substrates,LI_enriched
+glycine betaine/proline transport system substrate-binding protein,-0.163119424,0.081559712,RAS_EGC_03_1617_2,-0.047463939,High-ice cluster,K02002,Osmolytes,Substrates,LI_enriched
+glycine betaine/proline transport system substrate-binding protein,-0.163119424,0.081559712,RAS_EGC_05_1617_2,-0.159731241,Low-ice cluster,K02002,Osmolytes,Substrates,LI_enriched
+glycine betaine/proline transport system substrate-binding protein,-0.163119424,0.081559712,RAS_EGC_07_1617_1,0.270721587,Low-ice cluster,K02002,Osmolytes,Substrates,LI_enriched
+glycine betaine/proline transport system substrate-binding protein,-0.163119424,0.081559712,RAS_EGC_08_1617_1,0.079779287,Low-ice cluster,K02002,Osmolytes,Substrates,LI_enriched
+glycine betaine/proline transport system substrate-binding protein,-0.163119424,0.081559712,RAS_EGC_09_1617_1,0.031897801,Low-ice cluster,K02002,Osmolytes,Substrates,LI_enriched
+glycine betaine/proline transport system substrate-binding protein,-0.163119424,0.081559712,RAS_EGC_10_1617_2,0.151193468,Low-ice cluster,K02002,Osmolytes,Substrates,LI_enriched
+glycine betaine/proline transport system substrate-binding protein,-0.163119424,0.081559712,RAS_EGC_11_1617,0.11549737,Low-ice cluster,K02002,Osmolytes,Substrates,LI_enriched
+glycine betaine/proline transport system substrate-binding protein,-0.163119424,0.081559712,RAS_EGC_12_1617_1,-0.179731908,High-ice cluster,K02002,Osmolytes,Substrates,LI_enriched
+Oxygen-dependent choline dehydrogenase,-0.039409571,0.019704786,RAS_EGC_02_1617_1,-0.382484836,High-ice cluster,NA,Osmolytes,Substrates,LI_enriched
+Oxygen-dependent choline dehydrogenase,-0.039409571,0.019704786,RAS_EGC_03_1617_2,0.117896829,High-ice cluster,NA,Osmolytes,Substrates,LI_enriched
+Oxygen-dependent choline dehydrogenase,-0.039409571,0.019704786,RAS_EGC_05_1617_2,0.093991308,Low-ice cluster,NA,Osmolytes,Substrates,LI_enriched
+Oxygen-dependent choline dehydrogenase,-0.039409571,0.019704786,RAS_EGC_07_1617_1,-0.001856651,Low-ice cluster,NA,Osmolytes,Substrates,LI_enriched
+Oxygen-dependent choline dehydrogenase,-0.039409571,0.019704786,RAS_EGC_08_1617_1,-0.080298077,Low-ice cluster,NA,Osmolytes,Substrates,LI_enriched
+Oxygen-dependent choline dehydrogenase,-0.039409571,0.019704786,RAS_EGC_09_1617_1,0.186364628,Low-ice cluster,NA,Osmolytes,Substrates,LI_enriched
+Oxygen-dependent choline dehydrogenase,-0.039409571,0.019704786,RAS_EGC_10_1617_2,-0.102952768,Low-ice cluster,NA,Osmolytes,Substrates,LI_enriched
+Oxygen-dependent choline dehydrogenase,-0.039409571,0.019704786,RAS_EGC_11_1617,0.022980272,Low-ice cluster,NA,Osmolytes,Substrates,LI_enriched
+Oxygen-dependent choline dehydrogenase,-0.039409571,0.019704786,RAS_EGC_12_1617_1,0.146359294,High-ice cluster,NA,Osmolytes,Substrates,LI_enriched
+"sarcosine oxidase, subunit beta [EC:1.5.3.1]",-0.032306824,0.016153412,RAS_EGC_02_1617_1,-0.276442795,High-ice cluster,K00303,Osmolytes,Substrates,LI_enriched
+"sarcosine oxidase, subunit beta [EC:1.5.3.1]",-0.032306824,0.016153412,RAS_EGC_03_1617_2,0.111754236,High-ice cluster,K00303,Osmolytes,Substrates,LI_enriched
+"sarcosine oxidase, subunit beta [EC:1.5.3.1]",-0.032306824,0.016153412,RAS_EGC_05_1617_2,-0.114981826,Low-ice cluster,K00303,Osmolytes,Substrates,LI_enriched
+"sarcosine oxidase, subunit beta [EC:1.5.3.1]",-0.032306824,0.016153412,RAS_EGC_07_1617_1,0.173342713,Low-ice cluster,K00303,Osmolytes,Substrates,LI_enriched
+"sarcosine oxidase, subunit beta [EC:1.5.3.1]",-0.032306824,0.016153412,RAS_EGC_08_1617_1,0.023997425,Low-ice cluster,K00303,Osmolytes,Substrates,LI_enriched
+"sarcosine oxidase, subunit beta [EC:1.5.3.1]",-0.032306824,0.016153412,RAS_EGC_09_1617_1,-0.162359107,Low-ice cluster,K00303,Osmolytes,Substrates,LI_enriched
+"sarcosine oxidase, subunit beta [EC:1.5.3.1]",-0.032306824,0.016153412,RAS_EGC_10_1617_2,0.119917546,Low-ice cluster,K00303,Osmolytes,Substrates,LI_enriched
+"sarcosine oxidase, subunit beta [EC:1.5.3.1]",-0.032306824,0.016153412,RAS_EGC_11_1617,0.057003721,Low-ice cluster,K00303,Osmolytes,Substrates,LI_enriched
+"sarcosine oxidase, subunit beta [EC:1.5.3.1]",-0.032306824,0.016153412,RAS_EGC_12_1617_1,0.067768088,High-ice cluster,K00303,Osmolytes,Substrates,LI_enriched
+"sarcosine oxidase, subunit delta [EC:1.5.3.1]",-0.153737338,0.076868669,RAS_EGC_02_1617_1,-0.290160101,High-ice cluster,K00304,Osmolytes,Substrates,LI_enriched
+"sarcosine oxidase, subunit delta [EC:1.5.3.1]",-0.153737338,0.076868669,RAS_EGC_03_1617_2,-0.108843065,High-ice cluster,K00304,Osmolytes,Substrates,LI_enriched
+"sarcosine oxidase, subunit delta [EC:1.5.3.1]",-0.153737338,0.076868669,RAS_EGC_05_1617_2,-0.209191039,Low-ice cluster,K00304,Osmolytes,Substrates,LI_enriched
+"sarcosine oxidase, subunit delta [EC:1.5.3.1]",-0.153737338,0.076868669,RAS_EGC_07_1617_1,0.291584249,Low-ice cluster,K00304,Osmolytes,Substrates,LI_enriched
+"sarcosine oxidase, subunit delta [EC:1.5.3.1]",-0.153737338,0.076868669,RAS_EGC_08_1617_1,0.129263359,Low-ice cluster,K00304,Osmolytes,Substrates,LI_enriched
+"sarcosine oxidase, subunit delta [EC:1.5.3.1]",-0.153737338,0.076868669,RAS_EGC_09_1617_1,-0.098842981,Low-ice cluster,K00304,Osmolytes,Substrates,LI_enriched
+"sarcosine oxidase, subunit delta [EC:1.5.3.1]",-0.153737338,0.076868669,RAS_EGC_10_1617_2,0.14107452,Low-ice cluster,K00304,Osmolytes,Substrates,LI_enriched
+"sarcosine oxidase, subunit delta [EC:1.5.3.1]",-0.153737338,0.076868669,RAS_EGC_11_1617,0.207323906,Low-ice cluster,K00304,Osmolytes,Substrates,LI_enriched
+"sarcosine oxidase, subunit delta [EC:1.5.3.1]",-0.153737338,0.076868669,RAS_EGC_12_1617_1,-0.062208848,High-ice cluster,K00304,Osmolytes,Substrates,LI_enriched
+Monomeric sarcosine oxidase,0.59301971,-0.296509855,RAS_EGC_02_1617_1,0.399905825,High-ice cluster,NA,Osmolytes,Substrates,LI_enriched
+Monomeric sarcosine oxidase,0.59301971,-0.296509855,RAS_EGC_03_1617_2,0.750009004,High-ice cluster,NA,Osmolytes,Substrates,LI_enriched
+Monomeric sarcosine oxidase,0.59301971,-0.296509855,RAS_EGC_05_1617_2,-0.113835253,Low-ice cluster,NA,Osmolytes,Substrates,LI_enriched
+Monomeric sarcosine oxidase,0.59301971,-0.296509855,RAS_EGC_07_1617_1,-0.677107352,Low-ice cluster,NA,Osmolytes,Substrates,LI_enriched
+Monomeric sarcosine oxidase,0.59301971,-0.296509855,RAS_EGC_08_1617_1,-0.651789544,Low-ice cluster,NA,Osmolytes,Substrates,LI_enriched
+Monomeric sarcosine oxidase,0.59301971,-0.296509855,RAS_EGC_09_1617_1,-0.181785915,Low-ice cluster,NA,Osmolytes,Substrates,LI_enriched
+Monomeric sarcosine oxidase,0.59301971,-0.296509855,RAS_EGC_10_1617_2,-0.189629092,Low-ice cluster,NA,Osmolytes,Substrates,LI_enriched
+Monomeric sarcosine oxidase,0.59301971,-0.296509855,RAS_EGC_11_1617,0.035088024,Low-ice cluster,NA,Osmolytes,Substrates,LI_enriched
+Monomeric sarcosine oxidase,0.59301971,-0.296509855,RAS_EGC_12_1617_1,0.629144302,High-ice cluster,NA,Osmolytes,Substrates,LI_enriched
+sorbitol/mannitol transport system permease protein,-0.596378553,0.298189277,RAS_EGC_02_1617_1,-0.474720638,High-ice cluster,K10229,Polyols,Substrates,LI_enriched
+sorbitol/mannitol transport system permease protein,-0.596378553,0.298189277,RAS_EGC_03_1617_2,-0.926705762,High-ice cluster,K10229,Polyols,Substrates,LI_enriched
+sorbitol/mannitol transport system permease protein,-0.596378553,0.298189277,RAS_EGC_05_1617_2,0.071823069,Low-ice cluster,K10229,Polyols,Substrates,LI_enriched
+sorbitol/mannitol transport system permease protein,-0.596378553,0.298189277,RAS_EGC_07_1617_1,0.853077517,Low-ice cluster,K10229,Polyols,Substrates,LI_enriched
+sorbitol/mannitol transport system permease protein,-0.596378553,0.298189277,RAS_EGC_08_1617_1,0.545110773,Low-ice cluster,K10229,Polyols,Substrates,LI_enriched
+sorbitol/mannitol transport system permease protein,-0.596378553,0.298189277,RAS_EGC_09_1617_1,-0.01041503,Low-ice cluster,K10229,Polyols,Substrates,LI_enriched
+sorbitol/mannitol transport system permease protein,-0.596378553,0.298189277,RAS_EGC_10_1617_2,0.284384511,Low-ice cluster,K10229,Polyols,Substrates,LI_enriched
+sorbitol/mannitol transport system permease protein,-0.596378553,0.298189277,RAS_EGC_11_1617,0.045154821,Low-ice cluster,K10229,Polyols,Substrates,LI_enriched
+sorbitol/mannitol transport system permease protein,-0.596378553,0.298189277,RAS_EGC_12_1617_1,-0.387709261,High-ice cluster,K10229,Polyols,Substrates,LI_enriched
+sorbitol/mannitol transport system permease protein,-0.663233252,0.331616626,RAS_EGC_02_1617_1,-0.487112171,High-ice cluster,K10228,Polyols,Substrates,LI_enriched
+sorbitol/mannitol transport system permease protein,-0.663233252,0.331616626,RAS_EGC_03_1617_2,-1.229049515,High-ice cluster,K10228,Polyols,Substrates,LI_enriched
+sorbitol/mannitol transport system permease protein,-0.663233252,0.331616626,RAS_EGC_05_1617_2,0.157244846,Low-ice cluster,K10228,Polyols,Substrates,LI_enriched
+sorbitol/mannitol transport system permease protein,-0.663233252,0.331616626,RAS_EGC_07_1617_1,0.887205999,Low-ice cluster,K10228,Polyols,Substrates,LI_enriched
+sorbitol/mannitol transport system permease protein,-0.663233252,0.331616626,RAS_EGC_08_1617_1,0.493717082,Low-ice cluster,K10228,Polyols,Substrates,LI_enriched
+sorbitol/mannitol transport system permease protein,-0.663233252,0.331616626,RAS_EGC_09_1617_1,-0.065898706,Low-ice cluster,K10228,Polyols,Substrates,LI_enriched
+sorbitol/mannitol transport system permease protein,-0.663233252,0.331616626,RAS_EGC_10_1617_2,0.36018569,Low-ice cluster,K10228,Polyols,Substrates,LI_enriched
+sorbitol/mannitol transport system permease protein,-0.663233252,0.331616626,RAS_EGC_11_1617,0.157244846,Low-ice cluster,K10228,Polyols,Substrates,LI_enriched
+sorbitol/mannitol transport system permease protein,-0.663233252,0.331616626,RAS_EGC_12_1617_1,-0.27353807,High-ice cluster,K10228,Polyols,Substrates,LI_enriched
+sorbitol/mannitol transport system substrate-binding protein,-0.800115717,0.400057859,RAS_EGC_02_1617_1,-0.516140598,High-ice cluster,K10227,Polyols,Substrates,LI_enriched
+sorbitol/mannitol transport system substrate-binding protein,-0.800115717,0.400057859,RAS_EGC_03_1617_2,-0.821522248,High-ice cluster,K10227,Polyols,Substrates,LI_enriched
+sorbitol/mannitol transport system substrate-binding protein,-0.800115717,0.400057859,RAS_EGC_05_1617_2,0.177006582,Low-ice cluster,K10227,Polyols,Substrates,LI_enriched
+sorbitol/mannitol transport system substrate-binding protein,-0.800115717,0.400057859,RAS_EGC_07_1617_1,1.050279929,Low-ice cluster,K10227,Polyols,Substrates,LI_enriched
+sorbitol/mannitol transport system substrate-binding protein,-0.800115717,0.400057859,RAS_EGC_08_1617_1,0.564772113,Low-ice cluster,K10227,Polyols,Substrates,LI_enriched
+sorbitol/mannitol transport system substrate-binding protein,-0.800115717,0.400057859,RAS_EGC_09_1617_1,0.177006582,Low-ice cluster,K10227,Polyols,Substrates,LI_enriched
+sorbitol/mannitol transport system substrate-binding protein,-0.800115717,0.400057859,RAS_EGC_10_1617_2,0.202982069,Low-ice cluster,K10227,Polyols,Substrates,LI_enriched
+sorbitol/mannitol transport system substrate-binding protein,-0.800115717,0.400057859,RAS_EGC_11_1617,0.228299876,Low-ice cluster,K10227,Polyols,Substrates,LI_enriched
+sorbitol/mannitol transport system substrate-binding protein,-0.800115717,0.400057859,RAS_EGC_12_1617_1,-1.062684305,High-ice cluster,K10227,Polyols,Substrates,LI_enriched
+D-arabitol-phosphate dehydrogenase,0.851671929,-0.425835965,RAS_EGC_02_1617_1,0.783893098,High-ice cluster,NA,Polyols,Substrates,LI_enriched
+D-arabitol-phosphate dehydrogenase,0.851671929,-0.425835965,RAS_EGC_03_1617_2,1.171658629,High-ice cluster,NA,Polyols,Substrates,LI_enriched
+D-arabitol-phosphate dehydrogenase,0.851671929,-0.425835965,RAS_EGC_05_1617_2,-0.008783678,Low-ice cluster,NA,Polyols,Substrates,LI_enriched
+D-arabitol-phosphate dehydrogenase,0.851671929,-0.425835965,RAS_EGC_07_1617_1,-1.205034436,Low-ice cluster,NA,Polyols,Substrates,LI_enriched
+D-arabitol-phosphate dehydrogenase,0.851671929,-0.425835965,RAS_EGC_08_1617_1,-0.437779283,Low-ice cluster,NA,Polyols,Substrates,LI_enriched
+D-arabitol-phosphate dehydrogenase,0.851671929,-0.425835965,RAS_EGC_09_1617_1,-0.725461355,Low-ice cluster,NA,Polyols,Substrates,LI_enriched
+D-arabitol-phosphate dehydrogenase,0.851671929,-0.425835965,RAS_EGC_10_1617_2,-0.214635732,Low-ice cluster,NA,Polyols,Substrates,LI_enriched
+D-arabitol-phosphate dehydrogenase,0.851671929,-0.425835965,RAS_EGC_11_1617,0.036678697,Low-ice cluster,NA,Polyols,Substrates,LI_enriched
+D-arabitol-phosphate dehydrogenase,0.851671929,-0.425835965,RAS_EGC_12_1617_1,0.599464059,High-ice cluster,NA,Polyols,Substrates,LI_enriched
+malonate-semialdehyde dehydrogenase (acetylating) / methylmalonate-semialdehyde dehydrogenase [EC:1.2.1.18 1.2.1.27],0.030952977,-0.015476489,RAS_EGC_02_1617_1,-0.121931945,High-ice cluster,K00140,Polyols,Substrates,LI_enriched
+malonate-semialdehyde dehydrogenase (acetylating) / methylmalonate-semialdehyde dehydrogenase [EC:1.2.1.18 1.2.1.27],0.030952977,-0.015476489,RAS_EGC_03_1617_2,-0.036195034,High-ice cluster,K00140,Polyols,Substrates,LI_enriched
+malonate-semialdehyde dehydrogenase (acetylating) / methylmalonate-semialdehyde dehydrogenase [EC:1.2.1.18 1.2.1.27],0.030952977,-0.015476489,RAS_EGC_05_1617_2,-0.066716223,Low-ice cluster,K00140,Polyols,Substrates,LI_enriched
+malonate-semialdehyde dehydrogenase (acetylating) / methylmalonate-semialdehyde dehydrogenase [EC:1.2.1.18 1.2.1.27],0.030952977,-0.015476489,RAS_EGC_07_1617_1,-0.083383275,Low-ice cluster,K00140,Polyols,Substrates,LI_enriched
+malonate-semialdehyde dehydrogenase (acetylating) / methylmalonate-semialdehyde dehydrogenase [EC:1.2.1.18 1.2.1.27],0.030952977,-0.015476489,RAS_EGC_08_1617_1,-0.050322413,Low-ice cluster,K00140,Polyols,Substrates,LI_enriched
+malonate-semialdehyde dehydrogenase (acetylating) / methylmalonate-semialdehyde dehydrogenase [EC:1.2.1.18 1.2.1.27],0.030952977,-0.015476489,RAS_EGC_09_1617_1,-0.050322413,Low-ice cluster,K00140,Polyols,Substrates,LI_enriched
+malonate-semialdehyde dehydrogenase (acetylating) / methylmalonate-semialdehyde dehydrogenase [EC:1.2.1.18 1.2.1.27],0.030952977,-0.015476489,RAS_EGC_10_1617_2,0.059297312,Low-ice cluster,K00140,Polyols,Substrates,LI_enriched
+malonate-semialdehyde dehydrogenase (acetylating) / methylmalonate-semialdehyde dehydrogenase [EC:1.2.1.18 1.2.1.27],0.030952977,-0.015476489,RAS_EGC_11_1617,0.09858808,Low-ice cluster,K00140,Polyols,Substrates,LI_enriched
+malonate-semialdehyde dehydrogenase (acetylating) / methylmalonate-semialdehyde dehydrogenase [EC:1.2.1.18 1.2.1.27],0.030952977,-0.015476489,RAS_EGC_12_1617_1,0.250985911,High-ice cluster,K00140,Polyols,Substrates,LI_enriched
+myo-inositol-1(or 4)-monophosphatase [EC:3.1.3.25],0.053631685,-0.026815843,RAS_EGC_02_1617_1,0.029174718,High-ice cluster,K01092,Polyols,Substrates,LI_enriched
+myo-inositol-1(or 4)-monophosphatase [EC:3.1.3.25],0.053631685,-0.026815843,RAS_EGC_03_1617_2,0.033457379,High-ice cluster,K01092,Polyols,Substrates,LI_enriched
+myo-inositol-1(or 4)-monophosphatase [EC:3.1.3.25],0.053631685,-0.026815843,RAS_EGC_05_1617_2,-0.014691964,Low-ice cluster,K01092,Polyols,Substrates,LI_enriched
+myo-inositol-1(or 4)-monophosphatase [EC:3.1.3.25],0.053631685,-0.026815843,RAS_EGC_07_1617_1,-0.160902156,Low-ice cluster,K01092,Polyols,Substrates,LI_enriched
+myo-inositol-1(or 4)-monophosphatase [EC:3.1.3.25],0.053631685,-0.026815843,RAS_EGC_08_1617_1,-0.063706369,Low-ice cluster,K01092,Polyols,Substrates,LI_enriched
+myo-inositol-1(or 4)-monophosphatase [EC:3.1.3.25],0.053631685,-0.026815843,RAS_EGC_09_1617_1,0.001616774,Low-ice cluster,K01092,Polyols,Substrates,LI_enriched
+myo-inositol-1(or 4)-monophosphatase [EC:3.1.3.25],0.053631685,-0.026815843,RAS_EGC_10_1617_2,-0.037368673,Low-ice cluster,K01092,Polyols,Substrates,LI_enriched
+myo-inositol-1(or 4)-monophosphatase [EC:3.1.3.25],0.053631685,-0.026815843,RAS_EGC_11_1617,0.114157333,Low-ice cluster,K01092,Polyols,Substrates,LI_enriched
+myo-inositol-1(or 4)-monophosphatase [EC:3.1.3.25],0.053631685,-0.026815843,RAS_EGC_12_1617_1,0.098262959,High-ice cluster,K01092,Polyols,Substrates,LI_enriched
