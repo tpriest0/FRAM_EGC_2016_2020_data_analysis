@@ -15,7 +15,7 @@
 
 ### Set working directory!!!
 
-setwd("C:/Users/Taylor/ownCloud/PhD/Arctic Bacterioplankton/Fram Strait/RAS_metagenomes/EGC/ASV/FRAM_RAS_EGC_data_for_processing")
+setwd("")
 
 
 ############################################################################################
@@ -255,7 +255,7 @@ egc_meta_subset = egc_asv_meta %>%
   melt(id.vars=c("Mooring_name"), 
        variable.name="variable", value.name="value") %>% 
   mutate(variable = case_when(
-    (variable == "Temperature" ~ "Temperature (°C)"),
+    (variable == "Temperature" ~ "Temperature (Â°C)"),
     (variable == "AW_proportion" ~ "AW proportion (%)"),
     (variable == "Ice_cover" ~ "Ice cover (%)")))
 
@@ -465,33 +465,80 @@ egc_asv_dynamics_df=read.table("FRAM_RAS_EGC_ASV_dynamics_summary_and_taxa_compl
 egc_asv_rel=read.table("FRAM_RAS_EGC_ASV_relative_filtered.txt", header = TRUE, 
                        sep = "\t",as.is=TRUE,check.names=F,row.names=1)
 
-# Import sample metadata
-egc_asv_meta=read.table("FRAM_RAS_EGC_ASV_meta_refined.txt", header = TRUE, 
-                        sep = "\t",check.names=F,as.is=TRUE)
+###
+# Create dataframe with distrbution group and ASV distribution dynamics 
 
+asv_max_abund_moorings = egc_asv_dynamics_df %>%
+  subset(., select=c(ASV_name,Mooring_presence,Max_rel_abund,Num_samples_present,
+                     Distribution_group))
 
-egc_asv_meta$Date <- as.Date(egc_asv_meta$Date, format="%m/%d/%Y")
+asv_max_abund_moorings$Mooring_presence <- factor(asv_max_abund_moorings$Mooring_presence, 
+                                                  levels=unique(c("core-EGC","Shared","MIZ")))
 
-Figure_3a <- ggplot(egc_asv_meta, aes(x = as.Date(Date), y = Ice_cover)) + 
-  geom_area(fill="grey90") + 
-  geom_line(aes(x = as.Date(Date), y = AW_proportion*100), colour = "#1338BE", size = 2) +
-  geom_line(aes(x = as.Date(Date), y = Daylight*4), colour="#FFD300", size = 2) +
-  geom_line(aes(x = as.Date(Date), y = ifelse(Chlorophyll_a_sensor > 0, Chlorophyll_a_sensor*150, 0)), 
-            colour="#85CC6F", size = 2) + 
-  scale_y_continuous(sec.axis = sec_axis(~ ./150, name = "Chlorophyll a (mg m3)")) + 
-  scale_x_date(date_breaks = "3 months") + 
-  labs(y = "AW proportion / Ice concentration (%)", x = "Date") + 
-  facet_grid(.~Mooring_position, scales="free_x") + 
+### Plot Figure 3a - Frequency of detection vs ASV relative abundance
+
+Figure_3a <- ggplot(asv_max_abund_moorings) + 
+  geom_point(aes(x=Num_samples_present, y=Max_rel_abund, color=Distribution_group), size=2) + 
+  labs(y = "ASV maximum relative abundance (%)", x = "Number of samples ASV is present in", 
+       color = "Distribution group") + 
+  geom_smooth(aes(x=Num_samples_present, y=Max_rel_abund), method=lm) + 
+  scale_color_manual(values=c("Intermittent" = "#C5C6D0",
+                              "Transient" = "#232023", 
+                              "Resident" = "#787276")) + 
+  scale_y_log10() + 
+  facet_wrap(Mooring_presence~., scales="free_x") + 
+  guides(color=guide_legend(override.aes = list(size=4), ncol=1)) + 
   theme_bw() + 
-  theme(axis.title.y = element_text(size = 14, colour = "black"),
-        axis.title.x = element_blank(),
-        axis.text.y = element_text(size = 12, colour = "black"),
-        axis.text.x = element_blank(), 
-        strip.background.x = element_rect(fill = "white", colour = "black"), 
+  theme(legend.position="right", 
+        legend.title = element_text(size = 16, colour="black"), 
+        legend.text = element_text(size = 14, colour="black"),
+        axis.text.y = element_text(size=14, colour="Black"),
+        axis.title.y = element_text(size = 16, colour = "Black"),
+        axis.text.x = element_text(size=14, colour="Black"),
+        axis.title.x = element_text(size = 16, colour = "Black"),
+        strip.background = element_rect(fill = "white"), 
         strip.text.x = element_text(size = 16, colour = "black"))
 Figure_3a
 
-###
+### Figure 3b
+# Import data about network connections
+egc_asv_connections_data=read.table("FRAM_RAS_EGC_ASV_avg_connections_network_group.txt", header = TRUE, 
+                                    sep = "\t",as.is=TRUE)
+
+## Reformat data
+colnames(egc_asv_connections_data)<- gsub("\\.","-",colnames(egc_asv_connections_data))
+
+egc_asv_connections_data_long <- melt(data=egc_asv_connections_data, id.vars=c("Group"), variable.name="Network", value.name="Connections")
+
+egc_asv_connections_data_long$Network <- factor(egc_asv_connections_data_long$Network, 
+                                                levels=unique(c("core-EGC","MIZ")))
+egc_asv_connections_data_long$Group <- factor(egc_asv_connections_data_long$Group, 
+                                              levels=unique(c("Intermittent", "Transient", "Resident")))
+
+## Plot Figure 3b
+Figure_3b <- ggplot(egc_asv_connections_data_long) + 
+  geom_bar(aes(x=Group, y=Connections, fill=Group), stat="identity", position="dodge", size=2) + 
+  labs(y = "Avg. number of significant connections", 
+       fill = "Distribution group") + 
+  scale_fill_manual(values=c("Intermittent" = "#C5C6D0",
+                             "Transient" = "#232023", 
+                             "Resident" = "#787276")) + 
+  facet_wrap(Network~., scales="free_x") + 
+  guides(fill=guide_legend(override.aes = list(size=4), ncol=1)) + 
+  theme_bw() + 
+  theme(legend.position="right", 
+        legend.title = element_text(size = 16, colour="black"), 
+        legend.text = element_text(size = 14, colour="black"),
+        axis.text.y = element_text(size=14, colour="Black"),
+        axis.title.y = element_text(size = 16, colour = "Black"),
+        axis.text.x = element_blank(),
+        axis.title.x = element_blank(),
+        strip.background = element_rect(fill = "white"), 
+        strip.text.x = element_text(size = 16, colour = "black"))
+Figure_3b
+
+### Figure 3c
+
 # Create dataframe with relative abundance per Distribution group instead of per ASV
 asv_distr_group <- egc_asv_dynamics_df %>% 
   subset(., select=c(ASV_name,Distribution_group))
@@ -505,19 +552,58 @@ distr_group_rel_abund = asv_rel %>%
   rename(., RAS_id = Sample) %>% 
   left_join(egc_asv_meta, by="RAS_id")
 
+## Correlation analysis
+# Reformat abundance matrix for correlation analysis
+distr_group_hellinger_wide = distr_group_rel_abund %>%
+  subset(., select=c(Distribution_group,RAS_id,Rel_abund)) %>%
+  reshape2::dcast(RAS_id~Distribution_group, value.var="Rel_abund") %>% 
+  arrange(., RAS_id) %>%
+  tibble::column_to_rownames(., var="RAS_id") %>% 
+  vegan::decostand(., method="hellinger") %>%
+  tibble::rownames_to_column(., var="RAS_id")
+as.data.frame()
+
+# Import metadata and merge with distribution group abundance matrix
+egc_asv_meta=read.table("FRAM_RAS_EGC_ASV_meta.txt", header = TRUE, 
+                        sep = "\t",as.is=TRUE,check.names=F)
+egc_asv_meta
+egc_asv_meta_and_hellinger_dist_group = egc_asv_meta %>%
+  subset(., select=c(RAS_id,Daylight,Ice_cover,AW_proportion,Chlorophyll_a_sensor,
+                     O2_saturation,Temperature,Salinity,Ice_cover_past,
+                     Ice_edge_distance)) %>% 
+  arrange(., RAS_id) %>%
+  tibble::column_to_rownames(., var="RAS_id") %>%
+  vegan::decostand(., method="standardize") %>%
+  tibble::rownames_to_column(., var="RAS_id") %>%
+  left_join(distr_group_hellinger_wide, by="RAS_id") %>%
+  tibble::column_to_rownames(., var="RAS_id") %>%
+  as.matrix()
+
+# Calculate correlations
+library(Hmisc)
+egc_asv_meta_and_distr_group_cor <- rcorr(egc_asv_meta_and_hellinger_dist_group)
+
+round(egc_asv_meta_and_distr_group_cor$P, 2) %>%
+  subset(., select=c(Intermittent,Transient,Resident))
+
+round(egc_asv_meta_and_distr_group_cor$r, 2) %>%
+  subset(., select=c(Intermittent,Transient,Resident))
+
+# AW proportion is the consistent significant factor across all three fractions
+
+## Plot Figure 3c - temporal dynamics of community fractions 
+
 # Reformat variables and define order ready for plotting
 distr_group_rel_abund$Date <- as.Date(distr_group_rel_abund$Date, 
-                                                     format="%m/%d/%Y")
+                                      format="%m/%d/%Y")
 distr_group_rel_abund$Mooring_position <- factor(distr_group_rel_abund$Mooring_position, 
-                                                       levels=unique(c("core-EGC", "MIZ")))
+                                                 levels=unique(c("core-EGC", "MIZ")))
 distr_group_rel_abund$Distribution_group <- factor(distr_group_rel_abund$Distribution_group, 
-                                                     levels=unique(c("Intermittent", "Transient", "Resident")))
+                                                   levels=unique(c("Intermittent", "Transient", "Resident")))
 
-### Plot Figure 3b - Dynamics of community fractions across samples
-
-Figure_3b <- ggplot(data=distr_group_rel_abund, 
-                                          aes(x=as.Date(Date), y=Rel_abund)) + 
-  scale_x_date(breaks = "4 months") + 
+Figure_3c <- ggplot(data=distr_group_rel_abund, 
+                    aes(x=as.Date(Date), y=Rel_abund)) + 
+  scale_x_date(breaks = "3 months") + 
   labs(x = "Date", y = "Relative abundance (%)", fill = "Distribution group") + 
   geom_bar(aes(fill=Distribution_group), stat="identity", position="stack", width = 8) + 
   facet_grid(.~Mooring_position, scales="free_x") + 
@@ -534,11 +620,14 @@ Figure_3b <- ggplot(data=distr_group_rel_abund,
         legend.text = element_text(size = 14, colour = "black"), 
         strip.background = element_rect(fill="white"), 
         strip.text.x = element_text(size = 16, colour = "black"))
-Figure_3b
+Figure_3c
 
-pdf(file = "Figure_3.pdf", height=8, width=12)
-Figure_3a/Figure_3b
+### Combine Figure 3a, b and c into single Figure and export
+pdf(file="Figure_3.pdf", height=8, width=12)
+(Figure_3a+Figure_3b+plot_layout(widths=c(2,1), guides="collect"))/
+  Figure_3c
 dev.off()
+
 
 ############################################################################################
 ### Figure 4 ###
@@ -916,10 +1005,10 @@ dev.off()
 ##########
 
 # Import data
-egc_asv_meta=read.table("FRAM_RAS_EGC_ASV_meta_refined.txt", header = TRUE, 
+egc_asv_meta=read.table("FRAM_RAS_EGC_ASV_meta.txt", header = TRUE, 
                         sep = "\t",as.is=TRUE,check.names=F)
 egc_asv_meta$Date <- as.Date(egc_asv_meta$Date, format="%m/%d/%Y")
-
+egc_asv_meta
 # Plot key metadata variables over temporal scales
 
 egc_asv_meta_summary_plot <- ggplot(egc_asv_meta, aes(x = as.Date(Date), y = Ice_cover)) + 
@@ -1592,85 +1681,4 @@ dev.off()
 
 ###################
 
-### Supplementary Figure plotting
-
-# Import ASV distribution dynamics and taxa info
-egc_asv_dynamics_df=read.table("FRAM_RAS_EGC_ASV_dynamics_summary_and_taxa_complete.txt", header = TRUE, 
-                               sep = "\t",as.is=TRUE)
-###
-# Create dataframe with distrbution group and ASV distribution dynamics 
-
-asv_max_abund_moorings = egc_asv_dynamics_df %>%
-  subset(., select=c(ASV_name,Mooring_presence,Max_rel_abund,Num_samples_present,
-                     Distribution_group))
-
-asv_max_abund_moorings$Mooring_presence <- factor(asv_max_abund_moorings$Mooring_presence, 
-                                                  levels=unique(c("core-EGC","Shared","MIZ")))
-
-### Plot Supplementary Figure 1a - Frequency of detection vs ASV relative abundance
-
-Supp_Figure_1a <- ggplot(asv_max_abund_moorings) + 
-  geom_point(aes(x=Num_samples_present, y=Max_rel_abund, color=Distribution_group), size=2) + 
-  labs(y = "ASV maximum relative abundance (%)", x = "Number of samples ASV is present in", 
-       color = "Distribution group") + 
-  geom_smooth(aes(x=Num_samples_present, y=Max_rel_abund), method=lm) + 
-  scale_color_manual(values=c("Intermittent" = "#C5C6D0",
-                              "Transient" = "#232023", 
-                              "Resident" = "#787276")) + 
-  scale_y_log10() + 
-  facet_wrap(Mooring_presence~., scales="free_x") + 
-  guides(color=guide_legend(override.aes = list(size=4), ncol=1)) + 
-  theme_bw() + 
-  theme(legend.position="right", 
-        legend.title = element_text(size = 16, colour="black"), 
-        legend.text = element_text(size = 14, colour="black"),
-        axis.text.y = element_text(size=14, colour="Black"),
-        axis.title.y = element_text(size = 16, colour = "Black"),
-        axis.text.x = element_text(size=14, colour="Black"),
-        axis.title.x = element_text(size = 16, colour = "Black"),
-        strip.background = element_rect(fill = "white"), 
-        strip.text.x = element_text(size = 16, colour = "black"))
-Supp_Figure_1a
-
-### Supplementary Figure 1b
-# Import data about network connections
-egc_asv_connections_data=read.table("FRAM_RAS_EGC_ASV_avg_connections_network_group.txt", header = TRUE, 
-                                    sep = "\t",as.is=TRUE)
-
-## Reformat data
-colnames(egc_asv_connections_data)<- gsub("\\.","-",colnames(egc_asv_connections_data))
-
-egc_asv_connections_data_long <- melt(data=egc_asv_connections_data, id.vars=c("Group"), variable.name="Network", value.name="Connections")
-
-egc_asv_connections_data_long$Network <- factor(egc_asv_connections_data_long$Network, 
-                                                levels=unique(c("core-EGC","MIZ")))
-egc_asv_connections_data_long$Group <- factor(egc_asv_connections_data_long$Group, 
-                                              levels=unique(c("Intermittent", "Transient", "Resident")))
-
-## Plot Supplementary Figure 1b
-Supp_Figure_1b <- ggplot(egc_asv_connections_data_long) + 
-  geom_bar(aes(x=Group, y=Connections, fill=Group), stat="identity", position="dodge", size=2) + 
-  labs(y = "Avg. number of significant connections", 
-       fill = "Distribution group") + 
-  scale_fill_manual(values=c("Intermittent" = "#C5C6D0",
-                             "Transient" = "#232023", 
-                             "Resident" = "#787276")) + 
-  facet_wrap(Network~., scales="free_x") + 
-  guides(fill=guide_legend(override.aes = list(size=4), ncol=1)) + 
-  theme_bw() + 
-  theme(legend.position="right", 
-        legend.title = element_text(size = 16, colour="black"), 
-        legend.text = element_text(size = 14, colour="black"),
-        axis.text.y = element_text(size=14, colour="Black"),
-        axis.title.y = element_text(size = 16, colour = "Black"),
-        axis.text.x = element_blank(),
-        axis.title.x = element_blank(),
-        strip.background = element_rect(fill = "white"), 
-        strip.text.x = element_text(size = 16, colour = "black"))
-Supp_Figure_1b
-
-### Combine the above three plots into single Figure and export
-pdf(file="Supplementary_Figure_1.pdf", height=8, width=12)
-(Supp_Figure_1a+Supp_Figure_1b+plot_layout(widths=c(2,1), guides="collect"))
-dev.off()
 
