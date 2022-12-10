@@ -3,7 +3,7 @@ This repository incorporates the analysis pipelines applied to 16S amplicon and 
 
 There are three distinct sections to the analysis, each encapsulated on a different wiki page within this repository. The sections include:
 
-1) 16S Amplicon analysis <https://github.com/tpriest0/FRAM_EGC_2016_2020_data_analysis/wiki/16S-amplicon-data-processing-and-analysis> : raw sequence data processing, DADA2 pipeline, statistical analysis and visualisation in RStudio. Amplicon Sequence Variant abundance tables, metadata and R script to recreate statistical analysis and plots are provided.
+1) [16S Amplicon analysis](https://github.com/tpriest0/FRAM_EGC_2016_2020_data_analysis/wiki/16S-amplicon-data-processing-and-analysis) : raw sequence data processing, DADA2 pipeline, statistical analysis and visualisation in RStudio. Amplicon Sequence Variant abundance tables, metadata and R script to recreate statistical analysis and plots are provided.
 
 2) Network analysis : R based network analysis applied to Amplicon Sequence Variant dynamics over the two, two-year time series. Necessary input files and R script to reproduce are provided.  
 
