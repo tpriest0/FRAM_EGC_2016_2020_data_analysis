@@ -9,4 +9,4 @@ There are three distinct sections to the analysis, each encapsulated on a differ
 
 3) [Metagenome assembled genome recovery](https://github.com/tpriest0/FRAM_EGC_2016_2020_data_analysis/wiki/Recovery-of-metagenome-assembled-genomes) : detailed description of pipeline used to recover metagenome-assembled genomes, including the lines of code used to run the employed tools.  
 
-4) Metagenomic long-read analysis : detailed description along with code used to functionally annotate metagenomic HiFi reads. 
+4) [Metagenomic long-read taxonomic and functional profiling](https://github.com/tpriest0/FRAM_EGC_2016_2020_data_analysis/wiki/Metagenomic-HiFi-read-functional-and-taxonomic-profiling) : detailed description along with code used to functionally and taxonomically annotate metagenomic HiFi reads. 
