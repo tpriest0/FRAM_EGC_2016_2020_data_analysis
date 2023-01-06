@@ -15,12 +15,19 @@
 
 ### Set working directory!!!
 
-setwd("")
+setwd("D:/ownCloud/PhD/Arctic Bacterioplankton/Fram Strait/RAS_metagenomes/EGC/ASV/FRAM_RAS_EGC_data_for_processing")
 
 
 ############################################################################################
 ### LOADING PACKAGES AND DATA ###
 ############################################################################################
+
+BiocManager::install("ALDEx2", lib="D:/R")
+options(repos = c(
+  fawda123 = 'https://fawda123.r-universe.dev',
+  CRAN = 'https://cloud.r-project.org'))
+
+install.packages('ggord')
 
 # Loading libraries and data tables
 library(mixOmics)
@@ -44,6 +51,7 @@ library(ape)
 library(ALDEx2)
 library(rgr)
 library(reshape2)
+library(ggpmisc)
 
 # Load ASVs
 ASV <- read.table(
@@ -262,6 +270,7 @@ egc_meta_subset = egc_asv_meta %>%
 # Plot Figure 1c
 egc_mooring_metadata_boxplot <- ggplot(egc_meta_subset) + 
   geom_boxplot(aes(x=Mooring_name,y=value,fill=Mooring_name), stat="boxplot") + 
+  geom_point(aes(x=Mooring_name,y=value), colour="black", size = 2) + 
   facet_wrap(.~variable, scales="free_y") + 
   labs(fill = "Mooring") + 
   theme_bw() + 
@@ -465,79 +474,76 @@ egc_asv_dynamics_df=read.table("FRAM_RAS_EGC_ASV_dynamics_summary_and_taxa_compl
 egc_asv_rel=read.table("FRAM_RAS_EGC_ASV_relative_filtered.txt", header = TRUE, 
                        sep = "\t",as.is=TRUE,check.names=F,row.names=1)
 
+# Import sample metadata
+egc_asv_meta=read.table("FRAM_RAS_EGC_ASV_meta_refined.txt", header = TRUE, 
+                        sep = "\t",check.names=F,as.is=TRUE)
+
+# Import network connection information
+egc_asv_network_connections=read.table("FRAM_RAS_EGC_ASV_avg_connections_network_group.txt", header = TRUE, 
+                        sep = "\t",check.names=F,as.is=TRUE)
+
 ###
-# Create dataframe with distrbution group and ASV distribution dynamics 
+# Plot Figure 3a (asv dynamics)
 
-asv_max_abund_moorings = egc_asv_dynamics_df %>%
-  subset(., select=c(ASV_name,Mooring_presence,Max_rel_abund,Num_samples_present,
-                     Distribution_group))
+egc_asv_dynamics_df$Mooring_presence <- factor(egc_asv_dynamics_df$Mooring_presence, 
+                                                 levels=unique(c("core-EGC", "Shared","MIZ")))
 
-asv_max_abund_moorings$Mooring_presence <- factor(asv_max_abund_moorings$Mooring_presence, 
-                                                  levels=unique(c("core-EGC","Shared","MIZ")))
-
-### Plot Figure 3a - Frequency of detection vs ASV relative abundance
-
-Figure_3a <- ggplot(asv_max_abund_moorings) + 
-  geom_point(aes(x=Num_samples_present, y=Max_rel_abund, color=Distribution_group), size=2) + 
-  labs(y = "ASV maximum relative abundance (%)", x = "Number of samples ASV is present in", 
-       color = "Distribution group") + 
-  geom_smooth(aes(x=Num_samples_present, y=Max_rel_abund), method=lm) + 
-  scale_color_manual(values=c("Intermittent" = "#C5C6D0",
-                              "Transient" = "#232023", 
-                              "Resident" = "#787276")) + 
+Figure_3a <- ggplot(egc_asv_dynamics_df, aes(x=Num_samples_present, y=Max_rel_abund)) + 
+  geom_point(aes(colour=Distribution_group), stat="identity", show.legend=FALSE) + 
+  stat_poly_eq(method="lm", use_label(c("R2", "P")),
+               label.y=0.95) + 
+  stat_poly_line() + 
+  labs(y = "ASV maximum relative abundance (%)", x = "Number of samples ASV is present in",
+       colour = "Distribution group") + 
   scale_y_log10() + 
-  facet_wrap(Mooring_presence~., scales="free_x") + 
-  guides(color=guide_legend(override.aes = list(size=4), ncol=1)) + 
-  theme_bw() + 
-  theme(legend.position="right", 
-        legend.title = element_text(size = 16, colour="black"), 
-        legend.text = element_text(size = 14, colour="black"),
-        axis.text.y = element_text(size=14, colour="Black"),
-        axis.title.y = element_text(size = 16, colour = "Black"),
-        axis.text.x = element_text(size=14, colour="Black"),
-        axis.title.x = element_text(size = 16, colour = "Black"),
-        strip.background = element_rect(fill = "white"), 
-        strip.text.x = element_text(size = 16, colour = "black"))
-Figure_3a
-
-### Figure 3b
-# Import data about network connections
-egc_asv_connections_data=read.table("FRAM_RAS_EGC_ASV_avg_connections_network_group.txt", header = TRUE, 
-                                    sep = "\t",as.is=TRUE)
-
-## Reformat data
-colnames(egc_asv_connections_data)<- gsub("\\.","-",colnames(egc_asv_connections_data))
-
-egc_asv_connections_data_long <- melt(data=egc_asv_connections_data, id.vars=c("Group"), variable.name="Network", value.name="Connections")
-
-egc_asv_connections_data_long$Network <- factor(egc_asv_connections_data_long$Network, 
-                                                levels=unique(c("core-EGC","MIZ")))
-egc_asv_connections_data_long$Group <- factor(egc_asv_connections_data_long$Group, 
-                                              levels=unique(c("Intermittent", "Transient", "Resident")))
-
-## Plot Figure 3b
-Figure_3b <- ggplot(egc_asv_connections_data_long) + 
-  geom_bar(aes(x=Group, y=Connections, fill=Group), stat="identity", position="dodge", size=2) + 
-  labs(y = "Avg. number of significant connections", 
-       fill = "Distribution group") + 
-  scale_fill_manual(values=c("Intermittent" = "#C5C6D0",
+  facet_grid(.~Mooring_presence, scales="free_x") + 
+  scale_colour_manual(values=c("Intermittent" = "#C5C6D0",
                              "Transient" = "#232023", 
                              "Resident" = "#787276")) + 
-  facet_wrap(Network~., scales="free_x") + 
-  guides(fill=guide_legend(override.aes = list(size=4), ncol=1)) + 
   theme_bw() + 
-  theme(legend.position="right", 
-        legend.title = element_text(size = 16, colour="black"), 
-        legend.text = element_text(size = 14, colour="black"),
-        axis.text.y = element_text(size=14, colour="Black"),
-        axis.title.y = element_text(size = 16, colour = "Black"),
-        axis.text.x = element_blank(),
-        axis.title.x = element_blank(),
-        strip.background = element_rect(fill = "white"), 
-        strip.text.x = element_text(size = 16, colour = "black"))
-Figure_3b
+  theme(axis.text.y = element_text(size=12, colour="black"),
+        axis.title.y = element_text(size=14, colour="black"),
+        axis.text.x = element_text(size=12, colour="black"),
+        axis.title.x = element_text(size=14, colour="black"),
+        panel.grid.minor.x = element_blank(),
+        legend.title = element_text(size = 14, colour = "black"), 
+        legend.text = element_text(size = 12, colour = "black"), 
+        strip.background = element_rect(fill="white"), 
+        strip.text.x = element_text(size = 14, colour = "black"))
+Figure_3a
 
-### Figure 3c
+### 
+# Reformat table on network connections
+egc_asv_network_connections_long = egc_asv_network_connections %>%
+  reshape2::melt(., id.vars="Group", variable.name="Mooring", 
+                 value.name="num_connections")
+egc_asv_network_connections_long$Mooring <- factor(egc_asv_network_connections_long$Mooring, 
+                                               levels=unique(c("core-EGC","MIZ")))
+egc_asv_network_connections_long$Group <- factor(egc_asv_network_connections_long$Group, 
+                                                   levels=unique(c("Intermittent","Transient",
+                                                                   "Resident")))
+
+# Plot Figure 3b (network connections per group)
+
+Figure_3b <- ggplot(egc_asv_network_connections_long, aes(x = Group, y = num_connections)) + 
+  geom_bar(aes(fill=Group), stat="identity", position="identity") + 
+  labs(y = "Avg. number of significant connections", fill = "Distribution group") +
+  facet_grid(.~Mooring, scales="free") + 
+  scale_fill_manual(values=c("Intermittent" = "#C5C6D0",
+                               "Transient" = "#232023", 
+                               "Resident" = "#787276")) + 
+  theme_bw() + 
+  theme(axis.text.y = element_text(size=12, colour="black"),
+        axis.title.y = element_text(size=14, colour="black"),
+        axis.text.x = element_blank(),
+        axis.title.x = element_text(size=14, colour="black"),
+        panel.grid.minor.x = element_blank(),
+        legend.title = element_text(size = 14, colour = "black"), 
+        legend.text = element_text(size = 12, colour = "black"), 
+        strip.background = element_rect(fill="white"), 
+        strip.text.x = element_text(size = 14, colour = "black"))
+
+###
 
 # Create dataframe with relative abundance per Distribution group instead of per ASV
 asv_distr_group <- egc_asv_dynamics_df %>% 
@@ -552,58 +558,20 @@ distr_group_rel_abund = asv_rel %>%
   rename(., RAS_id = Sample) %>% 
   left_join(egc_asv_meta, by="RAS_id")
 
-## Correlation analysis
-# Reformat abundance matrix for correlation analysis
-distr_group_hellinger_wide = distr_group_rel_abund %>%
-  subset(., select=c(Distribution_group,RAS_id,Rel_abund)) %>%
-  reshape2::dcast(RAS_id~Distribution_group, value.var="Rel_abund") %>% 
-  arrange(., RAS_id) %>%
-  tibble::column_to_rownames(., var="RAS_id") %>% 
-  vegan::decostand(., method="hellinger") %>%
-  tibble::rownames_to_column(., var="RAS_id")
-as.data.frame()
-
-# Import metadata and merge with distribution group abundance matrix
-egc_asv_meta=read.table("FRAM_RAS_EGC_ASV_meta.txt", header = TRUE, 
-                        sep = "\t",as.is=TRUE,check.names=F)
-egc_asv_meta
-egc_asv_meta_and_hellinger_dist_group = egc_asv_meta %>%
-  subset(., select=c(RAS_id,Daylight,Ice_cover,AW_proportion,Chlorophyll_a_sensor,
-                     O2_saturation,Temperature,Salinity,Ice_cover_past,
-                     Ice_edge_distance)) %>% 
-  arrange(., RAS_id) %>%
-  tibble::column_to_rownames(., var="RAS_id") %>%
-  vegan::decostand(., method="standardize") %>%
-  tibble::rownames_to_column(., var="RAS_id") %>%
-  left_join(distr_group_hellinger_wide, by="RAS_id") %>%
-  tibble::column_to_rownames(., var="RAS_id") %>%
-  as.matrix()
-
-# Calculate correlations
-library(Hmisc)
-egc_asv_meta_and_distr_group_cor <- rcorr(egc_asv_meta_and_hellinger_dist_group)
-
-round(egc_asv_meta_and_distr_group_cor$P, 2) %>%
-  subset(., select=c(Intermittent,Transient,Resident))
-
-round(egc_asv_meta_and_distr_group_cor$r, 2) %>%
-  subset(., select=c(Intermittent,Transient,Resident))
-
-# AW proportion is the consistent significant factor across all three fractions
-
-## Plot Figure 3c - temporal dynamics of community fractions 
-
 # Reformat variables and define order ready for plotting
 distr_group_rel_abund$Date <- as.Date(distr_group_rel_abund$Date, 
-                                      format="%m/%d/%Y")
+                                                     format="%m/%d/%Y")
 distr_group_rel_abund$Mooring_position <- factor(distr_group_rel_abund$Mooring_position, 
-                                                 levels=unique(c("core-EGC", "MIZ")))
+                                                       levels=unique(c("core-EGC", "MIZ")))
 distr_group_rel_abund$Distribution_group <- factor(distr_group_rel_abund$Distribution_group, 
-                                                   levels=unique(c("Intermittent", "Transient", "Resident")))
+                                                     levels=unique(c("Intermittent", "Transient", "Resident")))
+
+### 
+# Plot Figure 3c - Dynamics of community fractions across samples
 
 Figure_3c <- ggplot(data=distr_group_rel_abund, 
-                    aes(x=as.Date(Date), y=Rel_abund)) + 
-  scale_x_date(breaks = "3 months") + 
+                                          aes(x=as.Date(Date), y=Rel_abund)) + 
+  scale_x_date(breaks = "4 months") + 
   labs(x = "Date", y = "Relative abundance (%)", fill = "Distribution group") + 
   geom_bar(aes(fill=Distribution_group), stat="identity", position="stack", width = 8) + 
   facet_grid(.~Mooring_position, scales="free_x") + 
@@ -611,23 +579,21 @@ Figure_3c <- ggplot(data=distr_group_rel_abund,
                              "Transient" = "#232023", 
                              "Resident" = "#787276")) + 
   theme_bw() + 
-  theme(axis.text.y = element_text(size=14, colour="Black"),
-        axis.title.y = element_text(size=16, colour="Black"),
-        axis.text.x = element_text(size=14, colour="Black", angle=45, hjust=1),
+  theme(axis.text.y = element_text(size=12, colour="Black"),
+        axis.title.y = element_text(size=14, colour="Black"),
+        axis.text.x = element_text(size=12, colour="Black", angle=45, hjust=1),
         axis.title.x = element_blank(),
         panel.grid.minor.x = element_blank(),
-        legend.title = element_text(size = 16, colour = "black"), 
-        legend.text = element_text(size = 14, colour = "black"), 
+        legend.title = element_text(size = 14, colour = "black"), 
+        legend.text = element_text(size = 12, colour = "black"), 
         strip.background = element_rect(fill="white"), 
-        strip.text.x = element_text(size = 16, colour = "black"))
+        strip.text.x = element_text(size = 14, colour = "black"))
 Figure_3c
 
-### Combine Figure 3a, b and c into single Figure and export
-pdf(file="Figure_3.pdf", height=8, width=12)
-(Figure_3a+Figure_3b+plot_layout(widths=c(2,1), guides="collect"))/
+pdf(file = "Figure_3.pdf", height=8, width=12)
+((Figure_3a+Figure_3b)+plot_layout(widths=c(2,1)))/
   Figure_3c
 dev.off()
-
 
 ############################################################################################
 ### Figure 4 ###
@@ -980,18 +946,364 @@ dev.off()
 
 ### Figures 4a and 4b were both exported and combined in Inkscape
 
+
+
+
 ############################################################################################
 ### Figure 5 ###
 ############################################################################################
 
 ##########
 
-### Figure 5. Ribosomal protein-based phylogenetic tree of MAGs from this study 
-### and those previously recovered from the Fram Strait. 
+### Figure 5. Comparison and assessment of distribution of MAGs across Arctic Ocean
+### and Fram Strait metagenomes 
 
 ##########
 
-### The figure was created in iToL
+# Load libraries
+library(dplyr)
+library(tidyverse)
+library(reshape2)
+library(vegan)
+library(UpSetR)
+
+### Part A - Species-level MAG comparison
+
+# Set working directory
+setwd('D:/ownCloud/PhD/Arctic Bacterioplankton/Arctic_comparison/MAGs/Arctic_Fram_EGC/')
+
+# Load MAG species clusters summary info
+comparative_mag_table <- read.table(
+  "FRAM_RAS_EGC_vs_Arctic_MAGs_species_cluster_summary.txt",
+  h = T, sep = "\t",
+  check.names=F)
+
+
+# Reformat dataframe ready for upset plot
+MAG_species_cluster_info_for_upset = comparative_mag_table %>%
+  subset(., select=c(Data_source,Species)) %>%
+  mutate(count=1) %>%
+  reshape2::dcast(., Species~Data_source, value.var="count")%>%
+  mutate_if(is.numeric, ~1 * (. >0)) %>%
+  subset(., select=-c(Species))
+
+datasets_list = colnames(MAG_species_cluster_info_for_upset)
+
+temp1 <- as.data.frame(datasets_list) %>%
+  rename(sets = datasets_list)
+temp2 <- as.data.frame(datasets_list) %>%
+  rename(dataset_source = datasets_list)
+
+upset_metadata <- cbind(temp1,temp2)
+
+# Plot Figure 5a
+Figure_5a <- 
+  UpSetR::upset(MAG_species_cluster_info_for_upset, order.by = "freq", decreasing = T,
+                sets.x.label = "Number of species", 
+                mainbar.y.label = "Number of species",
+                text.scale = c(1.5,1,1.5,1,1.5,1),
+                set.metadata = list(data=upset_metadata, 
+                                    plots = list(list(type = "matrix_rows",
+                                                      column = "dataset_source",
+                                                      colors=c(FRAM_EGC="#4D4D5C",
+                                                               FRAM18="#C5C6D0",
+                                                               MOSAiC="#4D4D5C",
+                                                               TARA="#C5C6D0",
+                                                               alpha=0.5)))))
+
+
+#####
+
+### Part B - Frequency of detection of FRAM_EGC MAGs across metagenomes 
+
+# Set working directory
+setwd('D:/ownCloud/PhD/Arctic Bacterioplankton/Arctic_comparison/MAGs/Arctic_Fram_EGC/')
+
+# Load MAG species relative abundance file
+mag_species_abund_arctic_fram_long <- read.table(
+  "Arctic_Fram_MAGs_species_reps_rel_abund_long.txt",
+  h = T, sep = "\t",
+  check.names=F)
+
+
+# Reformat
+mag_species_abund_arctic_fram_long %>%
+  subset(., select="Sample") %>%
+  count(Sample)
+
+# Load MAG species clusters summary info
+egc_mag_species_info <- read.table(
+  "Arctic_Fram_MAGs_EGC_reps_cluster_info.txt",
+  h = T, sep = "\t",
+  check.names=F)
+
+# Extract only species for which an FRAM_EGC MAG was recovered and reformat
+# dataframe to wide
+mag_species_abund_arctic_fram_wide = mag_species_abund_arctic_fram_long %>%
+  filter(Species %in% egc_mag_species_info$Species) %>%
+  subset(., select=c(Sample,Species,Rel_abund)) %>%
+  aggregate(Rel_abund~Species+Sample, data=., FUN=sum) %>%
+  reshape2::dcast(., Species~Sample, value.var = "Rel_abund") %>%
+  tibble::column_to_rownames(., var="Species")
+
+# Extract only species for which an FRAM_EGC MAG was recovered and reformat
+# dataframe to wide and calculate frequency of detection across all samples
+species_freq_detection = mag_species_abund_arctic_fram_long %>%
+  filter(Species %in% egc_mag_species_info$Species) %>%
+  subset(., select=c(Sample,Species,TAD)) %>% 
+  aggregate(TAD~Species+Sample, data=., FUN=sum) %>%
+  reshape2::dcast(., Species~Sample, value.var = "TAD") %>%
+  tibble::column_to_rownames(., var="Species")%>%
+  replace(., . > 1, 1) %>% 
+  replace(., . < 1, 0) %>%
+  mutate(Num_samples_present = rowSums(.[1:67])) %>% 
+  as.data.frame(.) %>% 
+  tibble::rownames_to_column(., var="Species") %>%
+  subset(., select=c(Species,Num_samples_present))
+
+# Determine the min, mean and max relative abundance value for each MAG
+# MAX
+MAG_max_rel_abund = mag_species_abund_arctic_fram_wide %>% 
+  tibble::rownames_to_column(., var="Species") %>%
+  melt(., id.vars="Species", variable.name="Sample", value.name="Rel_abund") %>% 
+  aggregate(Rel_abund~Species, data=., max) %>% 
+  rename(., Max_rel_abund = Rel_abund)
+# MIN
+MAG_min_rel_abund = mag_species_abund_arctic_fram_wide %>% 
+  tibble::rownames_to_column(., var="Species") %>%
+  melt(., id.vars="Species", variable.name="Sample", value.name="Rel_abund") %>% 
+  aggregate(Rel_abund~Species, data=., min) %>% 
+  rename(., Min_rel_abund = Rel_abund)
+# MEAN
+MAG_avg_rel_abund = mag_species_abund_arctic_fram_wide %>% 
+  tibble::rownames_to_column(., var="Species") %>%
+  melt(., id.vars="Species", variable.name="Sample", value.name="Rel_abund") %>% 
+  aggregate(Rel_abund~Species, data=., mean) %>% 
+  rename(., Avg_rel_abund = Rel_abund)
+
+# Combine different statistics generated above into a single summary tabl
+egc_mag_arctic_summary_info = egc_mag_species_info %>%
+  left_join(species_freq_detection, by="Species") %>%
+  left_join(MAG_max_rel_abund, by="Species") %>%
+  left_join(MAG_avg_rel_abund, by="Species") %>%
+  left_join(MAG_min_rel_abund, by="Species") %>%
+  arrange(desc(Num_samples_present))
+
+# Combine with summary information on MAG and its connecting ASV generated earlier 
+# in this script
+setwd('D:/ownCloud/PhD/Arctic Bacterioplankton/Fram Strait/RAS_metagenomes/EGC/ASV/FRAM_RAS_EGC_data_for_processing')
+
+# Import files if not running script consecutively
+mag_to_asv_mapping=read.table("FRAM_RAS_EGC_ASV_to_MAG.txt", header = TRUE, 
+                              sep = "\t",as.is=TRUE,check.names=F)
+asv_summary_complete=read.table("FRAM_RAS_EGC_ASV_dynamics_summary_and_taxa_complete_with_spls_cluster.txt", header = TRUE, 
+                                sep = "\t",as.is=TRUE,check.names=F)
+
+setwd('D:/ownCloud/PhD/Arctic Bacterioplankton/Fram Strait/RAS_metagenomes/EGC/MAGs/')
+
+mag_reps_summary=read.table("FRAM_RAS_EGC1617_MAG_reps_summary.txt", header = TRUE, 
+                            sep = "\t",as.is=TRUE,check.names=F)
+
+# Setwd ready for plot output
+setwd('D:/ownCloud/PhD/Arctic Bacterioplankton/manuscripts/FRAM_RAS_EGC1620_manuscript/ISME_submission/Resubmission_after_review/working_figures')
+
+# Reformat naming of samples to match across dataframes
+mag_reps_summary_mod = mag_reps_summary %>%
+  mutate(across("MAG", str_replace, "_RAS_EGC1617", "_EGC1617"))
+
+# Extract the information of interest from asv summary dataframe
+asv_distribution_group_and_cluster = asv_summary_complete %>%
+  subset(., select=c(ASV_name,Distribution_group,cluster))
+
+# Combine MAG distribution statistics with taxonomic information and
+# linked ASV 
+egc_mag_summary_across_arctic_and_fram = egc_mag_arctic_summary_info %>%
+  left_join(mag_reps_summary_mod, by="MAG") %>%
+  left_join(mag_to_asv_mapping, by=c("MAG" = "MAG_name")) %>% 
+  left_join(asv_distribution_group_and_cluster, by="ASV_name") %>%
+  subset(., select=c(MAG,Species,Rank,Num_samples_present,Completeness,
+                     Contamination,Strain_heterogeneity,Genome_size,
+                     N50,GC_content,GTDB_taxonomy,MAG_sample_source,ASV_name,
+                     Distribution_group,Max_rel_abund,Avg_rel_abund,
+                     Min_rel_abund,cluster)) %>%
+  mutate(Distribution_group = Distribution_group %>%
+           is.na %>% 
+           ifelse("Unassigned",Distribution_group)) %>% 
+  mutate(Distribution_group = fct_relevel(Distribution_group, c("Resident",
+                                                                "Intermittent",
+                                                                "Transient",
+                                                                "Unassigned"))) %>%
+  arrange(Distribution_group,desc(Num_samples_present))
+
+
+# Export MAG dynamics summary information file
+write.table(egc_mag_summary_across_arctic_and_fram,
+            file="FRAM_RAS_EGC_MAGs_dynamics_summary_information.txt", sep="\t")
+
+# Check for statistical significance in the frequency of detection between
+# different distribution groups.
+# Need to remove Transient however, due to it only having one MAG rep
+distr_group_num_samples = egc_mag_summary_across_arctic_and_fram %>%
+  subset(., select=c(Num_samples_present,Distribution_group)) %>%
+  filter(Distribution_group != "Transient")
+head(distr_group_num_samples)
+
+kruskal.test(Num_samples_present~Distribution_group, data=distr_group_num_samples) 
+pairwise.wilcox.test(distr_group_num_samples$Num_samples_present, 
+                     distr_group_num_samples$Distribution_group, p.adjust.method = "BH")
+
+# Fix MAG order
+egc_mag_summary_across_arctic_and_fram$MAG <- 
+  factor(egc_mag_summary_across_arctic_and_fram$MAG,
+         levels=unique(egc_mag_summary_across_arctic_and_fram$MAG))
+
+# Plot Figure 5b
+Figure_5b = 
+  ggplot(data=egc_mag_summary_across_arctic_and_fram,
+         aes(x = Distribution_group, y = Num_samples_present)) + 
+  geom_boxplot(aes(fill = Distribution_group)) + 
+  geom_jitter(alpha = 0.8, width = 0.2) +
+  geom_hline(aes(yintercept=67), colour="purple", linewidth=1.5) + 
+  labs(y = "Number of samples MAG has >1X coverage") + 
+  scale_fill_manual(values=c("Resident" = "#787276",
+                             "Intermittent" = "#C5C6D0",
+                             "Transient" = "#232023",
+                             "Unassigned" = "#747D9C")) +
+  theme_bw() + 
+  theme(legend.position="none", 
+        axis.title.y = element_text(colour = "black", size = 14),
+        axis.text.y = element_text(colour = "black", size = 12),
+        axis.title.x = element_blank(),
+        axis.text.x = element_text(colour = "black", size = 12))
+Figure_5b
+
+#####
+
+### Part C - Dynamics of sPLS clusters across Fram Strait and Arctic Ocean 
+### metagenomes
+
+# Set working directory
+setwd('D:/ownCloud/PhD/Arctic Bacterioplankton/Arctic_comparison/')
+
+fram_arctic_mg_metadata <- read.table(
+  "FRAM_Arctic_MG_all_metadata.txt",
+  h = T, sep = "\t",
+  check.names=F)
+
+# Extract necessary information from mag summary file generated above
+egc_mag_name_to_species = egc_mag_summary_across_arctic_and_fram %>%
+  subset(., select=c(MAG,Species,Distribution_group,Num_samples_present))
+View(egc_mag_name_to_species)
+
+egc_mag_to_cluster = subset(egc_mag_summary_across_arctic_and_fram, select=c(MAG,cluster))
+
+# Create average relative abundance dataframe for spls clusters across samples and
+# combine with metadata
+spls_clusters_abund_across_arctic_long_avg = mag_species_abund_arctic_fram_long %>% 
+  #filter(TAD > 1) %>% 
+  left_join(egc_mag_name_to_species, by="Species") %>%
+  left_join(egc_mag_to_cluster, by="MAG") %>%
+  aggregate(Rel_abund~cluster+Sample, data=., FUN=mean) %>%
+  left_join(fram_arctic_mg_metadata, by = "Sample") %>%
+  arrange(desc(Depth)) %>%
+  mutate(Dataset = case_when(
+    grepl("TARA",Sample)~"TARA",
+    grepl("MOSAIC", Sample)~"MOSAIC",
+    grepl("EGC",Sample)~"FRAM_EGC",
+    grepl("FRAM18",Sample)~"FRAM18"
+  ))
+
+# Define colour scheme for clusters
+pls_cluster_colours <- c(
+  "C1" = "#db6d00",
+  "C2" = "#920000",
+  "C3" = "#b6dbff",
+  "C4" = "#006ddb",
+  "C5" = "#009292",
+  "C6" = "#ffb6db",
+  "C7" = "#ffff6d",
+  "C8" = "#000000")
+
+### Plot Figure 5c
+Figure_5c_ice <- ggplot(spls_clusters_abund_across_arctic_long_avg, 
+                        aes(y=Rel_abund, x=Ice_cover, fill=cluster)) +
+  #geom_area(aes(y=Ice_cover, x=ifelse(Rel_abund>0.05,Rel_abund,NA), fill=cluster)) + 
+  scale_fill_manual(values=pls_cluster_colours) + 
+  stat_smooth(se = FALSE, geom = 'area', method = 'loess', span = 1, alpha=0.5, 
+              position = "stack", aes(fill = cluster)) + 
+  scale_y_continuous(limits = c(0,3)) + 
+  labs(y = "Average relative abundance (%)", x = "Ice cover (%)") + 
+  theme_bw() + 
+  theme(legend.position = "right", 
+        legend.title = element_text(colour = "black", size = 14),
+        legend.text = element_text(colour = "black", size = 12),
+        axis.title.y = element_blank(),
+        axis.text.y = element_text(colour = "black", size = 12),
+        axis.title.x = element_text(colour = "black", size = 14),
+        axis.text.x = element_text(colour = "black", size = 12))
+Figure_5c_ice
+
+# Plot spls abundance area with daylight
+Figure_5c_daylight <- ggplot(data=spls_clusters_abund_across_arctic_long_avg, 
+                             aes(y=ifelse(Rel_abund>0,Rel_abund,NA), x=Daylight, fill=cluster)) +
+  #geom_area(aes(y=Ice_cover, x=ifelse(Rel_abund>0.05,Rel_abund,NA), fill=cluster)) + 
+  scale_fill_manual(values=pls_cluster_colours) + 
+  stat_smooth(se = FALSE, geom = 'area', method = 'loess', span = 1, alpha=0.5, 
+              position = "stack", aes(fill = cluster)) + 
+  scale_y_continuous(limits = c(0,4.5)) + 
+  labs(y = "Average relative abundance (%)", x = "Daylight (h)") + 
+  theme_bw() + 
+  theme(legend.position = "right", 
+        legend.title = element_text(colour = "black", size = 14),
+        legend.text = element_text(colour = "black", size = 12), 
+        axis.title.y = element_blank(),
+        axis.text.y = element_text(colour = "black", size = 12),
+        axis.title.x = element_text(colour = "black", size = 14),
+        axis.text.x = element_text(colour = "black", size = 12))
+Figure_5c_daylight
+
+# Plot spls abundance area with depth
+Figure_5c_depth = spls_clusters_abund_across_arctic_long_avg %>%
+  filter(Depth < 1000) %>%
+  ggplot(data=., aes(y=Rel_abund, x=Depth, fill=cluster)) +
+  stat_smooth(se = FALSE, geom = 'area', method = 'loess', span = 1, alpha=0.5, 
+              position = "stack", aes(fill = cluster)) + 
+  scale_fill_manual(values=pls_cluster_colours) + 
+  scale_y_continuous(limits = c(0,4)) + 
+  labs(y = "Average relative abundance (%)", x = "Depth (m)") +
+  theme_bw() + 
+  theme(legend.position = "right", 
+        legend.title = element_text(colour = "black", size = 14),
+        legend.text = element_text(colour = "black", size = 12), 
+        axis.title.y = element_text(colour = "black", size = 14),
+        axis.text.y = element_text(colour = "black", size = 12),
+        axis.title.x = element_text(colour = "black", size = 14),
+        axis.text.x = element_text(colour = "black", size = 12))
+Figure_5c_depth
+
+### Combine all Figure 5 parts into one
+library(cowplot)
+library(ggplotify)
+
+fram_arctic_MAG_species_comparison_upset_v2 <- as.grob(fram_arctic_MAG_species_comparison_upset)
+
+part_1 <- plot_grid(fram_arctic_MAG_species_comparison_upset_v2, 
+                    FRAM_EGC_MAGs_distribution_group_across_arctic_boxplot, 
+                    nrow = 2, align="hv", labels = c("A", "B"),
+                    label_size = 14)
+
+part_2 <- plot_grid(spls_clust_avg_abund_with_ice,
+                    spls_clust_avg_abund_with_daylight,
+                    spls_clust_avg_abund_with_depth,
+                    nrow = 3, align = "v", labels = "C", label_size = 14)
+
+# Setwd ready for plot output
+setwd('D:/ownCloud/PhD/Arctic Bacterioplankton/manuscripts/FRAM_RAS_EGC1620_manuscript/ISME_submission/Resubmission_after_review/working_figures')
+
+pdf(file="Figure_5.pdf", height = 10, width = 10)
+plot_grid(part_1, part_2, ncol=2)
+dev.off()
+
 
 
 ############################################################################################
@@ -1005,10 +1317,10 @@ dev.off()
 ##########
 
 # Import data
-egc_asv_meta=read.table("FRAM_RAS_EGC_ASV_meta.txt", header = TRUE, 
+egc_asv_meta=read.table("FRAM_RAS_EGC_ASV_meta_refined.txt", header = TRUE, 
                         sep = "\t",as.is=TRUE,check.names=F)
 egc_asv_meta$Date <- as.Date(egc_asv_meta$Date, format="%m/%d/%Y")
-egc_asv_meta
+
 # Plot key metadata variables over temporal scales
 
 egc_asv_meta_summary_plot <- ggplot(egc_asv_meta, aes(x = as.Date(Date), y = Ice_cover)) + 
@@ -1264,7 +1576,7 @@ pls_c8_temporal = egc_asv_pls_signatures_with_meta %>%
 ### Combine all plots into single figure
 
 library(patchwork)
-pdf(file="Figure_6_new.pdf", height=12, width=14)
+pdf(file="Figure_6.pdf", height=12, width=14)
 (egc_asv_meta_summary_plot/pls_c1_temporal/pls_c2_temporal/
   pls_c3_temporal/pls_c4_temporal/pls_c6_temporal/pls_c7_temporal/pls_c8_temporal)+
   plot_layout(guides="collect")
@@ -1272,191 +1584,10 @@ dev.off()
 
 ### Plot was further modified in Inkscape
 
-############################################################################################
-### Figure 7 ###
-############################################################################################
-
-##########
-
-### Figure 7. Clustering of sample functional gene composition based on Bray-Curtis dissimilarities.
-
-##########
-
-# Import pre-normalised functional profile matrix
-
-egc_read_func_long=read.table("FRAM_RAS_EGC_community_functional_profile_norm_long.txt", 
-                              header = TRUE, sep = "\t",as.is=TRUE,check.names=F)
-egc_meta=read.table("FRAM_RAS_EGC_MG_meta.txt", 
-                           header = TRUE, sep = "\t",as.is=TRUE,check.names=F)
-
-# Reformat dataframe
-
-egc_read_func_wide = egc_read_func_long %>% 
-  aggregate(Norm_count~Gene+Sample, data=., FUN = sum) %>% 
-  reshape2::dcast(Gene~Sample, value.var = "Norm_count", data=.) %>% 
-  tibble::column_to_rownames(., var="Gene")
-
-egc_read_func_wide[is.na(egc_read_func_wide)]<-0
-
-# Filter out very low abundant functions
-
-egc_read_func_wide_filt <- OTUtable::filter_taxa(egc_read_func_wide, abundance=0.001, persistence = 20)
-dim(egc_read_func_wide_filt)
-
-# Compute dissimilarity matrix
-
-egc_read_func_wide_filt_t <- t(egc_read_func_wide_filt)
-egc_read_func_wide_bray <- vegdist(egc_read_func_wide_filt_t, method="bray", upper=FALSE)
-
-# Perform hierarchical clustering using different algorithms
-
-egc_read_func_wide_clust_avg <- hclust(egc_read_func_wide_bray, method="average")
-egc_read_func_wide_clust_comp <- hclust(egc_read_func_wide_bray, method="complete")
-egc_read_func_wide_clust_ward <- hclust(egc_read_func_wide_bray, method="ward.D")
-
-par(mfrow=c(3,1))
-plot(egc_read_func_wide_clust_avg)
-plot(egc_read_func_wide_clust_comp)
-plot(egc_read_func_wide_clust_ward)
-
-# Although slight variation observed, the same two distinct clusters were
-# consistently formed
-
-# Check which method is likely better at capturing dissimilarity
-
-# Calculate cophenetic correlation for each method
-egc_func_avg_coph <- cophenetic(egc_read_func_wide_clust_avg)
-egc_func_comp_coph <- cophenetic(egc_read_func_wide_clust_comp)
-egc_func_ward_coph <- cophenetic(egc_read_func_wide_clust_ward)
-
-# Print cophenetic values
-paste("Complete cophenetic correlation: ", cor(egc_read_func_wide_bray,
-                                               egc_func_comp_coph))
-paste("Average cophenetic correlation: ", cor(egc_read_func_wide_bray, 
-                                              egc_func_avg_coph))
-paste("Ward cophenetic correlation: ", cor(egc_read_func_wide_bray, 
-                                           egc_func_ward_coph))
-
-# Based on the highest cophenetic correlation, the average algorithm will be used
-
-# Define clusters and combine with metadata
-
-egc_func_clusters <- cutree(egc_read_func_wide_clust_avg, k=2)
-
-# Create dataframe with cluster information
-egc_func_clusters_df = egc_func_clusters %>% 
-  as.data.frame() %>%
-  rename(., Clusters = ".") %>% 
-  tibble::rownames_to_column(., "RAS_id")
-
-# Save cluster assignment output for use in Figure 8/9/10
-write.table(egc_func_clusters_df, file="FRAM_RAS_EGC_MG_cluster_assignment.txt", 
-            sep="\t")
-
-# Combine cluster information with the main metadata variables
-egc_func_metadata = egc_func_clusters_df %>%
-  left_join(egc_meta, by="RAS_id") %>% 
-  subset(., select=c(RAS_id,Ice_cover,Ice_edge_distance,
-                     Ice_cover_past,Daylight,AW_proportion,O2_concentration)) %>%
-  tibble::column_to_rownames(., "RAS_id")
-
-# Check for colinearity between metadata variables
-ggpairs(egc_func_metadata)
-
-### Ice edge distance and ice cover highly colinear
-### Ice cover and O2 concentration highly colinear
-### Ice cover will be kept and the others removed
-
-# Standardize metadata
-egc_func_meta_stand_with_clusters = egc_func_metadata %>% 
-  subset(., select=-c(O2_concentration,Ice_edge_distance)) %>%
-  decostand(., method="standardize", MARGIN=2) %>%
-  tibble::rownames_to_column(., "RAS_id") %>%
-  left_join(egc_func_clusters_df, by="RAS_id")
-
-# Run MANOVA to determine which metadata variables are significant between
-# clusters 
-
-depend_vars <- cbind(egc_func_meta_stand_with_clusters$Ice_cover,
-                     egc_func_meta_stand_with_clusters$Ice_cover_past,
-                     egc_func_meta_stand_with_clusters$Daylight,
-                     egc_func_meta_stand_with_clusters$AW_proportion)
-
-egc_read_func_meta_cluster_manova <- manova(depend_vars~Clusters, data=egc_func_meta_stand_with_clusters)
-summary(egc_read_func_meta_cluster_manova)
-summary.aov(egc_read_func_meta_cluster_manova)
-
-### This identified Ice_cover as the only significant variable
-
-### Prepare metadata dataframe for plotting
-egc_func_metadata_for_plotting = egc_func_metadata %>% 
-  subset(., select=-c(O2_concentration,Ice_edge_distance)) %>%
-  tibble::rownames_to_column(., "RAS_id") %>%
-  left_join(egc_func_clusters_df, by="RAS_id") %>%
-  mutate(AW_proportion_2 = AW_proportion*100) %>% 
-  subset(., select=-c(AW_proportion)) %>% 
-  rename(., AW_proportion = AW_proportion_2)
-
-# Sort by sample ID as this has to match the dissimilarity matrix order
-egc_func_metadata_for_plotting <- egc_func_metadata_for_plotting[order(row.names(egc_func_metadata_for_plotting)),]
-
-# Define clusters as a clustering object
-egc_read_func_wide_bray <- vegdist(egc_read_func_wide_filt_t, method="bray", upper=FALSE)
-egc_read_func_clusters <- hcut(egc_read_func_wide_bray, k=2, hc_method="average", isdiss=TRUE)
-
-# Define dissimilarity matrix as a matrix
-egc_read_func_wide_bray <- as.matrix(egc_read_func_wide_bray)
-egc_read_func_wide_bray
-
-### Plot dissimilarities at heatmap with metadata information also
-taxa_heatmap_colours <- colorRamp2(c(0.05, 0.3), c("#150c25", "#FFFFE5"))
-
-### Barplot annotation
-column_ha_bars = HeatmapAnnotation("Ice coverage (%)" = anno_barplot(egc_func_metadata_for_plotting$Ice_cover, 
-                                                                     axis_param = list(at = c(25,50,75,100))), 
-                                   "Atlantic water proportion (%)" = anno_barplot(egc_func_metadata_for_plotting$AW_proportion, 
-                                                                                  axis_param = list(at = c(25,50,75,100))), 
-                                   "Daylight (h)" = anno_barplot(egc_func_metadata_for_plotting$Daylight, 
-                                                                 axis_param = list(at = c(6,12,18,24))),
-                                   height = unit(6, "cm"),
-                                   annotation_name_side = "left",
-                                   annotation_name_rot = 1)
-
-#
-egc_read_func_heatmap <- Heatmap(egc_read_func_wide_bray, 
-                                 #rect_gp = gpar(type = "none"), 
-                                 column_dend_side = "bottom",
-                                 col = taxa_heatmap_colours,
-                                 show_column_names = FALSE,
-                                 top_annotation=column_ha_bars,
-                                 #bottom_annotation=col_cluster_symbol,
-                                 #left_annotation=row_cluster_symbol,
-                                 row_names_side = c("left"), 
-                                 cluster_columns=egc_read_func_clusters,
-                                 cluster_rows=egc_read_func_clusters,
-                                 clustering_method_columns = "average",
-                                 clustering_method_rows = "average", 
-                                 column_dend_height = unit(60, "pt"),
-                                 heatmap_legend_param = list(title="Bray Curtis dissimilarity", 
-                                                             legend_height = unit(4, "cm"), 
-                                                             labels_gp=gpar(fontsize=12), 
-                                                             title_gp=gpar(fotnsize=14)))
-
-egc_read_func_heatmap
-
-pdf(file="Figure_7.pdf", height=7, width=9)
-egc_read_func_heatmap
-dev.off()
-
 
 ############################################################################################
-### Figure 8 and Figure 9 ###
+### Figure 7
 ############################################################################################
-
-### Both figure 8 and figure 9 show different resolutions of significantly
-### enriched genes derived from the same analysis
-### As such, the first section of the next code will perform the analysis
-### and the respective figures are generated at the end
 
 #####
 
@@ -1578,60 +1709,12 @@ write.table(egc_mg_func_aldex_sig_genes_clr_and_group_enrichment_updated,
 #####
 
 ### At this point, the output table produced above was manually inspected,
-### Gene-encoding functions were checked and two subset dataframes were produced 
-### that were used to make the following figures
+### Gene-encoding functions were checked and rename/grouped based on function
+
 
 ##########
 
-### Figure 8. Summary of substrate uptake and degradation-related genes 
-### enriched with high- and low-ice coverage. .
-
-##########
-
-# Import grouped significant gene hits
-aldex_enriched_genes_grouped =read.table("FRAM_RAS_EGC_community_functional_profile_ALDEX_sig_enr_genes_grouped.csv", header = TRUE, 
-                                                    sep = ",",as.is=TRUE)
-
-aldex_enriched_genes_grouped$Metabolism <- factor(aldex_enriched_genes_grouped$Metabolism, levels = unique(aldex_enriched_genes_grouped$Metabolism))
-aldex_enriched_genes_grouped$Metabolism_group <- factor(aldex_enriched_genes_grouped$Metabolism_group, levels = unique(aldex_enriched_genes_grouped$Metabolism_group))
-
-# Create boxplot
-aldex_enriched_genes_grouped_boxplot <- 
-  aldex_enriched_genes_grouped %>% 
-  filter(Metabolism_group == "Substrates") %>% 
-  ggplot(.,) +
-  geom_boxplot(aes(
-    x=Metabolism, y=CLR_values, 
-    fill=cluster), outlier.shape = NA) + 
-  geom_hline(
-    yintercept=0, size=0.5,
-    linetype="dashed", 
-    color="gray33") + 
-  scale_fill_manual(values=c(
-    "High-ice cluster"="darkcyan",
-    "Low-ice cluster"="lightgoldenrod2")) +  
-  labs(y = "CLR-transformed normalised gene count", fill = "Ice coverage") +
-  theme_bw() + 
-  theme(axis.title.x=element_blank(),
-        legend.position = "right",
-        axis.title.y = element_text(size = 14, colour = "black", vjust=20), 
-        axis.text.x = element_text(size = 11, colour = "black", angle = 45, hjust = 1), 
-        axis.text.y = element_text(size = 12, colour = "black"),
-        legend.text = element_text(size = 12, colour = "black"),
-        legend.title = element_text(size = 14, colour = "black"),
-        strip.background = element_rect(fill = "white"), 
-        strip.text = element_text(size = 14, colour = "black"),
-        panel.grid.minor=element_blank(), 
-        plot.margin = margin(0.1,0.1,0.1,2.5,"cm"))
-aldex_enriched_genes_grouped_boxplot
-
-pdf(file="Figure_8.pdf", height = 8, width = 12)
-aldex_enriched_genes_grouped_boxplot
-dev.off()
-
-##########
-
-### Figure 9. Figure 9. Selected genes involved in the uptake and degradation 
+### Figure 8. Selected genes involved in the uptake and degradation 
 ### of organic and inorganic compounds enriched under high- and low-ice conditions. 
 
 ##########
@@ -1647,14 +1730,19 @@ aldex_enriched_genes_expanded_boxplot <-
   ggplot(data=aldex_enriched_genes_detailed) +
   geom_boxplot(aes(
     x=Gene_short, y=CLR_value, 
-    fill=cluster), outlier.shape = NA) + 
+    fill=cluster), outlier.shape=NA) + 
+  geom_point(aes(
+    x=Gene_short, y=CLR_value, colour=cluster), position=position_dodge(width=0.75)) +
   geom_hline(
     yintercept=0, size=0.5,
     linetype="dashed", 
     color="gray33") + 
   scale_fill_manual(values=c(
     "High-ice cluster"="darkcyan",
-    "Low-ice cluster"="lightgoldenrod2")) +  
+    "Low-ice cluster"="lightgoldenrod2")) +
+  scale_colour_manual(values=c(
+    "High-ice cluster"="black",
+    "Low-ice cluster"="black")) + 
   labs(y = "CLR-transformed normalised gene count", fill = "Ice coverage") +
   facet_wrap(~Metabolism, scales="free")+
   theme_bw() + 
@@ -1671,14 +1759,23 @@ aldex_enriched_genes_expanded_boxplot <-
         plot.margin = margin(0.1,0.1,0.1,2.5,"cm"))
 aldex_enriched_genes_expanded_boxplot
 
-pdf(file="Figure_9.pdf", height = 12, width = 12)
+pdf(file="Figure_7.pdf", height = 12, width = 12)
 aldex_enriched_genes_expanded_boxplot
 dev.off()
 
+############################################
 
 
-###################
 
-###################
+
+
+
+
+
+
+
+
+
+
 
 
