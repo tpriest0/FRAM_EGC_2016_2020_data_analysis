@@ -1,4 +1,4 @@
-# Variations in Atlantic water influx and sea-ice cover drive taxonomic and functional shifts in Arctic marine bacterial communities  
+# Atlantic water influx and sea-ice cover drive taxonomic and functional shifts in Arctic marine bacterial communities  
 This repository incorporates the analysis pipelines applied to 16S amplicon and PacBio HiFi read metagenomes in the study "Atlantic water influx and sea-ice cover drive taxonomic and functional shifts in Arctic marine bacterial communities".
 
 There are three distinct sections to the analysis, each encapsulated on a different wiki page within this repository. The sections include:
