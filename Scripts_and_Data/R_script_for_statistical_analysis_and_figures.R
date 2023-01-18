@@ -292,15 +292,15 @@ dev.off()
 ##########
 
 # Import ASV_relative_abundance_matrix
-egc_asv_rel=read.table("FRAM_RAS_EGC_ASV_relative_filtered.txt", header = TRUE, 
+ASV_rel_filt=read.table("FRAM_RAS_EGC_ASV_relative_filtered.txt", header = TRUE, 
                        sep = "\t",as.is=TRUE,check.names=F,row.names=1)
 
 # Import sample metadata
-egc_asv_meta=read.table("FRAM_RAS_EGC_ASV_meta_refined.txt", header = TRUE, 
+ASV_meta=read.table("FRAM_RAS_EGC_ASV_meta_refined.txt", header = TRUE, 
                         sep = "\t",check.names=F,as.is=TRUE)
 
 # Reformat data and calculate Bray-Curtis dissimilarity matrix
-egc_asv_bray_dist = egc_asv_rel %>% 
+ASV_bray_dist = ASV_rel_filt %>% 
   t(.) %>% 
   as.data.frame(.) %>% 
   tibble::rownames_to_column(., var="Sample") %>% 
@@ -310,9 +310,9 @@ egc_asv_bray_dist = egc_asv_rel %>%
   vegdist(., distance="bray", na.rm=TRUE)
 
 # Reformat metadata and standardize 
-egc_asv_meta[is.na(egc_asv_meta)]<-0
+ASV_meta[is.na(ASV_meta)]<-0
 
-egc_asv_meta_stand <- egc_asv_meta %>% 
+ASV_meta_stand <- ASV_meta %>% 
   subset(., select=c(Sample,Temperature,Salinity,O2_concentration,AW_proportion,Daylight,
                      Ice_cover,Ice_edge_distance,Ice_cover_past)) %>% 
   arrange(., Sample) %>%
@@ -320,74 +320,72 @@ egc_asv_meta_stand <- egc_asv_meta %>%
   decostand(., method="standardize", MARGIN=2)
 
 # Check for colinearity amonst metadata variables
-ggpairs(egc_asv_meta_stand)
+ggpairs(ASV_meta_stand)
 
 # Significant correlations >0.85 are considered highly colinear
 # Temperature and salinity are highly colinear with AW_proportion
 # Will remove temperature and salinity and keep AW proportion
 
-egc_asv_meta_stand_filt <- subset(egc_asv_meta_stand, select=-c(Temperature,Salinity))
+ASV_meta_stand_filt <- subset(ASV_meta_stand, select=-c(Temperature,Salinity))
 
 # Distance-based redundancy analysis with ordistep selection of variables
-egc_asv_dbrda_null <- dbrda(egc_asv_bray_dist~1, data = egc_asv_meta_stand_filt,
+ASV_dbrda_null <- dbrda(ASV_bray_dist~1, data = ASV_meta_stand_filt,
                             sqrt.dist=TRUE, add=TRUE)
-egc_asv_dbrda <- dbrda(egc_asv_bray_dist~., data = egc_asv_meta_stand_filt,
+ASV_dbrda <- dbrda(ASV_bray_dist~., data = ASV_meta_stand_filt,
                        sqrt.dist=TRUE, add=TRUE)
 
-egc_asv_dbrda_ordistep <- ordiR2step(egc_asv_dbrda_null, 
-                                     scope = formula(egc_asv_dbrda), 
+ASV_dbrda_ordistep <- ordiR2step(ASV_dbrda_null, 
+                                     scope = formula(ASV_dbrda), 
                                      direction="both",
                                      pstep=1000, r2scope=TRUE, permutations=1000)
-egc_asv_dbrda_ordistep
+ASV_dbrda_ordistep
 
 # Test the significance of the model
-anova.cca(egc_asv_dbrda_ordistep, step=1000)
+anova.cca(ASV_dbrda_ordistep, step=1000)
 
 # Select these variables and rerun the dbRDA
-egc_asv_dbrda_significant <- dbrda(egc_asv_bray_dist~AW_proportion+Daylight+
+ASV_dbrda_significant <- dbrda(ASV_bray_dist~AW_proportion+Daylight+
                                      Ice_cover_past,
-                                   data = egc_asv_meta_stand_filt)
+                                   data = ASV_meta_stand_filt)
 
 # Check proportion of constrained variation
-egc_asv_dbrda_significant
+ASV_dbrda_significant
 
 # Test model significance and axes significance 
-anova.cca(egc_asv_dbrda_significant, step=1000)
-anova.cca(egc_asv_dbrda_significant, by='axis', step=1000)
-anova.cca(egc_asv_dbrda_significant, by='margin', step=1000, model="direct")
-vif.cca(egc_asv_dbrda_significant)
+anova.cca(ASV_dbrda_significant, step=1000)
+anova.cca(ASV_dbrda_significant, by='axis', step=1000)
+anova.cca(ASV_dbrda_significant, by='margin', step=1000, model="direct")
+vif.cca(ASV_dbrda_significant)
 
 # Calculate adjusted R-squared value of model
-RsquareAdj(egc_asv_dbrda_significant)$adj.r.squared
+RsquareAdj(ASV_dbrda_significant)$adj.r.squared
 
 # Extract sample scores
-egc_asv_dbrda_sample_scores <- egc_asv_dbrda_significant$CCA$wa
+ASV_dbrda_sample_scores <- ASV_dbrda_significant$CCA$wa
 
 # Convert output into ggplot object
-temp_ord <- ggord(egc_asv_dbrda_significant)
-temp_ord
+temp_ord <- ggord(ASV_dbrda_significant)
 
 # Extract information from plot and reformat data
-egc_asv_dbrda_ord_meta <- temp_ord$plot_env$vecs
-egc_asv_dbrda_ord_meta_ref = egc_asv_dbrda_ord_meta %>% 
+ASV_dbrda_ord_meta <- temp_ord$plot_env$vecs
+ASV_dbrda_ord_meta_ref = ASV_dbrda_ord_meta %>% 
   rename(xend = one) %>% 
   rename(yend = two) %>% 
   rename(Variable = lab) %>%
   mutate(xbeg = 0,
          ybeg = 0)
 
-egc_asv_dbrda_ord_points <- temp_ord$plot_env$obs
-egc_asv_dbrda_ord_points_and_meta = egc_asv_dbrda_ord_points %>% 
+ASV_dbrda_ord_points <- temp_ord$plot_env$obs
+ASV_dbrda_ord_points_and_meta = ASV_dbrda_ord_points %>% 
   rename(CAP1 = one) %>% 
   rename(CAP2 = two) %>% 
-  rename(RAS_id = lab) %>% 
-  left_join(egc_asv_meta, by = "RAS_id")
-egc_asv_dbrda_ord_points_and_meta
+  rename(Sample = lab) %>% 
+  left_join(ASV_meta, by = "Sample")
 
 ### Plotting Figure 2
 
 # Plot Figure 2a (AW proportion)
-Figure_2a = ggplot(egc_asv_dbrda_ord_points_and_meta, aes(CAP1, CAP2)) + 
+Figure_2a = ggplot(ASV_dbrda_ord_points_and_meta, aes(CAP1, CAP2)) + 
   geom_point(aes(colour=AW_proportion*100, shape=Mooring_position), size=4) + 
   scale_colour_gradient2(low = "#D9D9D9", high="#08204F",
                          mid="#6BAED6", midpoint=50, 
@@ -404,7 +402,7 @@ Figure_2a = ggplot(egc_asv_dbrda_ord_points_and_meta, aes(CAP1, CAP2)) +
   guides(shape=guide_legend(override.aes = list(size=5)))
 
 # Plot Figure 2b (past ice cover)
-Figure_2b = ggplot(egc_asv_dbrda_ord_points_and_meta, aes(CAP1, CAP2)) + 
+Figure_2b = ggplot(ASV_dbrda_ord_points_and_meta, aes(CAP1, CAP2)) + 
   geom_point(aes(colour=Ice_cover_past, shape=Mooring_position), size=4) + 
   scale_colour_gradient2(low = "#D9D9D9", high="#0f2310",
                          mid="#91c591", midpoint=50, 
@@ -421,7 +419,7 @@ Figure_2b = ggplot(egc_asv_dbrda_ord_points_and_meta, aes(CAP1, CAP2)) +
   guides(shape="none")
 
 # Plot Figure 2c (Daylight)
-Figure_2c = ggplot(egc_asv_dbrda_ord_points_and_meta, aes(CAP1, CAP2)) + 
+Figure_2c = ggplot(ASV_dbrda_ord_points_and_meta, aes(CAP1, CAP2)) + 
   geom_point(aes(colour=Daylight, shape=Mooring_position), size=4) + 
   scale_colour_gradient2(low = "#D9D9D9", high="#611a00",
                          mid="#ff7947", midpoint=12, 
@@ -444,6 +442,7 @@ dev.off()
 
 ### The legends of the plots were further repositioned in Inkscape
 
+
 ############################################################################################
 ### Figure 3 ###
 ############################################################################################
@@ -464,7 +463,7 @@ ASV_rel_filt=read.table("FRAM_RAS_EGC_ASV_relative_filtered.txt", header = TRUE,
 
 # Import sample metadata
 ASV_meta=read.table("FRAM_RAS_EGC_ASV_meta_refined.txt", header = TRUE, 
-                        sep = "\t",check.names=F,as.is=TRUE)
+                        sep = "\t",check.names=F,as.is=TRUE,row.names=1)
 
 # Import network connection information
 ASV_network_connections_summary=read.table("FRAM_EGC1620_ASV_network_connections_summary.txt", header = TRUE, 
@@ -585,6 +584,43 @@ pdf(file = "figures_output/Figure_3.pdf", height=8, width=12)
 ((Figure_3a+Figure_3b)+plot_layout(widths=c(2,1)))/
   Figure_3c
 dev.off()
+
+#####
+
+### Correlation analysis between distribution groups and environmental
+### conditions
+
+#####
+
+# We now want to test whether the distribution groups dynamics are related 
+# to changes in environmental conditions
+# For this, we will filter the metadata table first
+ASV_meta_stand_filt
+
+# And we shall create a hellinger transformed matrix for distribution groups
+# across samples
+ASV_distr_group_hellinger = distr_group_rel_abund %>%
+  subset(., select=c(Distribution_group,Sample,Rel_abund)) %>%
+  dcast(Distribution_group~Sample, value.var="Rel_abund", data=.) %>%
+  tibble::column_to_rownames(., var="Distribution_group") %>%
+  decostand(., method="hellinger", MARGIN=2) %>%
+  t() %>%
+  as.data.frame()
+
+# Use the correlation function from the correlation package to compute 
+# pairwise correlations between all variables, with adjust p-values,
+# and then retain only those that are statistically significant
+ASV_distr_group_and_meta_corr_sig <- correlation::correlation(
+  ASV_distr_group_hellinger, ASV_meta_stand_filt,
+  include_factors = TRUE, method = "auto", p_adjust="BH") %>%
+  filter(Parameter1 == "Intermittent" | 
+           Parameter1 == "Resident" | 
+           Parameter1 == "Transient" | 
+           Parameter2 == "Intermittent" | 
+           Parameter2 == "Resident" | 
+           Parameter2 == "Transient",
+         p < 0.05)
+ASV_distr_group_and_meta_corr_sig
 
 ############################################################################################
 ### Figure 4 ###
@@ -963,7 +999,7 @@ comparative_mag_table <- read.table(
 
 # Load MAG species relative abundance file
 mag_species_abund_arctic_fram_long <- read.table(
-  "Arctic_Fram_MAGs_species_reps_rel_abund_long.txt",
+  "FRAM_RAS_EGC_and_Arctic_MAGs_species_reps_rel_abund_long.txt",
   h = T, sep = "\t",
   check.names=F)
 
@@ -1698,3 +1734,18 @@ aldex_enriched_genes_expanded_boxplot
 dev.off()
 
 ############################################
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
