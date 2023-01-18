@@ -1,0 +1,7 @@
+Group	Network	Num_of_asvs	Sum_of_connections	Avg_connections_per_asv
+Intermittent	core-EGC	528	3337	6.320075758
+Resident	core-EGC	215	730	3.395348837
+Transient	core-EGC	65	81	1.246153846
+Intermittent	MIZ	845	44854	53.0816568
+Resident	MIZ	226	1751	7.747787611
+Transient	MIZ	18	8	0.444444444
