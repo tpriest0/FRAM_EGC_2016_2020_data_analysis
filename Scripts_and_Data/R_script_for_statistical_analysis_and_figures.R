@@ -14,20 +14,20 @@
 ### Any errors or inconsistencies, feel free to contact tpriest@mpi-bremen.de ###
 
 ### Set working directory!!!
+# Set this variable to download datafiles directory
+datafiles_dir = ('D:/ownCloud/PhD/Arctic Bacterioplankton/Fram Strait/RAS_metagenomes/EGC/ASV/FRAM_RAS_EGC_data_for_processing')
 
-setwd("D:/ownCloud/PhD/Arctic Bacterioplankton/Fram Strait/RAS_metagenomes/EGC/ASV/FRAM_RAS_EGC_data_for_processing")
+# Define working directory
+setwd(datafiles_dir)
 
+# Create directory ready for figure output
+output_figures_dir = "figures_output"
+output_figures_dir_path <- file.path(datafiles_dir, output_figures_dir)
+dir.create(output_figures_dir_path)
 
 ############################################################################################
 ### LOADING PACKAGES AND DATA ###
 ############################################################################################
-
-BiocManager::install("ALDEx2", lib="D:/R")
-options(repos = c(
-  fawda123 = 'https://fawda123.r-universe.dev',
-  CRAN = 'https://cloud.r-project.org'))
-
-install.packages('ggord')
 
 # Loading libraries and data tables
 library(mixOmics)
@@ -49,30 +49,44 @@ library(gtools)
 library(amap)
 library(ape)
 library(ALDEx2)
-library(rgr)
 library(reshape2)
 library(ggpmisc)
+library(compositions)
 
 # Load ASVs
-ASV <- read.table(
+ASV_raw <- read.table(
   "FRAM_RAS_EGC_ASV_raw.txt",
   h = T, sep = "\t",
   check.names=F,
   row.names=1)
 
 # Load taxonomy
-TAX <- read.table(
+ASV_taxa <- read.table(
   "FRAM_RAS_EGC_ASV_taxa.txt",
   h = T, 
   sep = "\t",
   check.names=F, 
   row.names=1)
-TAX <- as.matrix(TAX)
 
 # Load Metadata
 # Assign ice/PW categories 
-ENV <- read.table(
-  "FRAM_RAS_EGC_ASV_meta.txt", header=T) %>%
+ASV_meta <- read.csv(
+  "FRAM_RAS_EGC_ASV_meta.txt", header=T, sep="\t") %>%
+  dplyr::rename(
+    Mooring_full = mooring_full,
+    Ice_cover = iceConc,
+    Ice_cover_past = icePast,
+    Ice_edge_distance = iceDist,
+    AW_proportion = AW_frac,
+    Temperature = temp,
+    Salinity = sal,
+    Daylight = daylight,
+    Longitude = lon,
+    O2_concentration = O2_conc,
+    Depth = depth,
+    Date = date,
+    Year = year,
+    Sample=RAS_id) %>%
   mutate(Mooring_position=case_when(Mooring_full %in% c(
     "EGC-3","EGC-4")~"MIZ",
     TRUE~"core-EGC")) %>%
@@ -90,53 +104,30 @@ ENV <- read.table(
 ### PREFILTERING ASV DATA AND ASSESSING DISTRIBUTION DYNAMICS ###
 ############################################################################################
 
-### CREATING PHYLOSEQ OBJECT, PREFILTERING AND CONVERTING TO RELATIVE ABUNDANCE
-
-# Reformat
-asv = otu_table(ASV, taxa_are_rows=T)
-tax = tax_table(TAX)
-rownames(tax) <- rownames(asv)
-env = ENV %>%
-  column_to_rownames("RAS_id")
+### PREFILTERING AND CONVERTING TO RELATIVE ABUNDANCE
 
 # Subset: ASVs with >3 counts in >3 samples
-pseq.abs <- phyloseq(
-  otu_table(asv, taxa_are_rows = T), 
-  sample_data(env), 
-  tax_table(tax)) %>%
-  phyloseq::filter_taxa(function(x) sum(x >= 3) >= 3, TRUE)
+ASV_raw_filt <- ASV_raw %>%
+  filter(rowSums(.>= 3) >= 3)
 
-# Fix tax-IDs
-colnames(pseq.abs@tax_table) <- c(
-  "Kingdom","Phylum","Class","Order",
-  "Family","Genus","Species")
+# Filter taxa table based on refined ASV table 
+ASV_taxa_filt <- ASV_taxa[row.names(ASV_raw_filt),]
 
-# Rel. abundances
-pseq.rel = transform_sample_counts(
-  pseq.abs, 
-  function(x) x / sum(x) * 100) 
-
-# Extract filtered ASV dataset with absolute and relative matrices
-
-# Absolute counts
-asv_abs <- as(otu_table(pseq.abs), "matrix") %>% as.data.frame() 
-
-# Relative abundances
-asv_rel <- as(otu_table(pseq.rel), "matrix") %>% as.data.frame() %>% mutate_all(round, 3)
-
-# Taxonomy
-asv_tax <- as(tax_table(pseq.abs), "matrix") %>%  as.data.frame()
+# Calculate relative abundances
+ASV_rel_filt = as.data.frame(
+  apply(ASV_raw_filt, 2, function(x) x / sum(x) * 100)) %>% 
+  mutate_all(round, 4)
 
 # Save filtered datasets
-write.table(asv_abs, file="FRAM_RAS_EGC_ASV_absolute_filtered.txt", sep="\t")
-write.table(asv_rel, file="FRAM_RAS_EGC_ASV_relative_filtered.txt", sep="\t")
-write.table(asv_tax, file="FRAM_RAS_EGC_ASV_taxonomy_filtered.txt", sep="\t")
-write.table(ENV, file="FRAM_RAS_EGC_ASV_meta_refined.txt", sep="\t")
+write.table(ASV_raw_filt, file="FRAM_RAS_EGC_ASV_absolute_filtered.txt", sep="\t")
+write.table(ASV_rel_filt, file="FRAM_RAS_EGC_ASV_relative_filtered.txt", sep="\t")
+write.table(ASV_taxa_filt, file="FRAM_RAS_EGC_ASV_taxonomy_filtered.txt", sep="\t")
+write.table(ASV_meta, file="FRAM_RAS_EGC_ASV_meta_refined.txt", sep="\t")
 
 ### ASSESSING DISTRIBUTION DYNAMICS OF ASVS
 
 # Calculate frequency of detection across samples
-asv_freq_detection = asv_abs %>% 
+asv_freq_detection = ASV_raw_filt %>% 
   replace(., . > 1, 1) %>% 
   mutate(Num_samples_present = rowSums(.[1:84])) %>% 
   as.data.frame(.) %>% 
@@ -144,11 +135,11 @@ asv_freq_detection = asv_abs %>%
   subset(., select=c(ASV_name,Num_samples_present))
 
 # Calculate whether ASV present at both moorings or only one
-asv_mooring_distribution = asv_abs %>% 
+asv_mooring_distribution = ASV_raw_filt %>% 
   replace(., . > 1, 1) %>% 
   tibble::rownames_to_column(., var="ASV_name") %>% 
-  reshape2::melt(., id.vars="ASV_name", variable.name="RAS_id", value.name="Rel_abund") %>%
-  left_join(ENV, by="RAS_id") %>% 
+  reshape2::melt(., id.vars="ASV_name", variable.name="Sample", value.name="Rel_abund") %>%
+  left_join(ASV_meta, by="Sample") %>% 
   subset(., select=c(ASV_name,Mooring_position,Rel_abund)) %>%
   aggregate(Rel_abund~ASV_name+Mooring_position, data=., FUN=sum) %>% 
   reshape2::dcast(., ASV_name~Mooring_position, value.var="Rel_abund") %>% 
@@ -159,36 +150,35 @@ asv_mooring_distribution = asv_abs %>%
   subset(., select=c(ASV_name,Mooring_presence))
 
 # Maximum relative abundance of each ASV
-asv_max_rel_abund = asv_rel %>% 
+asv_max_rel_abund = ASV_rel_filt %>% 
   tibble::rownames_to_column(., var="ASV_name") %>%
-  melt(., id.vars="ASV_name", variable.name="Sample", value.name="Rel_abund") %>% 
+  reshape2::melt(., id.vars="ASV_name", variable.name="Sample", value.name="Rel_abund") %>% 
   aggregate(Rel_abund~ASV_name, data=., max) %>% 
   rename(., Max_rel_abund = Rel_abund)
 
 # Min relative abundance of each ASV
-asv_min_rel_abund = asv_rel %>% 
+asv_min_rel_abund = ASV_rel_filt %>% 
   tibble::rownames_to_column(., var="ASV_name") %>%
-  melt(., id.vars="ASV_name", variable.name="Sample", value.name="Rel_abund") %>% 
+  reshape2::melt(., id.vars="ASV_name", variable.name="Sample", value.name="Rel_abund") %>% 
   aggregate(Rel_abund~ASV_name, data=., min) %>% 
   rename(., Min_rel_abund = Rel_abund)
 
 # Average relative abundance of each ASV
-asv_avg_rel_abund = asv_rel %>% 
+asv_avg_rel_abund = ASV_rel_filt %>% 
   tibble::rownames_to_column(., var="ASV_name") %>%
-  melt(., id.vars="ASV_name", variable.name="Sample", value.name="Rel_abund") %>% 
+  reshape2::melt(., id.vars="ASV_name", variable.name="Sample", value.name="Rel_abund") %>% 
   aggregate(Rel_abund~ASV_name, data=., mean) %>% 
   rename(., Avg_rel_abund = Rel_abund)
 
 # Average relative abundance of each ASV at both moorings and classifiying mooring
 # preference based on the higher of these values
-asv_mooring_pref_and_avg_rel_abund_at_moorings = asv_rel %>% 
+asv_mooring_pref_and_avg_rel_abund_at_moorings = ASV_rel_filt %>% 
   tibble::rownames_to_column(., var="ASV_name") %>%
-  melt(., id.vars="ASV_name", variable.name="Sample", value.name="Rel_abund") %>%
-  rename(., RAS_id = Sample) %>%
-  left_join(ENV, by="RAS_id") %>% 
+  reshape2::melt(., id.vars="ASV_name", variable.name="Sample", value.name="Rel_abund") %>%
+  left_join(ASV_meta, by="Sample") %>% 
   subset(., select=c(ASV_name,Mooring_position,Rel_abund)) %>% 
   aggregate(Rel_abund~ASV_name+Mooring_position, data=., mean) %>% 
-  dcast(., ASV_name~Mooring_position, value.var="Rel_abund") %>% 
+  reshape2::dcast(., ASV_name~Mooring_position, value.var="Rel_abund") %>% 
   mutate(Pref_region=case_when(
     `core-EGC` > MIZ ~ "core-EGC",
     MIZ > `core-EGC` ~ "MIZ")) %>% 
@@ -197,14 +187,13 @@ asv_mooring_pref_and_avg_rel_abund_at_moorings = asv_rel %>%
   rename(., Avg_rel_abund_MIZ = MIZ)
 
 # Max relative abundance of each ASV at both moorings
-asv_max_rel_abund_at_moorings = asv_rel %>% 
+asv_max_rel_abund_at_moorings = ASV_rel_filt %>% 
   tibble::rownames_to_column(., var="ASV_name") %>%
-  melt(., id.vars="ASV_name", variable.name="Sample", value.name="Rel_abund") %>%
-  rename(., RAS_id = Sample) %>%
-  left_join(ENV, by="RAS_id") %>% 
+  reshape2::melt(., id.vars="ASV_name", variable.name="Sample", value.name="Rel_abund") %>%
+  left_join(ASV_meta, by="Sample") %>% 
   subset(., select=c(ASV_name,Mooring_position,Rel_abund)) %>% 
   aggregate(Rel_abund~ASV_name+Mooring_position, data=., max) %>% 
-  dcast(., ASV_name~Mooring_position, value.var="Rel_abund") %>% 
+  reshape2::dcast(., ASV_name~Mooring_position, value.var="Rel_abund") %>% 
   as.data.frame(.) %>%
   rename(., `Max_rel_abund_core-EGC` = `core-EGC`) %>%
   rename(., Max_rel_abund_MIZ = MIZ)
@@ -212,7 +201,7 @@ asv_max_rel_abund_at_moorings = asv_rel %>%
 ### Create a master ASV dataframe containing all of the above-calculated 
 ### statistics along with taxonomy
 
-tax_temp <- tibble::rownames_to_column(asv_tax, var="ASV_name")
+tax_temp <- tibble::rownames_to_column(ASV_taxa_filt, var="ASV_name")
 
 asv_summary_temp = asv_freq_detection %>% 
   left_join(asv_max_rel_abund, by="ASV_name") %>%
@@ -260,7 +249,7 @@ egc_asv_meta <- read.table(
 # Subset data and rename columns
 egc_meta_subset = egc_asv_meta %>% 
   subset(., select=c(Mooring_name,Temperature,AW_proportion,Ice_cover)) %>% 
-  melt(id.vars=c("Mooring_name"), 
+  reshape2::melt(id.vars=c("Mooring_name"), 
        variable.name="variable", value.name="value") %>% 
   mutate(variable = case_when(
     (variable == "Temperature" ~ "Temperature (°C)"),
@@ -268,7 +257,7 @@ egc_meta_subset = egc_asv_meta %>%
     (variable == "Ice_cover" ~ "Ice cover (%)")))
 
 # Plot Figure 1c
-egc_mooring_metadata_boxplot <- ggplot(egc_meta_subset) + 
+Figure_1c <- ggplot(egc_meta_subset) + 
   geom_boxplot(aes(x=Mooring_name,y=value,fill=Mooring_name), stat="boxplot") + 
   geom_point(aes(x=Mooring_name,y=value), colour="black", size = 2) + 
   facet_wrap(.~variable, scales="free_y") + 
@@ -285,8 +274,8 @@ egc_mooring_metadata_boxplot <- ggplot(egc_meta_subset) +
         strip.background.x = element_rect(fill = "white", colour = "black"))
 
 # Export Figure 1c
-pdf(file = "Figure_1_part_C.pdf", height=5, width=10)
-egc_mooring_metadata_boxplot
+pdf(file = "figures_output/Figure_1_part_C.pdf", height=5, width=10)
+Figure_1c
 dev.off()
 
 # Figure 1a, 1b and 1c were then combined in Inkscape
@@ -324,10 +313,10 @@ egc_asv_bray_dist = egc_asv_rel %>%
 egc_asv_meta[is.na(egc_asv_meta)]<-0
 
 egc_asv_meta_stand <- egc_asv_meta %>% 
-  subset(., select=c(RAS_id,Temperature,Salinity,O2_concentration,AW_proportion,Daylight,
+  subset(., select=c(Sample,Temperature,Salinity,O2_concentration,AW_proportion,Daylight,
                      Ice_cover,Ice_edge_distance,Ice_cover_past)) %>% 
-  arrange(., RAS_id) %>%
-  textshape::column_to_rownames(., "RAS_id") %>%
+  arrange(., Sample) %>%
+  textshape::column_to_rownames(., "Sample") %>%
   decostand(., method="standardize", MARGIN=2)
 
 # Check for colinearity amonst metadata variables
@@ -398,7 +387,7 @@ egc_asv_dbrda_ord_points_and_meta
 ### Plotting Figure 2
 
 # Plot Figure 2a (AW proportion)
-egc_asv_dissim_pca_aw_proportion = ggplot(egc_asv_dbrda_ord_points_and_meta, aes(CAP1, CAP2)) + 
+Figure_2a = ggplot(egc_asv_dbrda_ord_points_and_meta, aes(CAP1, CAP2)) + 
   geom_point(aes(colour=AW_proportion*100, shape=Mooring_position), size=4) + 
   scale_colour_gradient2(low = "#D9D9D9", high="#08204F",
                          mid="#6BAED6", midpoint=50, 
@@ -415,7 +404,7 @@ egc_asv_dissim_pca_aw_proportion = ggplot(egc_asv_dbrda_ord_points_and_meta, aes
   guides(shape=guide_legend(override.aes = list(size=5)))
 
 # Plot Figure 2b (past ice cover)
-egc_asv_dissim_pca_ice = ggplot(egc_asv_dbrda_ord_points_and_meta, aes(CAP1, CAP2)) + 
+Figure_2b = ggplot(egc_asv_dbrda_ord_points_and_meta, aes(CAP1, CAP2)) + 
   geom_point(aes(colour=Ice_cover_past, shape=Mooring_position), size=4) + 
   scale_colour_gradient2(low = "#D9D9D9", high="#0f2310",
                          mid="#91c591", midpoint=50, 
@@ -429,10 +418,10 @@ egc_asv_dissim_pca_ice = ggplot(egc_asv_dbrda_ord_points_and_meta, aes(CAP1, CAP
         axis.text.y = element_text(size = 12, colour = "black"), 
         axis.text.x = element_text(size = 12, colour = "black"), 
         axis.title.x = element_text(size = 14, colour = "black")) + 
-  guides(shape=guide_legend(override.aes = list(size=5)))
+  guides(shape="none")
 
 # Plot Figure 2c (Daylight)
-egc_asv_dissim_pca_daylight = ggplot(egc_asv_dbrda_ord_points_and_meta, aes(CAP1, CAP2)) + 
+Figure_2c = ggplot(egc_asv_dbrda_ord_points_and_meta, aes(CAP1, CAP2)) + 
   geom_point(aes(colour=Daylight, shape=Mooring_position), size=4) + 
   scale_colour_gradient2(low = "#D9D9D9", high="#611a00",
                          mid="#ff7947", midpoint=12, 
@@ -446,12 +435,11 @@ egc_asv_dissim_pca_daylight = ggplot(egc_asv_dbrda_ord_points_and_meta, aes(CAP1
         axis.text.y = element_text(size = 12, colour = "black"), 
         axis.text.x = element_text(size = 12, colour = "black"), 
         axis.title.x = element_text(size = 14, colour = "black")) + 
-  guides(shape=guide_legend(override.aes = list(size=5)))
+  guides(shape="none")
 
 ### Combine three parts into single figure and export
-pdf(file="Figure_2.pdf", height=5, width=14)
-egc_asv_dissim_pca_aw_proportion+egc_asv_dissim_pca_ice+egc_asv_dissim_pca_daylight + 
-  plot_layout(guides="collect")
+pdf(file="figures_output/Figure_2.pdf", height=5, width=14)
+Figure_2a+Figure_2b+Figure_2c
 dev.off()
 
 ### The legends of the plots were further repositioned in Inkscape
@@ -467,30 +455,30 @@ dev.off()
 ##########
 
 # Import ASV distribution dynamics and taxa info
-egc_asv_dynamics_df=read.table("FRAM_RAS_EGC_ASV_dynamics_summary_and_taxa_complete.txt", header = TRUE, 
+ASV_dynamics_df=read.table("FRAM_RAS_EGC_ASV_dynamics_summary_and_taxa_complete.txt", header = TRUE, 
                                sep = "\t",as.is=TRUE)
 
 # Import ASV_relative_abundance_matrix
-egc_asv_rel=read.table("FRAM_RAS_EGC_ASV_relative_filtered.txt", header = TRUE, 
+ASV_rel_filt=read.table("FRAM_RAS_EGC_ASV_relative_filtered.txt", header = TRUE, 
                        sep = "\t",as.is=TRUE,check.names=F,row.names=1)
 
 # Import sample metadata
-egc_asv_meta=read.table("FRAM_RAS_EGC_ASV_meta_refined.txt", header = TRUE, 
+ASV_meta=read.table("FRAM_RAS_EGC_ASV_meta_refined.txt", header = TRUE, 
                         sep = "\t",check.names=F,as.is=TRUE)
 
 # Import network connection information
-egc_asv_network_connections=read.table("FRAM_RAS_EGC_ASV_avg_connections_network_group.txt", header = TRUE, 
+ASV_network_connections_summary=read.table("FRAM_EGC1620_ASV_network_connections_summary.txt", header = TRUE, 
                         sep = "\t",check.names=F,as.is=TRUE)
 
 ###
 # Plot Figure 3a (asv dynamics)
 
-egc_asv_dynamics_df$Mooring_presence <- factor(egc_asv_dynamics_df$Mooring_presence, 
+ASV_dynamics_df$Mooring_presence <- factor(ASV_dynamics_df$Mooring_presence, 
                                                  levels=unique(c("core-EGC", "Shared","MIZ")))
 
-Figure_3a <- ggplot(egc_asv_dynamics_df, aes(x=Num_samples_present, y=Max_rel_abund)) + 
+Figure_3a <- ggplot(ASV_dynamics_df, aes(x=Num_samples_present, y=Max_rel_abund)) + 
   geom_point(aes(colour=Distribution_group), stat="identity", show.legend=FALSE) + 
-  stat_poly_eq(method="lm", use_label(c("R2", "P")),
+  stat_poly_eq(method="lm", use_label(c("R2", "p")),
                label.y=0.95) + 
   stat_poly_line() + 
   labs(y = "ASV maximum relative abundance (%)", x = "Number of samples ASV is present in",
@@ -513,22 +501,25 @@ Figure_3a <- ggplot(egc_asv_dynamics_df, aes(x=Num_samples_present, y=Max_rel_ab
 Figure_3a
 
 ### 
-# Reformat table on network connections
-egc_asv_network_connections_long = egc_asv_network_connections %>%
-  reshape2::melt(., id.vars="Group", variable.name="Mooring", 
-                 value.name="num_connections")
-egc_asv_network_connections_long$Mooring <- factor(egc_asv_network_connections_long$Mooring, 
+# Visualise the connectivity of ASVs in core-EGC and MIZ networks
+# Summary information about the total number of ASVs and the average and sum of 
+# statistically significant connections for each of the distribution groups (Int-,
+# Trans and Res) was obtained from Cytoscape
+
+# Define factor order
+ASV_network_connections_summary$Network <- factor(ASV_network_connections_summary$Network, 
                                                levels=unique(c("core-EGC","MIZ")))
-egc_asv_network_connections_long$Group <- factor(egc_asv_network_connections_long$Group, 
+ASV_network_connections_summary$Group <- factor(ASV_network_connections_summary$Group, 
                                                    levels=unique(c("Intermittent","Transient",
                                                                    "Resident")))
 
 # Plot Figure 3b (network connections per group)
 
-Figure_3b <- ggplot(egc_asv_network_connections_long, aes(x = Group, y = num_connections)) + 
+Figure_3b <- ggplot(ASV_network_connections_summary, 
+                    aes(x = Group, y = Avg_connections_per_asv)) + 
   geom_bar(aes(fill=Group), stat="identity", position="identity") + 
-  labs(y = "Avg. number of significant connections", fill = "Distribution group") +
-  facet_grid(.~Mooring, scales="free") + 
+  labs(y = "Avg. number of sig. connections per ASV", fill = "Distribution group") +
+  facet_grid(.~Network, scales="free") + 
   scale_fill_manual(values=c("Intermittent" = "#C5C6D0",
                                "Transient" = "#232023", 
                                "Resident" = "#787276")) + 
@@ -542,21 +533,21 @@ Figure_3b <- ggplot(egc_asv_network_connections_long, aes(x = Group, y = num_con
         legend.text = element_text(size = 12, colour = "black"), 
         strip.background = element_rect(fill="white"), 
         strip.text.x = element_text(size = 14, colour = "black"))
+Figure_3b
 
 ###
 
 # Create dataframe with relative abundance per Distribution group instead of per ASV
-asv_distr_group <- egc_asv_dynamics_df %>% 
+asv_distr_group <- ASV_dynamics_df %>% 
   subset(., select=c(ASV_name,Distribution_group))
 
-distr_group_rel_abund = asv_rel %>%
+distr_group_rel_abund = ASV_rel_filt %>%
   tibble::rownames_to_column(., var="ASV_name") %>%
   left_join(asv_distr_group, by="ASV_name") %>% 
-  melt(., id.vars=c("ASV_name","Distribution_group"), variable.name="Sample",
+  reshape2::melt(., id.vars=c("ASV_name","Distribution_group"), variable.name="Sample",
        value.name="Rel_abund") %>%
   aggregate(Rel_abund~Distribution_group+Sample, data=., FUN=sum) %>% 
-  rename(., RAS_id = Sample) %>% 
-  left_join(egc_asv_meta, by="RAS_id")
+  left_join(ASV_meta, by="Sample")
 
 # Reformat variables and define order ready for plotting
 distr_group_rel_abund$Date <- as.Date(distr_group_rel_abund$Date, 
@@ -565,7 +556,7 @@ distr_group_rel_abund$Mooring_position <- factor(distr_group_rel_abund$Mooring_p
                                                        levels=unique(c("core-EGC", "MIZ")))
 distr_group_rel_abund$Distribution_group <- factor(distr_group_rel_abund$Distribution_group, 
                                                      levels=unique(c("Intermittent", "Transient", "Resident")))
-
+distr_group_rel_abund
 ### 
 # Plot Figure 3c - Dynamics of community fractions across samples
 
@@ -590,7 +581,7 @@ Figure_3c <- ggplot(data=distr_group_rel_abund,
         strip.text.x = element_text(size = 14, colour = "black"))
 Figure_3c
 
-pdf(file = "Figure_3.pdf", height=8, width=12)
+pdf(file = "figures_output/Figure_3.pdf", height=8, width=12)
 ((Figure_3a+Figure_3b)+plot_layout(widths=c(2,1)))/
   Figure_3c
 dev.off()
@@ -607,34 +598,35 @@ dev.off()
 ##########
 
 # Import data
-egc_asv_dynamics_df=read.table("FRAM_RAS_EGC_ASV_dynamics_summary_and_taxa_complete.txt", header = TRUE, 
+ASV_dynamics_df=read.table("FRAM_RAS_EGC_ASV_dynamics_summary_and_taxa_complete.txt", header = TRUE, 
                                sep = "\t",as.is=TRUE, check.names = F)
-egc_asv_relative=read.table("FRAM_RAS_EGC_ASV_relative_filtered.txt", header = TRUE, 
+ASV_rel_filt=read.table("FRAM_RAS_EGC_ASV_relative_filtered.txt", header = TRUE, 
                                 sep = "\t",row.names=1,as.is=TRUE, check.names = F)
-egc_asv_meta=read.table("FRAM_RAS_EGC_ASV_meta_refined.txt", header = TRUE, 
+ASV_meta=read.table("FRAM_RAS_EGC_ASV_meta_refined.txt", header = TRUE, 
                             sep = "\t",as.is=TRUE,check.names = F)
 
 # Subset and reformat metadata
-egc_asv_meta_subset = egc_asv_meta %>% 
-  subset(., select=c(RAS_id,Longitude,AW_proportion,
+ASV_meta_subset = ASV_meta %>% 
+  subset(., select=c(Sample,Longitude,AW_proportion,
                      Daylight,Ice_cover,Ice_cover_past,Ice_edge_distance,
                      O2_concentration)) %>% 
-  arrange(., RAS_id) %>% 
-  textshape::column_to_rownames(., "RAS_id")
-egc_asv_meta_subset <- egc_asv_meta_subset[ order(rownames(egc_asv_meta_subset)), ]
+  arrange(., Sample) %>% 
+  textshape::column_to_rownames(., "Sample")
+ASV_meta_subset <- ASV_meta_subset[ order(rownames(ASV_meta_subset)), ]
 
 # Filter ASV data to remove low abundant, then hellinger transform and reformat
-egc_asv_relative_filt = egc_asv_relative %>% 
+ASV_hellinger_filt = ASV_rel_filt %>% 
   OTUtable::filter_taxa(., abundance=0.1, persistence = 10) %>% 
   vegan::decostand(., method="hellinger") %>%
   t(.) %>%
   as.data.frame(.)
 
-egc_asv_relative_filt <- egc_asv_relative_filt[ order(rownames(egc_asv_relative_filt)), ]
+# Set order of rownames the same as metadata table
+ASV_hellinger_filt <- ASV_hellinger_filt[ order(rownames(ASV_hellinger_filt)), ]
 
 # Run sPLS
 PLS_v2 <- spls(
-  egc_asv_relative_filt,  egc_asv_meta_subset,
+  ASV_hellinger_filt,  ASV_meta_subset,
   ncomp = 3, 
   tol = 1e-06,
   max.iter = 100,
@@ -655,11 +647,9 @@ cim_v2 <- cim(
 # Subset significant ASVs
 mat_v2 <- cim_v2$mat.cor
 subset_v2 = row.names(mat_v2)
-subset_v2
 
 # Filter ASV relative abundance dataframe to only include significant ASVs
-asv_spls_v2_sig <- egc_asv_relative_filt[names(egc_asv_relative_filt) %in% subset_v2] 
-asv_spls_v2_sig
+asv_spls_v2_sig <- ASV_hellinger_filt[names(ASV_hellinger_filt) %in% subset_v2] 
 
 # Test which clustering method best represents the variation in the data
 # First perform hierarchical clustering with different algorithms
@@ -708,7 +698,7 @@ asv_spls_v2_hc_gap_statistics <-
   labs(subtitle = "Gap statistic method")
 asv_spls_v2_hc_gap_statistics
 
-### Based on these two calculations, we could determine that between 7 - 10
+### Based on these two calculations, we could determine that 9 - 10
 ### clusters is likely optimal
 
 # Repeat sPLS analysis using only the significant ASVs along with the 
@@ -716,7 +706,7 @@ asv_spls_v2_hc_gap_statistics
 
 # Final PLS with subset
 PLS_v2_final <- spls(
-  asv_spls_v2_sig, egc_asv_meta_subset, 
+  asv_spls_v2_sig, ASV_meta_subset, 
   ncomp = 3, 
   tol = 1e-06,
   max.iter = 100,
@@ -745,14 +735,6 @@ asv_spls_v2_hc <- hclust(Dist(
 
 # Visualise
 plot(asv_spls_v2_hc)
-
-# Define 7 clusters and plot on dendrogram
-asv_spls_v2_cutree_7 <- cutree(asv_spls_v2_hc, k=7)
-plot(as.phylo(asv_spls_v2_hc), tip.color=asv_spls_v2_cutree_7, cex=0.2)
-
-# Define 8 clusters and plot on dendrogram
-asv_spls_v2_cutree_8 <- cutree(asv_spls_v2_hc, k=8)
-plot(as.phylo(asv_spls_v2_hc), tip.color=asv_spls_v2_cutree_8, cex=0.2)
 
 # Define 9 clusters and plot on dendrogram
 asv_spls_v2_cutree_9 <- cutree(asv_spls_v2_hc, k=9)
@@ -862,17 +844,17 @@ cim(
   color = colorRampPalette(c(
     "#000000", "#ffffff", "#BDA55D"))(40),
   save = "pdf",
-  name.save = "Figure_4a_new") 
+  name.save = "figures_output/Figure_4a_new") 
 
 # Combine cluster information with previous asv dynamics summary dataframe
 # and export
-egc_asv_cluster_temp = clusters_and_correlation_mat_final %>%
+ASV_to_spls_cluster = clusters_and_correlation_mat_final %>%
   subset(., select=c(asv,cluster)) %>%
   rename(., ASV_name = asv)
 
-egc_asv_dynamics_df_with_cluster <- left_join(egc_asv_dynamics_df, egc_asv_cluster_temp, by="ASV_name")
+ASV_dynamics_with_pls_cluster <- left_join(ASV_dynamics_df, ASV_to_spls_cluster, by="ASV_name")
 
-write.table(egc_asv_dynamics_df_with_cluster, 
+write.table(ASV_dynamics_with_pls_cluster, 
             file="FRAM_RAS_EGC_ASV_dynamics_summary_and_taxa_complete_with_spls_cluster.txt",
             sep="\t")
 
@@ -883,19 +865,19 @@ write.table(egc_asv_dynamics_df_with_cluster,
 # Create dataframe with only most prominent ASVs in each cluster 
 # Then group into genera
 
-egc_asv_dynamics_df_with_cluster=read.table("FRAM_RAS_EGC_ASV_dynamics_summary_and_taxa_complete_with_spls_cluster.txt", header = TRUE, 
+ASV_dynamics_with_pls_cluster=read.table("FRAM_RAS_EGC_ASV_dynamics_summary_and_taxa_complete_with_spls_cluster.txt", header = TRUE, 
                                sep = "\t",as.is=TRUE,check.names=F)
-egc_asv_relative=read.table("FRAM_RAS_EGC_ASV_relative_filtered.txt", header = TRUE, 
-                            sep = "\t",as.is=TRUE,check.names=F)
-
-egc_asv_relative_mod = egc_asv_relative %>% 
+ASV_rel_filt=read.table("FRAM_RAS_EGC_ASV_relative_filtered.txt", header = TRUE, 
+                            sep = "\t",as.is=TRUE,check.names=F) %>%
   tibble::rownames_to_column(., var="ASV_name")
 
-egc_asv_most_prominent_in_each_cluster_summary_df= egc_asv_dynamics_df_with_cluster %>% 
+# Filter ASV summary dynamics dataframe to include only spls cluster reps
+# and then aggregate at genus level for plotting
+ASV_most_prominent_in_each_cluster_summary_df= ASV_dynamics_with_pls_cluster %>% 
   filter(cluster != "NA") %>% 
   filter(Max_rel_abund > 1) %>% 
   subset(., select=c(ASV_name,Class,Genus,cluster)) %>% 
-  left_join(egc_asv_relative_mod, by="ASV_name") %>% 
+  left_join(ASV_rel_filt, by="ASV_name") %>% 
   reshape2::melt(., id.vars=c("ASV_name", "Class", "Genus", "cluster"), variable.name="Sample",
        value.name="rel_abund") %>% 
   aggregate(rel_abund~cluster+Class+Genus+Sample, data=., FUN=sum) %>% 
@@ -904,9 +886,9 @@ egc_asv_most_prominent_in_each_cluster_summary_df= egc_asv_dynamics_df_with_clus
   slice(1) %>% 
   arrange(., cluster,Genus)
 
-
 # Plot Figure 4b
 
+# Redefine colour palette from sPLS
 pls_cluster_colours <- c(
   "C1" = "#db6d00",
   "C2" = "#920000",
@@ -917,15 +899,15 @@ pls_cluster_colours <- c(
   "C7" = "#ffff6d",
   "C8" = "#000000")
 
-egc_asv_most_prominent_in_each_cluster_summary_df$cluster <- 
-  factor(egc_asv_most_prominent_in_each_cluster_summary_df$cluster,
-         levels = unique(egc_asv_most_prominent_in_each_cluster_summary_df$cluster))
-egc_asv_most_prominent_in_each_cluster_summary_df$Genus <- 
-  factor(egc_asv_most_prominent_in_each_cluster_summary_df$Genus,
-         levels = unique(egc_asv_most_prominent_in_each_cluster_summary_df$Genus))
+# Fix order of variables
+ASV_most_prominent_in_each_cluster_summary_df$cluster <- 
+  factor(ASV_most_prominent_in_each_cluster_summary_df$cluster,
+         levels = unique(ASV_most_prominent_in_each_cluster_summary_df$cluster))
+ASV_most_prominent_in_each_cluster_summary_df$Genus <- 
+  factor(ASV_most_prominent_in_each_cluster_summary_df$Genus,
+         levels = unique(ASV_most_prominent_in_each_cluster_summary_df$Genus))
 
-pdf(file="Figure_4b_new.pdf", height=10, width=8)
-ggplot(data=egc_asv_most_prominent_in_each_cluster_summary_df) + 
+Figure_4b <- ggplot(data=ASV_most_prominent_in_each_cluster_summary_df) + 
   geom_point(aes(x=cluster, y=Genus, size=rel_abund, colour=cluster), stat="identity",
              position="identity") + 
   scale_colour_manual(values=pls_cluster_colours) + 
@@ -940,6 +922,10 @@ ggplot(data=egc_asv_most_prominent_in_each_cluster_summary_df) +
         legend.title = element_text(size = 14, colour = "black"), 
         legend.text = element_text(size = 12, colour = "black")) + 
   guides(colour=guide_legend(override.aes = list(size=5)))
+
+# Export Figure 4b
+pdf(file="figures_output/Figure_4b.pdf", height=10, width=8)
+Figure_4b
 dev.off()
 
 #####
@@ -969,15 +955,36 @@ library(UpSetR)
 
 ### Part A - Species-level MAG comparison
 
-# Set working directory
-setwd('D:/ownCloud/PhD/Arctic Bacterioplankton/Arctic_comparison/MAGs/Arctic_Fram_EGC/')
-
 # Load MAG species clusters summary info
 comparative_mag_table <- read.table(
   "FRAM_RAS_EGC_vs_Arctic_MAGs_species_cluster_summary.txt",
   h = T, sep = "\t",
   check.names=F)
 
+# Load MAG species relative abundance file
+mag_species_abund_arctic_fram_long <- read.table(
+  "Arctic_Fram_MAGs_species_reps_rel_abund_long.txt",
+  h = T, sep = "\t",
+  check.names=F)
+
+# Load ASV to MAG mapping data
+mag_to_asv_mapping=read.table("FRAM_RAS_EGC_ASV_to_MAG.txt", header = TRUE, 
+                              sep = "\t",as.is=TRUE,check.names=F)
+
+# Load MAG statistics
+mag_reps_summary=read.table("FRAM_RAS_EGC1617_MAG_reps_summary.txt", header = TRUE, 
+                            sep = "\t",as.is=TRUE,check.names=F) %>%
+  rename(MAG_name = MAG)
+
+# Load FRAM and Arctic metagenome metadata
+fram_arctic_mg_metadata <- read.table(
+  "FRAM_Arctic_all_metagenomes_metadata.txt",
+  h = T, sep = "\t",
+  check.names=F)
+
+# Load summary ASV data table generated earlier in this script
+ASV_dynamics_with_pls_cluster=read.table("FRAM_RAS_EGC_ASV_dynamics_summary_and_taxa_complete_with_spls_cluster.txt", header = TRUE, 
+                                         sep = "\t",as.is=TRUE,check.names=F)
 
 # Reformat dataframe ready for upset plot
 MAG_species_cluster_info_for_upset = comparative_mag_table %>%
@@ -1015,45 +1022,28 @@ Figure_5a <-
 #####
 
 ### Part B - Frequency of detection of FRAM_EGC MAGs across metagenomes 
-
-# Set working directory
-setwd('D:/ownCloud/PhD/Arctic Bacterioplankton/Arctic_comparison/MAGs/Arctic_Fram_EGC/')
-
-# Load MAG species relative abundance file
-mag_species_abund_arctic_fram_long <- read.table(
-  "Arctic_Fram_MAGs_species_reps_rel_abund_long.txt",
-  h = T, sep = "\t",
-  check.names=F)
-
-
-# Reformat
-mag_species_abund_arctic_fram_long %>%
-  subset(., select="Sample") %>%
-  count(Sample)
-
-# Load MAG species clusters summary info
-egc_mag_species_info <- read.table(
-  "Arctic_Fram_MAGs_EGC_reps_cluster_info.txt",
-  h = T, sep = "\t",
-  check.names=F)
-
+egc_mag_species = comparative_mag_table %>%
+  filter(., grepl("EGC",MAG_name))
+  
 # Extract only species for which an FRAM_EGC MAG was recovered and reformat
 # dataframe to wide
-mag_species_abund_arctic_fram_wide = mag_species_abund_arctic_fram_long %>%
-  filter(Species %in% egc_mag_species_info$Species) %>%
+egc_mag_species_abund_arctic_fram_wide = mag_species_abund_arctic_fram_long %>%
+  filter(Species %in% egc_mag_species$Species) %>%
   subset(., select=c(Sample,Species,Rel_abund)) %>%
   aggregate(Rel_abund~Species+Sample, data=., FUN=sum) %>%
   reshape2::dcast(., Species~Sample, value.var = "Rel_abund") %>%
   tibble::column_to_rownames(., var="Species")
 
-# Extract only species for which an FRAM_EGC MAG was recovered and reformat
-# dataframe to wide and calculate frequency of detection across all samples
+# Calculate frequency of detection (number of samples present) 
+# for egc mag species across all samples. Here we are determining presence
+# as a MAG that has >1X coverage in a sample. Hence, we are using the 
+# truncated average depth values and not relative abundance
 species_freq_detection = mag_species_abund_arctic_fram_long %>%
-  filter(Species %in% egc_mag_species_info$Species) %>%
-  subset(., select=c(Sample,Species,TAD)) %>% 
+  filter(Species %in% egc_mag_species$Species) %>%
+  subset(., select=c(Sample,Species,TAD)) %>%
   aggregate(TAD~Species+Sample, data=., FUN=sum) %>%
   reshape2::dcast(., Species~Sample, value.var = "TAD") %>%
-  tibble::column_to_rownames(., var="Species")%>%
+  tibble::column_to_rownames(., var="Species") %>%
   replace(., . > 1, 1) %>% 
   replace(., . < 1, 0) %>%
   mutate(Num_samples_present = rowSums(.[1:67])) %>% 
@@ -1061,80 +1051,56 @@ species_freq_detection = mag_species_abund_arctic_fram_long %>%
   tibble::rownames_to_column(., var="Species") %>%
   subset(., select=c(Species,Num_samples_present))
 
-# Determine the min, mean and max relative abundance value for each MAG
+# Determine the min, mean and max relative abundance value for each EGC MAG
 # MAX
-MAG_max_rel_abund = mag_species_abund_arctic_fram_wide %>% 
+MAG_max_rel_abund = egc_mag_species_abund_arctic_fram_wide %>% 
   tibble::rownames_to_column(., var="Species") %>%
-  melt(., id.vars="Species", variable.name="Sample", value.name="Rel_abund") %>% 
+  reshape2::melt(., id.vars="Species", variable.name="Sample", value.name="Rel_abund") %>% 
   aggregate(Rel_abund~Species, data=., max) %>% 
   rename(., Max_rel_abund = Rel_abund)
 # MIN
-MAG_min_rel_abund = mag_species_abund_arctic_fram_wide %>% 
+MAG_min_rel_abund = egc_mag_species_abund_arctic_fram_wide %>% 
   tibble::rownames_to_column(., var="Species") %>%
-  melt(., id.vars="Species", variable.name="Sample", value.name="Rel_abund") %>% 
+  reshape2::melt(., id.vars="Species", variable.name="Sample", value.name="Rel_abund") %>% 
   aggregate(Rel_abund~Species, data=., min) %>% 
   rename(., Min_rel_abund = Rel_abund)
 # MEAN
-MAG_avg_rel_abund = mag_species_abund_arctic_fram_wide %>% 
+MAG_avg_rel_abund = egc_mag_species_abund_arctic_fram_wide %>% 
   tibble::rownames_to_column(., var="Species") %>%
-  melt(., id.vars="Species", variable.name="Sample", value.name="Rel_abund") %>% 
+  reshape2::melt(., id.vars="Species", variable.name="Sample", value.name="Rel_abund") %>% 
   aggregate(Rel_abund~Species, data=., mean) %>% 
   rename(., Avg_rel_abund = Rel_abund)
 
 # Combine different statistics generated above into a single summary tabl
-egc_mag_arctic_summary_info = egc_mag_species_info %>%
+egc_mag_species_summary_info = egc_mag_species %>%
   left_join(species_freq_detection, by="Species") %>%
   left_join(MAG_max_rel_abund, by="Species") %>%
   left_join(MAG_avg_rel_abund, by="Species") %>%
   left_join(MAG_min_rel_abund, by="Species") %>%
   arrange(desc(Num_samples_present))
 
-# Combine with summary information on MAG and its connecting ASV generated earlier 
-# in this script
-setwd('D:/ownCloud/PhD/Arctic Bacterioplankton/Fram Strait/RAS_metagenomes/EGC/ASV/FRAM_RAS_EGC_data_for_processing')
-
-# Import files if not running script consecutively
-mag_to_asv_mapping=read.table("FRAM_RAS_EGC_ASV_to_MAG.txt", header = TRUE, 
-                              sep = "\t",as.is=TRUE,check.names=F)
-asv_summary_complete=read.table("FRAM_RAS_EGC_ASV_dynamics_summary_and_taxa_complete_with_spls_cluster.txt", header = TRUE, 
-                                sep = "\t",as.is=TRUE,check.names=F)
-
-setwd('D:/ownCloud/PhD/Arctic Bacterioplankton/Fram Strait/RAS_metagenomes/EGC/MAGs/')
-
-mag_reps_summary=read.table("FRAM_RAS_EGC1617_MAG_reps_summary.txt", header = TRUE, 
-                            sep = "\t",as.is=TRUE,check.names=F)
-
-# Setwd ready for plot output
-setwd('D:/ownCloud/PhD/Arctic Bacterioplankton/manuscripts/FRAM_RAS_EGC1620_manuscript/ISME_submission/Resubmission_after_review/working_figures')
-
-# Reformat naming of samples to match across dataframes
-mag_reps_summary_mod = mag_reps_summary %>%
-  mutate(across("MAG", str_replace, "_RAS_EGC1617", "_EGC1617"))
-
-# Extract the information of interest from asv summary dataframe
-asv_distribution_group_and_cluster = asv_summary_complete %>%
+# Filter ASV summary datatable to only retain information of interest
+ASV_distribution_group_and_cluster = ASV_dynamics_with_pls_cluster %>%
   subset(., select=c(ASV_name,Distribution_group,cluster))
 
 # Combine MAG distribution statistics with taxonomic information and
 # linked ASV 
-egc_mag_summary_across_arctic_and_fram = egc_mag_arctic_summary_info %>%
-  left_join(mag_reps_summary_mod, by="MAG") %>%
-  left_join(mag_to_asv_mapping, by=c("MAG" = "MAG_name")) %>% 
-  left_join(asv_distribution_group_and_cluster, by="ASV_name") %>%
-  subset(., select=c(MAG,Species,Rank,Num_samples_present,Completeness,
+egc_mag_summary_across_arctic_and_fram = egc_mag_species_summary_info %>%
+  left_join(mag_reps_summary, by="MAG_name") %>%
+  left_join(mag_to_asv_mapping, by= "MAG_name") %>% 
+  left_join(ASV_distribution_group_and_cluster, by="ASV_name") %>%
+  subset(., select=c(MAG_name,Species,Rank,Num_samples_present,Completeness,
                      Contamination,Strain_heterogeneity,Genome_size,
                      N50,GC_content,GTDB_taxonomy,MAG_sample_source,ASV_name,
                      Distribution_group,Max_rel_abund,Avg_rel_abund,
                      Min_rel_abund,cluster)) %>%
-  mutate(Distribution_group = Distribution_group %>%
-           is.na %>% 
-           ifelse("Unassigned",Distribution_group)) %>% 
+  mutate(Distribution_group = 
+           ifelse(is.na(Distribution_group), "Unassigned", Distribution_group)) %>%
   mutate(Distribution_group = fct_relevel(Distribution_group, c("Resident",
                                                                 "Intermittent",
                                                                 "Transient",
                                                                 "Unassigned"))) %>%
   arrange(Distribution_group,desc(Num_samples_present))
-
 
 # Export MAG dynamics summary information file
 write.table(egc_mag_summary_across_arctic_and_fram,
@@ -1142,26 +1108,21 @@ write.table(egc_mag_summary_across_arctic_and_fram,
 
 # Check for statistical significance in the frequency of detection between
 # different distribution groups.
-# Need to remove Transient however, due to it only having one MAG rep
+# Need to remove Transient however, as it only has one MAG representative
 distr_group_num_samples = egc_mag_summary_across_arctic_and_fram %>%
   subset(., select=c(Num_samples_present,Distribution_group)) %>%
   filter(Distribution_group != "Transient")
-head(distr_group_num_samples)
-
-kruskal.test(Num_samples_present~Distribution_group, data=distr_group_num_samples) 
-pairwise.wilcox.test(distr_group_num_samples$Num_samples_present, 
-                     distr_group_num_samples$Distribution_group, p.adjust.method = "BH")
 
 # Fix MAG order
-egc_mag_summary_across_arctic_and_fram$MAG <- 
-  factor(egc_mag_summary_across_arctic_and_fram$MAG,
-         levels=unique(egc_mag_summary_across_arctic_and_fram$MAG))
+egc_mag_summary_across_arctic_and_fram$MAG_name <- 
+  factor(egc_mag_summary_across_arctic_and_fram$MAG_name,
+         levels=unique(egc_mag_summary_across_arctic_and_fram$MAG_name))
 
-# Plot Figure 5b
+### Plot Figure 5b
 Figure_5b = 
   ggplot(data=egc_mag_summary_across_arctic_and_fram,
          aes(x = Distribution_group, y = Num_samples_present)) + 
-  geom_boxplot(aes(fill = Distribution_group)) + 
+  geom_violin(aes(fill = Distribution_group), scale = "area") + 
   geom_jitter(alpha = 0.8, width = 0.2) +
   geom_hline(aes(yintercept=67), colour="purple", linewidth=1.5) + 
   labs(y = "Number of samples MAG has >1X coverage") + 
@@ -1177,32 +1138,35 @@ Figure_5b =
         axis.text.x = element_text(colour = "black", size = 12))
 Figure_5b
 
+# Use wilcox test to see if differences in the frequency of detection of MAGs
+# assigned to distribution groups is significant. Will only compare:
+# Resident vs. Intermittent
+# Unassigned vs Intermittent
+# Based on the visualisation of the data
+distr_group_num_samples %>%
+  filter(Distribution_group == "Resident" |
+           Distribution_group == "Intermittent") %>%
+  wilcox.test(Num_samples_present~Distribution_group, data=.,)
+
+distr_group_num_samples %>%
+  filter(Distribution_group == "Unassigned" |
+           Distribution_group == "Intermittent") %>%
+  wilcox.test(Num_samples_present~Distribution_group, data=.,)
+
 #####
 
 ### Part C - Dynamics of sPLS clusters across Fram Strait and Arctic Ocean 
 ### metagenomes
-
-# Set working directory
-setwd('D:/ownCloud/PhD/Arctic Bacterioplankton/Arctic_comparison/')
-
-fram_arctic_mg_metadata <- read.table(
-  "FRAM_Arctic_MG_all_metadata.txt",
-  h = T, sep = "\t",
-  check.names=F)
-
 # Extract necessary information from mag summary file generated above
-egc_mag_name_to_species = egc_mag_summary_across_arctic_and_fram %>%
-  subset(., select=c(MAG,Species,Distribution_group,Num_samples_present))
-View(egc_mag_name_to_species)
-
-egc_mag_to_cluster = subset(egc_mag_summary_across_arctic_and_fram, select=c(MAG,cluster))
+egc_mag_name_cluster_and_group_info = egc_mag_summary_across_arctic_and_fram %>%
+  subset(., select=c(MAG_name,Species,Distribution_group,cluster))
 
 # Create average relative abundance dataframe for spls clusters across samples and
 # combine with metadata
 spls_clusters_abund_across_arctic_long_avg = mag_species_abund_arctic_fram_long %>% 
   #filter(TAD > 1) %>% 
-  left_join(egc_mag_name_to_species, by="Species") %>%
-  left_join(egc_mag_to_cluster, by="MAG") %>%
+  left_join(egc_mag_name_cluster_and_group_info, by="Species") %>%
+  #left_join(egc_mag_to_cluster, by="MAG") %>%
   aggregate(Rel_abund~cluster+Sample, data=., FUN=mean) %>%
   left_join(fram_arctic_mg_metadata, by = "Sample") %>%
   arrange(desc(Depth)) %>%
@@ -1285,22 +1249,20 @@ Figure_5c_depth
 library(cowplot)
 library(ggplotify)
 
-fram_arctic_MAG_species_comparison_upset_v2 <- as.grob(fram_arctic_MAG_species_comparison_upset)
+Figure_5a_grob <- as.grob(Figure_5a)
 
-part_1 <- plot_grid(fram_arctic_MAG_species_comparison_upset_v2, 
-                    FRAM_EGC_MAGs_distribution_group_across_arctic_boxplot, 
+part_1 <- plot_grid(Figure_5a_grob, 
+                    Figure_5b, 
                     nrow = 2, align="hv", labels = c("A", "B"),
                     label_size = 14)
 
-part_2 <- plot_grid(spls_clust_avg_abund_with_ice,
-                    spls_clust_avg_abund_with_daylight,
-                    spls_clust_avg_abund_with_depth,
+part_2 <- plot_grid(Figure_5c_ice,
+                    Figure_5c_daylight,
+                    Figure_5c_depth,
                     nrow = 3, align = "v", labels = "C", label_size = 14)
 
-# Setwd ready for plot output
-setwd('D:/ownCloud/PhD/Arctic Bacterioplankton/manuscripts/FRAM_RAS_EGC1620_manuscript/ISME_submission/Resubmission_after_review/working_figures')
-
-pdf(file="Figure_5.pdf", height = 10, width = 10)
+### Combine and export plot
+pdf(file="figures_output/Figure_5.pdf", height = 10, width = 10)
 plot_grid(part_1, part_2, ncol=2)
 dev.off()
 
@@ -1316,18 +1278,34 @@ dev.off()
 
 ##########
 
-# Import data
-egc_asv_meta=read.table("FRAM_RAS_EGC_ASV_meta_refined.txt", header = TRUE, 
+# Import metadata for ASV samples data
+ASV_meta=read.table("FRAM_RAS_EGC_ASV_meta_refined.txt", header = TRUE, 
                         sep = "\t",as.is=TRUE,check.names=F)
-egc_asv_meta$Date <- as.Date(egc_asv_meta$Date, format="%m/%d/%Y")
+ASV_meta$Date <- as.Date(ASV_meta$Date, format="%m/%d/%Y")
 
-# Plot key metadata variables over temporal scales
+# Import ASV summary data
+ASV_dynamics_df_with_cluster=read.table("FRAM_RAS_EGC_ASV_dynamics_summary_and_taxa_complete_with_spls_cluster.txt", header = TRUE, 
+                                        sep = "\t",as.is=TRUE,check.names=F)
 
-egc_asv_meta_summary_plot <- ggplot(egc_asv_meta, aes(x = as.Date(Date), y = Ice_cover)) + 
+# Import ASV relative abundance matrix
+ASV_rel_filt=read.table("FRAM_RAS_EGC_ASV_relative_filtered.txt", header = TRUE, 
+                        sep = "\t",as.is=TRUE,check.names=F) %>% 
+  tibble::rownames_to_column(., var="ASV_name")
+
+# Import ASV to MAG information
+mag_to_asv_mapping=read.table("FRAM_RAS_EGC_ASV_to_MAG.txt", header = TRUE, 
+                              sep = "\t",as.is=TRUE,check.names=F)
+
+## Step 1: Plot key metadata variables over temporal scales
+ASV_meta_summary_plot <- ggplot(ASV_meta, aes(x = as.Date(Date), y = Ice_cover)) + 
   geom_area(fill="grey90") + 
-  geom_line(aes(x = as.Date(Date), y = AW_proportion*100), colour = "#1338BE", size = 2) +
-  geom_line(aes(x = as.Date(Date), y = Daylight*4), colour="#FFD300", size = 2) +
-  geom_line(aes(x = as.Date(Date), y = ifelse(Chlorophyll_a_sensor > 0, Chlorophyll_a_sensor*150, 0)), colour="#85CC6F", size = 2) + 
+  geom_line(aes(x = as.Date(Date), y = AW_proportion*100), 
+            colour = "#1338BE", linewidth = 2) +
+  geom_line(aes(x = as.Date(Date), y = Daylight*4), 
+            colour="#FFD300", linewidth = 2) +
+  geom_line(aes(x = as.Date(Date), 
+                y = ifelse(chl_sens > 0, chl_sens*150, 0)), 
+            colour="#85CC6F", linewidth = 2) + 
   scale_y_continuous(sec.axis = sec_axis(~ ./150, name = "Chlorophyll a (mg m3)")) + 
   scale_x_date(date_breaks = "3 months") + 
   labs(y = "AW proportion / Ice concentration (%)", x = "Date") + 
@@ -1339,76 +1317,55 @@ egc_asv_meta_summary_plot <- ggplot(egc_asv_meta, aes(x = as.Date(Date), y = Ice
         axis.text.x = element_blank(), 
         strip.background.x = element_rect(fill = "white", colour = "black"), 
         strip.text.x = element_text(size = 16, colour = "black"))
-egc_asv_meta_summary_plot
+ASV_meta_summary_plot
 
-### 
+### Step 2: process ASV data, identify signature populations and then plot
 
-# Import ASV data
-
-egc_asv_dynamics_df_with_cluster=read.table("FRAM_RAS_EGC_ASV_dynamics_summary_and_taxa_complete_with_spls_cluster.txt", header = TRUE, 
-                                            sep = "\t",as.is=TRUE,check.names=F)
-egc_asv_relative=read.table("FRAM_RAS_EGC_ASV_relative_filtered.txt", header = TRUE, 
-                            sep = "\t",as.is=TRUE,check.names=F)
-
-# Import ASV to MAG information
-
-egc_asv_to_mag=read.table("FRAM_RAS_EGC_ASV_to_MAG.txt", header = TRUE, 
-                            sep = "\t",as.is=TRUE,check.names=F)
-
-egc_asv_dynamics_df_with_cluster_and_signatures = egc_asv_dynamics_df_with_cluster %>% 
-  left_join(egc_asv_to_mag, by="ASV_name") %>% 
+# Identify signature populations based on MAG and ASV mapping and assignement
+# to a sPLS cluster
+ASV_dynamics_df_with_cluster_and_signatures = ASV_dynamics_df_with_cluster %>% 
+  left_join(mag_to_asv_mapping, by="ASV_name") %>% 
   mutate(Signature_population = case_when(
     MAG_name != "NA" & cluster != "NA" ~ "Signature"
   ))
 
-# Export this dataframe as it now contains all information used throughout the 
-# analysis
+# After the addition of signature population designation above, the dataframe
+# now contains all information about ASVs produced during this Rscript
 
-write.table(egc_asv_dynamics_df_with_cluster_and_signatures,
+write.table(ASV_dynamics_df_with_cluster_and_signatures,
              file="FRAM_RAS_EGC_ASV_complete_summary_information.txt",
              sep="\t")
 
-# Reformat ASV relative abundance matrix
-
-egc_asv_relative_mod = egc_asv_relative %>% 
-  tibble::rownames_to_column(., var="ASV_name")
-
 # Subset information from metadata table that will be used
-
-egc_asv_meta_mod <- egc_asv_meta %>% 
-  subset(., select=c(RAS_id,Mooring_position,Date)) %>%
-  rename(., Sample = RAS_id)
+ASV_meta_select <- ASV_meta %>% 
+  subset(., select=c(Sample,Mooring_position,Date))
 
 # Filter ASV information to only include signature populations and combine
 # with metadata
-
-egc_asv_pls_signatures_with_meta = egc_asv_dynamics_df_with_cluster_and_signatures %>%
+ASV_pls_signatures_with_meta = ASV_dynamics_df_with_cluster_and_signatures %>%
   filter(Signature_population == "Signature") %>% 
   subset(., select=c(ASV_name, cluster, Genus)) %>% 
   mutate(Name_and_genus=paste(ASV_name, Genus, sep="-")) %>% 
-  left_join(egc_asv_relative_mod, by="ASV_name") %>% 
-  reshape2::melt(id.vars=c("ASV_name","cluster","Genus","Name_and_genus"), variable.name="Sample",
-       value.name="rel_abund") %>%
-  left_join(egc_asv_meta_mod, by="Sample")
-View(egc_asv_pls_signatures_with_meta)
+  left_join(ASV_rel_filt, by="ASV_name") %>% 
+  reshape2::melt(id.vars=c("ASV_name","cluster","Genus","Name_and_genus"), 
+                 variable.name="Sample", value.name="rel_abund") %>%
+  left_join(ASV_meta_select, by="Sample")
 
 # Define factor levels
-
-egc_asv_pls_signatures_with_meta$Mooring_position <- factor(egc_asv_pls_signatures_with_meta$Mooring_position, 
+ASV_pls_signatures_with_meta$Mooring_position <- factor(ASV_pls_signatures_with_meta$Mooring_position, 
                                                    levels=unique(c("core-EGC","MIZ")))
-egc_asv_pls_signatures_with_meta$Date <- as.Date(egc_asv_pls_signatures_with_meta$Date, format="%m/%d/%Y")
+ASV_pls_signatures_with_meta$Date <- as.Date(ASV_pls_signatures_with_meta$Date, format="%m/%d/%Y")
 
 ### Plot
 # Plot sPLS1 signature populations temporal dynamics
-
-pls_c1_temporal= egc_asv_pls_signatures_with_meta %>% 
+pls_c1_temporal= ASV_pls_signatures_with_meta %>% 
   filter(cluster == "C1") %>% 
   ggplot(data=., aes(x=as.Date(Date), y=rel_abund)) + 
   scale_x_date(breaks = "4 months") + 
   labs(x = "Date", y = "Relative abundance (%)", 
        fill = "C1 signature populations") + 
   geom_bar(aes(fill=Name_and_genus), stat="identity", position="stack", width = 8) + 
-  scale_fill_manual(values = c("#A6CEE3", "#1F78B4")) + 
+  scale_fill_manual(values = c("#A6CEE3", "#1F78B4","#B2DF8A")) + 
   facet_grid(.~Mooring_position, scales="free_x") + 
   theme_bw() + 
   theme(axis.text.y = element_text(size=12, colour="Black"),
@@ -1424,33 +1381,8 @@ pls_c1_temporal= egc_asv_pls_signatures_with_meta %>%
         plot.background = element_blank()) + 
   guides(fill=guide_legend(ncol=2))
 
-# Plot sPLS2 signature populations temporal dynamics
-
-pls_c2_temporal = egc_asv_pls_signatures_with_meta %>% 
-  filter(cluster == "C2") %>% 
-  ggplot(data=., aes(x=as.Date(Date), y=rel_abund)) + 
-  scale_x_date(breaks = "4 months") + 
-  labs(x = "Date", y = "Relative abundance (%)", 
-       fill = "C2 signature populations") + 
-  geom_bar(aes(fill=Name_and_genus), stat="identity", position="stack", width = 8) + 
-  scale_fill_manual(values = "#B2DF8A") + 
-  facet_grid(.~Mooring_position, scales="free_x") + 
-  theme_bw() + 
-  theme(axis.text.y = element_text(size=12, colour="Black"),
-        axis.title.y = element_blank(),
-        axis.text.x = element_blank(),
-        axis.title.x = element_blank(),
-        panel.grid.minor.x = element_blank(),
-        legend.title = element_text(size = 12, colour = "black"), 
-        legend.text = element_text(size = 10, colour = "black"), 
-        legend.background = element_blank(),
-        strip.background = element_blank(), 
-        strip.text.x = element_blank(),
-        plot.background = element_blank())
-
 # Plot sPLS3 signature populations temporal dynamics
-
-pls_c3_temporal = egc_asv_pls_signatures_with_meta %>% 
+pls_c3_temporal = ASV_pls_signatures_with_meta %>% 
   filter(cluster == "C3") %>% 
   ggplot(data=., aes(x=as.Date(Date), y=rel_abund)) + 
   scale_x_date(breaks = "4 months") + 
@@ -1474,8 +1406,7 @@ pls_c3_temporal = egc_asv_pls_signatures_with_meta %>%
   guides(fill=guide_legend(ncol=2))
 
 # Plot sPLS4 signature populations temporal dynamics
-
-pls_c4_temporal = egc_asv_pls_signatures_with_meta %>% 
+pls_c4_temporal = ASV_pls_signatures_with_meta %>% 
   filter(cluster == "C4") %>% 
   ggplot(data=., aes(x=as.Date(Date), y=rel_abund)) + 
   scale_x_date(breaks = "4 months") + 
@@ -1497,11 +1428,10 @@ pls_c4_temporal = egc_asv_pls_signatures_with_meta %>%
         strip.background = element_blank(), 
         strip.text.x = element_blank(),
         plot.background = element_blank())+ 
-  guides(fill=guide_legend(ncol=3))
+  guides(fill=guide_legend(ncol=2))
 
 # Plot sPLS6 signature populations temporal dynamics
-
-pls_c6_temporal = egc_asv_pls_signatures_with_meta %>% 
+pls_c6_temporal = ASV_pls_signatures_with_meta %>% 
   filter(cluster == "C6") %>% 
   ggplot(data=., aes(x=as.Date(Date), y=rel_abund)) + 
   scale_x_date(breaks = "4 months") + 
@@ -1524,8 +1454,7 @@ pls_c6_temporal = egc_asv_pls_signatures_with_meta %>%
         plot.background = element_blank())
 
 # Plot sPLS7 signature populations temporal dynamics
-
-pls_c7_temporal = egc_asv_pls_signatures_with_meta %>% 
+pls_c7_temporal = ASV_pls_signatures_with_meta %>% 
   filter(cluster == "C7") %>% 
   ggplot(data=., aes(x=as.Date(Date), y=rel_abund)) + 
   scale_x_date(breaks = "4 months") + 
@@ -1548,8 +1477,7 @@ pls_c7_temporal = egc_asv_pls_signatures_with_meta %>%
         plot.background = element_blank())
 
 # Plot sPLS8 signature populations temporal dynamics
-
-pls_c8_temporal = egc_asv_pls_signatures_with_meta %>% 
+pls_c8_temporal = ASV_pls_signatures_with_meta %>% 
   filter(cluster == "C8") %>% 
   ggplot(data=., aes(x=as.Date(Date), y=rel_abund)) + 
   scale_x_date(breaks = "4 months") + 
@@ -1570,14 +1498,13 @@ pls_c8_temporal = egc_asv_pls_signatures_with_meta %>%
         strip.background = element_blank(), 
         strip.text.x = element_blank(),
         plot.background = element_blank()) +
-  guides(fill=guide_legend(ncol=3))
+  guides(fill=guide_legend(ncol=2))
 
 ### Plot Figure 6
 ### Combine all plots into single figure
-
 library(patchwork)
-pdf(file="Figure_6.pdf", height=12, width=14)
-(egc_asv_meta_summary_plot/pls_c1_temporal/pls_c2_temporal/
+pdf(file="figures_output/Figure_6.pdf", height=12, width=14)
+(ASV_meta_summary_plot/pls_c1_temporal/
   pls_c3_temporal/pls_c4_temporal/pls_c6_temporal/pls_c7_temporal/pls_c8_temporal)+
   plot_layout(guides="collect")
 dev.off()
@@ -1590,69 +1517,76 @@ dev.off()
 ############################################################################################
 
 #####
-
-### Aldex2 analysis
-
-#####
-
-# Import data
+# Import metagenome functional gene profile data
 egc_read_func_long=read.table("FRAM_RAS_EGC_community_functional_profile_norm_long.txt", 
                               header = TRUE, sep = "\t",as.is=TRUE,check.names=F)
+
+# Import metagenome metadata
 egc_meta=read.table("FRAM_RAS_EGC_MG_meta.txt", 
                     header = TRUE, sep = "\t",as.is=TRUE,check.names=F)
-egc_mg_cluster_assignment=read.table("FRAM_RAS_EGC_MG_cluster_assignment.txt", 
-                    header = TRUE, sep = "\t",as.is=TRUE,check.names=F)
 
-# Reformat
-
+# Reformat functional profile to wide format
 egc_read_func_wide = egc_read_func_long %>% 
   aggregate(Norm_count~Gene+Sample, data=., FUN = sum) %>% 
   reshape2::dcast(Gene~Sample, value.var = "Norm_count", data=.) %>% 
   tibble::column_to_rownames(., var="Gene")
 
-egc_read_func_wide[is.na(egc_read_func_wide)]<-0
+# Filter out very low abundant functions and calculate bray-curtis dissimilarity
+# matrix
+egc_read_func_wide_bray = egc_read_func_wide %>% 
+  replace(is.na(.), 0) %>%
+  OTUtable::filter_taxa(., abundance=0.001, persistence = 20) %>%
+  t() %>%
+  vegdist(., method="bray")
 
-# Filter out very low abundant functions and reformat dataframe to long format
+# Perform hierarchical clustering using different algorithms
+egc_read_func_wide_clust_avg <- hclust(egc_read_func_wide_bray, method="average")
+egc_read_func_wide_clust_comp <- hclust(egc_read_func_wide_bray, method="complete")
+egc_read_func_wide_clust_ward <- hclust(egc_read_func_wide_bray, method="ward.D")
 
-egc_read_func_long_filt <- egc_read_func_wide %>% 
-  OTUtable::filter_taxa(., abundance=0.001, persistence = 20) %>% 
-  tibble::rownames_to_column(., "Gene") %>% 
-  reshape2::melt(., id.vars=c("Gene"), 
-       variable.name="RAS_id", value.name="Norm_count")
-View(egc_read_func_long_filt)
+par(mfrow=c(3,1))
+plot(egc_read_func_wide_clust_avg)
+plot(egc_read_func_wide_clust_comp)
+plot(egc_read_func_wide_clust_ward)
 
-# Combine with metadata and perform additional reformating of variable names
-egc_mg_clusters_tidy = egc_mg_cluster_assignment %>% 
-  mutate(Cluster = case_when(
-    Clusters == 1 ~ "High-ice cluster",
-    Clusters == 2 ~ "Low-ice cluster"
+# Although slight variation observed, the same two distinct clusters were
+# consistently formed
+# Define clusters
+egc_func_clusters <- cutree(egc_read_func_wide_clust_avg, k=2)
+
+# Create dataframe with cluster information
+egc_metag_clusters = egc_func_clusters %>% 
+  as.data.frame() %>%
+  rename(., Clusters = ".") %>% 
+  tibble::rownames_to_column(., "Sample") %>%
+  mutate(Clusters = case_when(
+    Clusters == 1 ~ "High-ice",
+    Clusters == 2 ~ "Low-ice"
   )) %>% 
-  subset(., select=-c(Clusters)) %>% 
-  arrange(., RAS_id)
+  arrange(., Sample)
 
-egc_read_func_long_filt_with_cluster = egc_read_func_long_filt %>% 
-  left_join(egc_mg_cluster_assignment, by="RAS_id") %>% 
-  mutate(Cluster = case_when(
-    Clusters == 1 ~ "High-ice cluster",
-    Clusters == 2 ~ "Low-ice cluster"
-  )) %>% 
-  subset(., select=-c(Clusters)) %>% 
-  arrange(., RAS_id)
+# Filter out low abundant functions from functional profile and format 
+# to long data frame, before combining with cluster information
+egc_read_func_long_filt = egc_read_func_wide %>% 
+  replace(is.na(.), 0) %>%
+  OTUtable::filter_taxa(., abundance=0.001, persistence = 20) %>%
+  tibble::rownames_to_column(., var="Gene") %>%
+  reshape2::melt(., id.vars="Gene", variable.name="Sample", 
+                 value.name="Norm_count") %>%
+  left_join(egc_metag_clusters, by="Sample")
 
+# Create functional matrix for aldex (requires integers only, wide format and 
+# colnames matching rownames from metadata table)
 functional_matrix_for_aldex <- egc_read_func_long_filt %>% 
-  mutate_at(c("Norm_count"), as.numeric) %>%
-  mutate(count=Norm_count*1000) %>% #scaling up values as absolute integers needed)
-  mutate_at(c("count"), round, 0) %>% 
-  reshape2::dcast(Gene~RAS_id, value.var="count", data=.,) %>% 
+  mutate(Count=Norm_count*1000) %>% #scaling up values as absolute integers needed)
+  mutate_at(c("Count"), round, 0) %>% 
+  reshape2::dcast(Gene~Sample, value.var="Count", data=.,) %>% 
   column_to_rownames("Gene")
-
-View(functional_matrix_for_aldex)
-View(egc_mg_clusters_tidy)
 
 # Run Aldex2
 egc_mg_func_aldex <- aldex(
   functional_matrix_for_aldex,
-  factor(egc_mg_clusters_tidy$Cluster), 
+  factor(egc_metag_clusters$Clusters), 
   denom = "zero",
   test = "kw",
   mc.samples = 128)
@@ -1666,17 +1600,17 @@ View(egc_mg_func_aldex_sig_genes)
 # Create matrix for significant hits, combine with metadata and calculate CLR
 egc_mg_func_aldex_sig_genes_clr = subset(
   functional_matrix_for_aldex, rownames(functional_matrix_for_aldex) %in% egc_mg_func_aldex_sig_genes) %>% 
-  rgr:: clr() %>%
+  clr() %>%
   as.data.frame() %>%
   tibble::rownames_to_column(., var="Gene") %>%
-  reshape2::melt(id.vars="Gene", variable.name="RAS_id", value.name="CLR_values") %>%
-  left_join(egc_mg_clusters_tidy, by="RAS_id")
-View(egc_mg_func_aldex_sig_genes_clr)
+  reshape2::melt(id.vars="Gene", variable.name="Sample", value.name="CLR_values") %>%
+  left_join(egc_mg_clusters_tidy, by="Sample")
 
-# Determine which group genes are enriched under and add to dataframe
+# Determine which group each of the genes are enriched under and 
+# add information to dataframe
 egc_mg_func_gene_enrichment_category = egc_mg_func_aldex_sig_genes_clr %>% 
-  aggregate(CLR_values~Gene+Cluster, data=., FUN=mean) %>% 
-  reshape2::dcast(., Gene~Cluster, value.var="CLR_values") %>%
+  aggregate(CLR_values~Gene+Clusters, data=., FUN=mean) %>% 
+  reshape2::dcast(., Gene~Clusters, value.var="CLR_values") %>%
   mutate(Enrichment = case_when(
     `High-ice cluster` > `Low-ice cluster` ~ "HI_enriched",
     `Low-ice cluster` > `High-ice cluster` ~ "LI_enriched"
@@ -1692,16 +1626,16 @@ egc_mg_func_aldex_sig_genes_clr_and_group_enrichment =
 kegg_info = read.table("KEGG_ID_to_description.csv", header = TRUE, 
                        sep = ",",as.is=TRUE, check.names=F)
 
-# Add KO descriptions to dataframe
+# Add KO descriptions to dataframe where KO values are present
 egc_mg_func_aldex_sig_genes_clr_and_group_enrichment_updated = egc_mg_func_aldex_sig_genes_clr_and_group_enrichment %>% 
   mutate(description = "NA") %>% 
   left_join(kegg_info, by="Gene") %>% 
   subset(., select=-c(description.x)) %>% 
   mutate(KEGG_description = description.y) %>% 
   subset(., select=-c(description.y))
-View(egc_mg_func_aldex_sig_genes_clr_and_group_enrichment_updated)
 
-# Export dataframe
+# Export dataframe - this now contains information on enriched functions
+# and under what conditions they were enriched under
 write.table(egc_mg_func_aldex_sig_genes_clr_and_group_enrichment_updated, 
             file="FRAM_RAS_EGC_community_functional_profile_ALDEX_sig_enr_genes_long.txt", 
             sep = "\t")
@@ -1764,18 +1698,3 @@ aldex_enriched_genes_expanded_boxplot
 dev.off()
 
 ############################################
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
